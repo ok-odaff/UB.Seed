@@ -49,5 +49,12 @@ properties:
       "line_items": {{state.fees}},
       "customer_email": {{state.primary_contact.email}}
     }
-actions: {}
+actions:
+  triggerEvent:
+    - action: '17496555238120.8513669831891769'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  moduleLoad: []
 slots: []

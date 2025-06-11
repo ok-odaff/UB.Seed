@@ -1,0 +1,38 @@
+id: '17496561912210.8581774497489149'
+definitionId: heading
+styles:
+  xl:
+    fontSize:
+      customValue: auto
+      customUnit: null
+      themeDefaultOverridePropertyKey: baseTextFontSize
+    gridItem:
+      x: 0
+      w: 24
+      h: 9
+    iconPlacement: left
+    color:
+      value: danger
+      dataValue: basic
+      withData: false
+properties:
+  name: heading10
+  text: If you're having trouble with payment, please contact the program admin.
+  verticalAlignment: middle
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  heightMode: auto
+  alignment: center
+  icon:
+    value: error_material
+    dataValue: star-outline
+    withData: false
+  iconColor:
+    value: text-color
+    dataValue: text-color
+    withData: false
+parentSlotId: '17496561912210.6038571815570095'
+index: 0
+actions: {}
+slots: []
