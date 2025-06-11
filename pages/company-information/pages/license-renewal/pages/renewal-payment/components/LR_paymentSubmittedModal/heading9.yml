@@ -1,0 +1,34 @@
+id: '17496561890370.5486939202128421'
+definitionId: heading
+styles:
+  xl:
+    fontSize:
+      customValue: auto
+      customUnit: null
+      themeDefaultOverridePropertyKey: baseTextFontSize
+    gridItem:
+      x: 0
+      w: 24
+      h: 9
+    color:
+      value: primary
+      dataValue: basic
+      withData: false
+    iconPlacement: left
+properties:
+  name: heading9
+  text: Payment successfully submitted!
+  verticalAlignment: middle
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  heightMode: auto
+  alignment: center
+  icon:
+    value: check_circle_material
+    dataValue: star-outline
+    withData: false
+parentSlotId: '17496561890370.3824071527432932'
+index: 0
+actions: {}
+slots: []
