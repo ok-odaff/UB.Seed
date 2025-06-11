@@ -1,0 +1,120 @@
+id: '17488793144460.1535940716870282'
+kind: workflow
+name: click_continue
+nameConfigured: true
+steps:
+  - id: '17488793225070.17451873845957033'
+    type: executeAction
+    name: update_contact
+    params:
+      - type: action
+        value: '17488793432150.3009785562739168'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./update_contact-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17488796211470.08613023319417756'
+    type: executeAction
+    name: update_address
+    params:
+      - type: action
+        value: '17488796341840.7699571885054052'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./update_address-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17496538973860.8827402025629459'
+    type: customAsyncCode
+    name: build_line_items
+    params:
+      - type: asyncCode
+        value: ./build_line_items.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17488797734590.9498232315883628'
+    type: navigation
+    name: payment
+    params:
+      - type: url
+        value: '{{routes.renewalPayment.url}}'
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: openInNewTab
+        value: false
+        valueType: custom
+      - type: queryParams
+        value:
+          mode: structured
+          value:
+            custom: ''
+            structured:
+              - name: ''
+                value: ''
+        valueType: custom
+        interpolationType: string
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+mode: manual
+modeConfigured: false
+parentPageId: '17477469569500.9222351327248683'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.click_continue.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.click_continue.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: false
+  errorToast: Action "{{actions.click_continue.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

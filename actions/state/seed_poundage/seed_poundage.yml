@@ -1,0 +1,15 @@
+id: '17488913917850.3424598039672061'
+kind: store_item
+name: seed_poundage
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17477484248050.7798491970641792'
+storeItem:
+  value: '[]'
+  valueType: array
+  initialValue: '[]'
+  version: 1
+selected: true
+configured: true

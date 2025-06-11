@@ -1,0 +1,46 @@
+id: '17479416032370.7690641479668856'
+definitionId: container
+parentSlotId: '17484494134040.2376849489855153'
+styles:
+  xl:
+    gridItem:
+      id: '17479416032370.7690641479668856'
+      x: 0
+      y: 28
+      w: 19
+      h: 27
+    flex:
+      size:
+        widthValue: 300
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17479416032370.7690641479668856'
+      x: 0
+      y: 55
+      w: 19
+      h: 27
+    flex:
+      size:
+        widthValue: 300
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: AI_PrimaryAddressContainer
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  heightMode: auto
+actions: {}
+slots:
+  - id: '17479416032370.6510143779556755'
+    name: views
+    children:
+      - view_6/view_6.yml

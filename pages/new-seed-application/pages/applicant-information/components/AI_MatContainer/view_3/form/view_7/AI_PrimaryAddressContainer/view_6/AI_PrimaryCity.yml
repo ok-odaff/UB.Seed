@@ -1,0 +1,47 @@
+id: '17477736521820.6931453246356761'
+definitionId: stringEdit
+parentSlotId: '17479416032370.7241486054773489'
+styles:
+  xl:
+    gridItem:
+      x: 7
+      y: 9
+      w: 6
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17477736521820.6931453246356761'
+      x: 10
+      y: 9
+      w: 10
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: AI_PrimaryCity
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelConfig:
+    text: City
+    position: horizontal
+    align: left
+  labelWidth: 0
+  required:
+    value: true
+    dataValue: 'false'
+    withData: false
+actions: {}
+slots: []

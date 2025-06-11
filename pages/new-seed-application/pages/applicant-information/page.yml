@@ -1,0 +1,29 @@
+id: '17477471567180.6287153283818414'
+name: Applicant Information
+url: applicant-information
+roleIds: []
+disableInMenu: false
+hideFromMenu: false
+parentPageId: '17477468308140.41045842855886727'
+icon: ''
+slots:
+  - id: '17477471567180.1211161191669784'
+    name: content
+    children:
+      - id: '17477471567180.10027847588172412'
+        definitionId: grid
+        parentSlotId: '17477471567180.1211161191669784'
+        styles: {}
+        properties:
+          name: applicant-information
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '17477471567180.16935006930149643'
+            name: content
+            children:
+              - components/AI_Header.yml
+              - components/AI_MatContainer/AI_MatContainer.yml

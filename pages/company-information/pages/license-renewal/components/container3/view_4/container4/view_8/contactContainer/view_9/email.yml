@@ -1,0 +1,46 @@
+id: '17488760835170.3538106586466745'
+definitionId: stringEdit
+parentSlotId: '17488759736910.9545567065553086'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 18
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 18
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: email
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  value: '{{state.company_contacts.email}}'
+  labelConfig:
+    text: Email
+    position: horizontal
+    align: left
+  required:
+    value: false
+    dataValue: '!{{ui.phone.value}}'
+    withData: true
+actions: {}
+slots: []

@@ -1,0 +1,46 @@
+id: '17483703274920.7255882157649837'
+definitionId: button
+parentSlotId: '2'
+styles:
+  xl:
+    gridItem:
+      x: 13
+      y: 59
+      w: 6
+      h: 41
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 54
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: home_goToPoundage
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  linkInfo:
+    active: internalPath
+    internalPath: '{{routes.poundageReporting.url}}'
+    externalPath: ''
+  text: Report Poundage
+  status:
+    value: success-dark
+    dataValue: primary
+    withData: false
+actions: {}
+slots: []

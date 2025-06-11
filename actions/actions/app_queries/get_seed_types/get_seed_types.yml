@@ -1,0 +1,73 @@
+id: '17488805538980.26303137671508536'
+kind: workflow
+name: get_seed_types
+nameConfigured: true
+steps:
+  - id: '17488805600240.8075381024521282'
+    type: LOAD_ENTITY
+    name: get
+    params:
+      - type: datasourceId
+        value: My Data
+        valueType: string
+      - type: resourceId
+        value: dbo.program_variables
+        valueType: string
+      - type: filters
+        value:
+          - column: name
+            operation: '='
+            value:
+              value: SEED_TYPES
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ./get-successMapper.js
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17488806645810.295715599897705'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17488806484960.10649830091811718'
+        valueType: string
+      - type: value
+        value: '{{data}}.split(''; '')'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentId: '17483682823830.5384011930826919'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.get_seed_types.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_seed_types.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_seed_types.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+selected: true
+configured: true

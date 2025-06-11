@@ -1,0 +1,53 @@
+id: '17489586292310.7319414170153518'
+definitionId: container
+parentSlotId: '17489584561880.43727801488959717'
+styles:
+  xl:
+    gridItem:
+      x: 1
+      y: 10
+      w: 23
+      h: 213
+    flex:
+      size:
+        widthValue: 300
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+    backgroundColor:
+      value: default
+      dataValue: transparent
+      withData: false
+  xs:
+    gridItem:
+      id: '17489586292310.7319414170153518'
+      x: 5
+      y: 177
+      w: 13
+      h: 80
+    flex:
+      size:
+        widthValue: 300
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: container7
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  heightMode: auto
+  margin:
+    value: false
+    dataValue: 0px
+    withData: false
+actions: {}
+slots:
+  - id: '17489586292310.7680677413677883'
+    name: views
+    children:
+      - view_13/view_13.yml

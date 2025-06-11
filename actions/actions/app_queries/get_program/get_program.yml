@@ -1,0 +1,73 @@
+id: '17483679663970.0804247711769791'
+kind: workflow
+name: get_program
+nameConfigured: true
+steps:
+  - id: '17483679824650.8056719058514852'
+    type: LOAD_ENTITY
+    name: get
+    params:
+      - type: datasourceId
+        value: My Data
+        valueType: string
+      - type: resourceId
+        value: dbo.program
+        valueType: string
+      - type: filters
+        value:
+          - column: program_id
+            operation: '='
+            value:
+              value: '{{PROGRAM}}'
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17483680183670.6177444910420339'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17483678059000.4579612646428044'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentId: '17483682823830.5384011930826919'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.get_program.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_program.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_program.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+selected: false
+configured: true

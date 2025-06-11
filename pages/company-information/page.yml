@@ -1,0 +1,27 @@
+id: '17477468730420.7324189684811326'
+name: License Information
+url: company-information
+roleIds: []
+disableInMenu: false
+hideFromMenu: false
+parentPageId: ''
+icon: ''
+slots:
+  - id: '17477468730420.11768484367701748'
+    name: content
+    children:
+      - id: '17477468730420.12941501816651446'
+        definitionId: grid
+        parentSlotId: '17477468730420.11768484367701748'
+        styles: {}
+        properties:
+          name: company-information
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '17477468730420.4301741842915521'
+            name: content
+            children: []

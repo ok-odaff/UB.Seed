@@ -1,0 +1,15 @@
+id: '17488729188490.32568949159082006'
+kind: store_item
+name: company_contacts
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17483677096750.77303552721274'
+storeItem:
+  value: '[]'
+  valueType: array
+  initialValue: '[]'
+  version: 1
+selected: true
+configured: true

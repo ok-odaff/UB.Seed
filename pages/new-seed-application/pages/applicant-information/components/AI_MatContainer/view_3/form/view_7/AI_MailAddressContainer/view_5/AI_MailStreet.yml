@@ -1,0 +1,47 @@
+id: '17477738164030.32514412139709337'
+definitionId: stringEdit
+parentSlotId: '17479413470440.07200346331735796'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 14
+      w: 7
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17477738164030.32514412139709337'
+      x: 0
+      y: 0
+      w: 6
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: AI_MailStreet
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelConfig:
+    text: Street
+    position: horizontal
+    align: left
+  labelWidth: 0
+  required:
+    value: true
+    dataValue: 'false'
+    withData: false
+actions: {}
+slots: []

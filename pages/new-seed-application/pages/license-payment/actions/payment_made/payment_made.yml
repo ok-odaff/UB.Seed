@@ -1,0 +1,16 @@
+id: '17483687958780.023456257013450776'
+kind: store_item
+name: payment_made
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentPageId: '17477471740250.8081042684627866'
+parentId: null
+storeItem:
+  value: false
+  valueType: boolean
+  initialValue: false
+  version: 1
+selected: true
+configured: true

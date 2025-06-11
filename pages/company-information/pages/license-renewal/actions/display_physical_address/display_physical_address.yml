@@ -1,0 +1,87 @@
+id: '17488775134420.541397187728423'
+kind: workflow
+name: display_physical_address
+nameConfigured: true
+steps:
+  - id: '17496500389730.11925709969259846'
+    type: LOAD_COLLECTION
+    name: load
+    params:
+      - type: datasourceId
+        value: My Data
+        valueType: string
+      - type: resourceId
+        value: dbo.company_address
+        valueType: string
+      - type: filters
+        value:
+          - column: detail_id
+            operation: '='
+            value:
+              value: '{{state.login_information.detail_id}}'
+        valueType: custom
+      - type: ordering
+        value:
+          limit:
+            value: 1000
+          offset:
+            value: ''
+          orderBy:
+            value: ''
+          orderDirection:
+            value: asc
+        valueType: custom
+      - type: additionalParams
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17488775240830.4960010928094979'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    paused: false
+mode: manual
+modeConfigured: false
+parentPageId: '17477469569500.9222351327248683'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.display_physical_address.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.display_physical_address.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.display_physical_address.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

@@ -1,0 +1,65 @@
+id: '17483675401480.7285149211809564'
+definitionId: modal
+parentSlotId: '17477471740250.5620423663908407'
+styles:
+  xl:
+    gridItem:
+      x: 21
+      y: 0
+      w: 3
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+    modalSize:
+      widthValue: 80
+      widthUnit: '%'
+      heightValue: auto
+      heightUnit: null
+      minWidthValue: 0
+      minWidthUnit: px
+      minHeightValue: 0
+      minHeightUnit: px
+      maxWidthValue: none
+      maxWidthUnit: null
+      maxHeightValue: none
+      maxHeightUnit: null
+  xs:
+    gridItem:
+      x: 0
+      y: 9
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: NL_paymentFailed
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  buttonHidden:
+    value: true
+    dataValue: 'false'
+    withData: false
+actions: {}
+slots:
+  - id: '17483675401480.23678299559814775'
+    name: header
+    children: []
+  - id: '17483675401480.531284524532546'
+    name: body
+    children:
+      - text13.yml
+      - text14.yml
+  - id: '17483675401480.7362665684463825'
+    name: footer
+    children: []

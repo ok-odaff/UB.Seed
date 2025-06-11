@@ -1,0 +1,15 @@
+id: '17496493164330.6512939972381194'
+kind: store_item
+name: new_primary_contact
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17496492997520.2618585004530486'
+storeItem:
+  value: '{}'
+  valueType: object
+  initialValue: '{}'
+  version: 1
+selected: true
+configured: true

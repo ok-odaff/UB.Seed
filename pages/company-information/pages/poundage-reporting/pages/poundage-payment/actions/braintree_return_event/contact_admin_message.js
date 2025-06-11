@@ -1,0 +1,1 @@
+{{ui.paymentFailed.open()}}

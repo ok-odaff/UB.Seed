@@ -1,0 +1,77 @@
+id: '17495784656130.6118995447984297'
+kind: workflow
+name: exec_query
+nameConfigured: true
+steps:
+  - id: '17495784693050.7041732219422977'
+    type: customSQLQuery
+    name: query
+    params:
+      - type: query
+        value: ./query-query.sql
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: My Data
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: ./query-preparedQuery.sql
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.query)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.local_vars)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.detail_id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.payment_type_id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.created_date)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.braintree_id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.receipt_id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.speedtype_id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.fee)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.late_fee)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.processing_fee)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.needs_review)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.payment_date)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.payment_made)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.created_by)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.reviewed_by)
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17488750047290.4356229913740549'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.exec_query.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.exec_query.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.exec_query.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

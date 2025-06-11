@@ -1,0 +1,52 @@
+id: '17480161916090.22482550227379205'
+kind: workflow
+name: get_license_type
+nameConfigured: true
+steps:
+  - id: '17480161980190.9152299193638215'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17480166332300.40997654922568694'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17480166104700.6165363850898449'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17477471567180.6287153283818414'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.get_license_type.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_license_type.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_license_type.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

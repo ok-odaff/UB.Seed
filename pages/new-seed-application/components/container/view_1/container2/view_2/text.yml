@@ -1,0 +1,43 @@
+id: '17477534738380.6170303883628022'
+definitionId: text
+parentSlotId: '17477533644210.5471831111551084'
+styles:
+  xl:
+    gridItem:
+      x: 1
+      y: 23
+      w: 22
+      h: 8
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 24
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+    fontSize:
+      customValue: 18
+      customUnit: px
+      themeDefaultOverridePropertyKey: baseTextFontSize
+  xs:
+    gridItem:
+      x: 0
+      y: 9
+      w: 24
+      h: 6
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 24
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: text
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  value: This form is for those seeking a license to sell seed in Oklahoma*.
+  heightMode: auto
+actions: {}
+slots: []

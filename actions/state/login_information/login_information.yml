@@ -1,0 +1,17 @@
+id: '17483681875700.7365016355933992'
+kind: store_item
+name: login_information
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17477484248050.7798491970641792'
+storeItem:
+  value: '{}'
+  valueType: object
+  initialValue: '{}'
+  version: 1
+config:
+  preserveStateOnPageChange: true
+selected: true
+configured: true

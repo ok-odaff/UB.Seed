@@ -1,0 +1,53 @@
+id: '17477738049140.7081006085807097'
+definitionId: checkbox
+parentSlotId: '17479413470440.07200346331735796'
+styles:
+  xl:
+    gridItem:
+      id: '17477738049140.7081006085807097'
+      x: 5
+      y: 0
+      w: 6
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17477738049140.7081006085807097'
+      x: 5
+      y: 51
+      w: 6
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: AI_CopyPrimaryAddress
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelConfig:
+    text: Same as Primary
+    position: horizontal
+    align: left
+actions:
+  checkboxChange:
+    - action: '17477748888170.895720632665134'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  focusEvent: []
+  blurEvent: []
+  init: []
+  validate: []
+slots: []

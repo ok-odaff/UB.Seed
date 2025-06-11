@@ -1,0 +1,31 @@
+id: '17488750047290.4356229913740549'
+name: Poundage Payment
+url: poundage-payment
+roleIds: []
+disableInMenu: false
+hideFromMenu: true
+parentPageId: '17477469853160.5069296822295167'
+icon: ''
+slots:
+  - id: '17488750047300.7800561937409228'
+    name: content
+    children:
+      - id: '17488750047300.602684521343477'
+        definitionId: grid
+        parentSlotId: '17488750047300.7800561937409228'
+        styles: {}
+        properties:
+          name: submit-application-payment3
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '17488750047300.5038740472037252'
+            name: content
+            children:
+              - components/module3.yml
+              - components/button3.yml
+              - components/paymentSubmittedModal/paymentSubmittedModal.yml
+              - components/paymentFailed/paymentFailed.yml

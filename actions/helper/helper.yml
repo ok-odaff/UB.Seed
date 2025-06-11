@@ -1,0 +1,112 @@
+id: '17477483623430.05787988820505663'
+kind: js_file
+name: helper
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+jsFile:
+  declarations:
+    - type: variable
+      name: PROGRAM
+      start: 19
+      end: 32
+      params: []
+      loc:
+        start:
+          line: 2
+          column: 6
+        end:
+          line: 2
+          column: 19
+    - type: variable
+      name: LICENSE_SPEEDTYPE
+      start: 60
+      end: 85
+      params: []
+      loc:
+        start:
+          line: 4
+          column: 6
+        end:
+          line: 4
+          column: 31
+    - type: variable
+      name: POUNDAGE_SPEEDTYPE
+      start: 93
+      end: 119
+      params: []
+      loc:
+        start:
+          line: 5
+          column: 6
+        end:
+          line: 5
+          column: 32
+    - type: variable
+      name: MERCHANT_ACCOUNT
+      start: 191
+      end: 265
+      params: []
+      loc:
+        start:
+          line: 7
+          column: 6
+        end:
+          line: 7
+          column: 80
+    - type: variable
+      name: REQUIRED_VARIABLES
+      start: 345
+      end: 557
+      params: []
+      loc:
+        start:
+          line: 10
+          column: 6
+        end:
+          line: 10
+          column: 218
+    - type: variable
+      name: FISCAL_YEAR_START_MONTH
+      start: 600
+      end: 627
+      params: []
+      loc:
+        start:
+          line: 13
+          column: 6
+        end:
+          line: 13
+          column: 33
+    - type: function
+      name: getFiscalQuarter
+      start: 636
+      end: 863
+      params:
+        - date
+      loc:
+        start:
+          line: 14
+          column: 0
+        end:
+          line: 19
+          column: 1
+    - type: function
+      name: getFiscalYear
+      start: 865
+      end: 1134
+      params:
+        - date
+      loc:
+        start:
+          line: 21
+          column: 0
+        end:
+          line: 26
+          column: 1
+  valid: true
+selected: true
+configured: true
+config:
+  preserveStateOnPageChange: true

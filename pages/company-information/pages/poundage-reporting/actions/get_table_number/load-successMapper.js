@@ -1,0 +1,1 @@
+return {{data.stop}}.format(yyyy-mm-dd)

@@ -1,0 +1,15 @@
+id: '17496493708520.22446903895997272'
+kind: store_item
+name: new_mailing_address
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17496492997520.2618585004530486'
+storeItem:
+  value: '{}'
+  valueType: object
+  initialValue: '{}'
+  version: 1
+selected: true
+configured: true

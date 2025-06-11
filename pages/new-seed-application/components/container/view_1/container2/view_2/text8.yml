@@ -1,0 +1,58 @@
+id: '17477569872530.7917455975404218'
+definitionId: text
+parentSlotId: '17477533644210.5471831111551084'
+styles:
+  xl:
+    gridItem:
+      x: 2
+      y: 50
+      w: 17
+      h: 7
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 24
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+    fontSize:
+      customValue: 14
+      customUnit: px
+      themeDefaultOverridePropertyKey: baseTextFontSize
+    iconPlacement: left
+  xs:
+    gridItem:
+      x: 0
+      y: 123
+      w: 24
+      h: 15
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 24
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: text8
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  value: >-
+    License renewal fees and seed inspection fees must be paid in separate
+    transactions.
+  icon:
+    value: chevron_right_material
+    dataValue: star-outline
+    withData: false
+  iconColor:
+    value: info
+    dataValue: text-color
+    withData: false
+  heightMode: auto
+  margin:
+    value: true
+    dataValue: '10'
+    withData: true
+actions: {}
+slots: []

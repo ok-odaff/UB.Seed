@@ -1,0 +1,46 @@
+id: '17490489600380.4730016995027444'
+definitionId: button
+parentSlotId: '17477469853170.5146140099855416'
+styles:
+  xl:
+    gridItem:
+      x: 16
+      y: 20
+      w: 4
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 491
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: button6
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.stop_sales_list.length > state.seed_poundage.length}}'
+  text: Add another report
+actions:
+  buttonClick:
+    - action: '17490489851100.12450931447137326'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  init: []
+slots: []

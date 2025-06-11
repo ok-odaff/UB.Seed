@@ -1,0 +1,17 @@
+id: '17479267934100.9269453843220871'
+kind: store_item
+name: ok_counties
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17477484248050.7798491970641792'
+storeItem:
+  value: '[]'
+  valueType: array
+  initialValue: '[]'
+  version: 1
+selected: true
+configured: true
+config:
+  preserveStateOnPageChange: true

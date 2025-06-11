@@ -1,0 +1,16 @@
+id: '17490488708510.4953072346624202'
+kind: store_item
+name: stop_sales_list
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentPageId: '17477469853160.5069296822295167'
+parentId: '17490488658930.20052143646950082'
+storeItem:
+  value: '[]'
+  valueType: array
+  initialValue: '[]'
+  version: 1
+selected: true
+configured: true

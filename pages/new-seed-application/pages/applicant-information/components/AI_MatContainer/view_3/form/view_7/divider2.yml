@@ -1,0 +1,41 @@
+id: '17477744844240.672368555400734'
+definitionId: divider
+parentSlotId: '17484494134040.2376849489855153'
+styles:
+  xl:
+    gridItem:
+      id: '17477744844240.672368555400734'
+      x: 0
+      y: 23
+      w: 24
+      h: 5
+    flex:
+      size:
+        widthValue: 200
+        widthUnit: px
+        heightValue: 20
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17477744844240.672368555400734'
+      x: 0
+      y: 50
+      w: 24
+      h: 5
+    flex:
+      size:
+        widthValue: 200
+        widthUnit: px
+        heightValue: 20
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: divider2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+actions: {}
+slots: []

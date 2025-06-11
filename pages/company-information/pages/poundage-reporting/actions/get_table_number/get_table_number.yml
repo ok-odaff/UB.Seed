@@ -1,0 +1,109 @@
+id: '17490515293450.04185752342938187'
+kind: workflow
+name: get_table_number
+nameConfigured: true
+steps:
+  - id: '17490524660260.3856565121021386'
+    type: LOAD_COLLECTION
+    name: load
+    params:
+      - type: datasourceId
+        value: My Data
+        valueType: string
+      - type: resourceId
+        value: dbo.stop_sales
+        valueType: string
+      - type: filters
+        value:
+          - column: stop_sale_tonnage
+            operation: '='
+            value:
+              value: '1'
+          - column: release_date
+            operation: '='
+            value:
+              value: 'null'
+          - column: detail_id
+            operation: '='
+            value:
+              value: '{{state.login_information.detail_id}} ?? 0'
+        valueType: custom
+      - type: ordering
+        value:
+          limit:
+            value: 1000
+          offset:
+            value: ''
+          orderBy:
+            value: ''
+          orderDirection:
+            value: asc
+        valueType: custom
+      - type: additionalParams
+        value:
+          - name: ''
+            value: ''
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ./load-successMapper.js
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17490515809390.1009375742108406'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17490488708510.4953072346624202'
+        valueType: string
+      - type: value
+        value: '{{data.map(s => s.stop_sale_start_date)}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17491401025730.2156623987491033'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: false
+mode: manual
+modeConfigured: false
+parentPageId: '17477469853160.5069296822295167'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.get_table_number.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_table_number.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_table_number.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: false

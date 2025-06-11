@@ -1,0 +1,16 @@
+id: '17483687758910.9554816493299464'
+kind: store_item
+name: payment_retries
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentPageId: '17477471740250.8081042684627866'
+parentId: null
+storeItem:
+  value: 0
+  valueType: number
+  initialValue: 0
+  version: 1
+selected: true
+configured: true

@@ -1,0 +1,17 @@
+id: '17477482544340.07570631363280456'
+kind: store_item
+name: program_variables
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+storeItem:
+  value: ''
+  valueType: string
+  initialValue: ''
+  version: 1
+config:
+  preserveStateOnPageChange: true
+parentId: '17477484248050.7798491970641792'
+selected: false
+configured: true

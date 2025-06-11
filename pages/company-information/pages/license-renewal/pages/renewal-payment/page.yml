@@ -1,0 +1,29 @@
+id: '17478410726100.7337066522722252'
+name: Renewal Payment
+url: renewal-payment
+roleIds: []
+disableInMenu: false
+hideFromMenu: true
+parentPageId: '17477469569500.9222351327248683'
+icon: ''
+slots:
+  - id: '17478410726100.4788686056840371'
+    name: content
+    children:
+      - id: '17478410726110.4633302352735821'
+        definitionId: grid
+        parentSlotId: '17478410726100.4788686056840371'
+        styles: {}
+        properties:
+          name: submit-application-payment2
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '17478410726110.5546941170678428'
+            name: content
+            children:
+              - components/module2.yml
+              - components/button2.yml

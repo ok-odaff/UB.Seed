@@ -1,0 +1,80 @@
+id: '17484494134040.6104033887121502'
+definitionId: compositeForm
+parentSlotId: '17477727931900.8639283246564218'
+styles:
+  xl:
+    gridItem:
+      x: 2
+      y: 5
+      w: 22
+      h: 80
+    flex:
+      size:
+        widthValue: 300
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17484494134040.6104033887121502'
+      x: 8
+      y: 0
+      w: 10
+      h: 80
+    flex:
+      size:
+        widthValue: 300
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: form
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  showCustomButton:
+    value: false
+    dataValue: 'false'
+    withData: false
+  showHeader: false
+  heightMode: auto
+  containerStyles:
+    withData: false
+    dataValue: |-
+      {
+        padding: 'default',
+        shadow: 'default',
+        border: 'default'
+      }
+    value:
+      padding: default
+      shadow: default
+      border: default
+  disableSubmitButtonWhenInvalid:
+    value: true
+    dataValue: 'true'
+    withData: false
+actions:
+  submitEvent:
+    - action: '17479404435160.8759920106910823'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  init: []
+  formClick: []
+  changeEvent: []
+  customButtonClick: []
+slots:
+  - id: '17484494134040.09099520086023039'
+    name: header
+    children:
+      - heading3.yml
+  - id: '17484494134040.044359694979239306'
+    name: views
+    children:
+      - view_7/view_7.yml

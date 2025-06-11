@@ -1,0 +1,38 @@
+id: '17477534172350.3386593676476899'
+definitionId: heading
+parentSlotId: '17477533644210.5471831111551084'
+styles:
+  xl:
+    gridItem:
+      x: 1
+      y: 7
+      w: 5
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: heading
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  text: License Details
+actions: {}
+slots: []

@@ -1,0 +1,15 @@
+id: '17488734109970.6328496075295605'
+kind: store_item
+name: company_addresses
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17483677096750.77303552721274'
+storeItem:
+  value: ''
+  valueType: string
+  initialValue: ''
+  version: 1
+selected: true
+configured: true

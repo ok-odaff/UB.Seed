@@ -1,0 +1,47 @@
+id: '17477739082210.9312570256428073'
+definitionId: emailEdit
+parentSlotId: '17484494134040.2376849489855153'
+styles:
+  xl:
+    gridItem:
+      id: '17477739082210.9312570256428073'
+      x: 13
+      y: 70
+      w: 7
+      h: 14
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17477739082210.9312570256428073'
+      x: 13
+      y: 151
+      w: 7
+      h: 14
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: AI_ContactEmail
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelConfig:
+    text: Email
+    position: vertical
+    align: left
+  required:
+    value: true
+    dataValue: 'false'
+    withData: false
+actions: {}
+slots: []

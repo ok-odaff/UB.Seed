@@ -1,0 +1,22 @@
+metadata:
+  favicon: ''
+  title: Public Seed
+  description: ''
+  breakpoints: []
+  rendererCachingEnabled: true
+  skipDepsComparisonInCompilerCache: false
+appSettings:
+  properties:
+    defaultData: '{}'
+  actions:
+    appLoad:
+      - action: '17483526234230.642729751070407'
+        paramCode: ''
+        blockPageLoad: false
+        preventDefault: false
+        index: 0
+    pageLoad: []
+    appData: []
+  gridVersion: 2
+  density: compact
+internalType: project

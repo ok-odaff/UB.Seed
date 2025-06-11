@@ -1,0 +1,178 @@
+id: '17488727010380.4522633111017351'
+kind: workflow
+name: get_company_details
+nameConfigured: true
+steps:
+  - id: '17488727143040.24085337154190056'
+    type: customSQLQuery
+    name: query
+    params:
+      - type: query
+        value: ./query-query.sql
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: datasourceId
+        value: My Data
+        valueType: custom
+        mustSelectFirst: true
+      - type: preparedQuery
+        value: ./query-preparedQuery.sql
+        valueType: interpolatedValue
+      - type: preparedQueryParams
+        value:
+          - __UI_BAKERY__FORMAT_IF_DATE__(state.login_information.detail_id)
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: stepVersion
+        value: 2
+        valueType: custom
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17488728230250.1952349761115849'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17483677373960.9495011422711037'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17496533917780.8699420919358719'
+    type: LOAD_ENTITY
+    name: get
+    params:
+      - type: datasourceId
+        value: My Data
+        valueType: string
+      - type: resourceId
+        value: dbo.company_address
+        valueType: string
+      - type: filters
+        value:
+          - column: detail_id
+            operation: '='
+            value:
+              value: '{{state.login_information.detail_id}}'
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17496534121480.616670998960664'
+    type: putInStore
+    name: save2
+    params:
+      - type: name
+        value: '17488734109970.6328496075295605'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17496534284450.9494892875551189'
+    type: LOAD_ENTITY
+    name: get2
+    params:
+      - type: datasourceId
+        value: My Data
+        valueType: string
+      - type: resourceId
+        value: dbo.company_contact
+        valueType: string
+      - type: filters
+        value:
+          - column: detail_id
+            operation: '='
+            value:
+              value: '{{state.login_information.detail_id}}'
+        valueType: custom
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17496534576120.5098864262134466'
+    type: putInStore
+    name: save3
+    params:
+      - type: name
+        value: '17488729188490.32568949159082006'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentId: '17483683147680.5692059558631833'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.get_company_details.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_company_details.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_company_details.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+selected: true
+configured: false

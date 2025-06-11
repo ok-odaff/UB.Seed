@@ -1,0 +1,123 @@
+id: '17479404435160.8759920106910823'
+kind: workflow
+name: new_application_submit
+nameConfigured: true
+steps:
+  - id: '17483651644570.6558211170411231'
+    type: executeAction
+    name: get_addresses
+    params:
+      - type: action
+        value: '17480176636340.7168963392423028'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./get_addresses-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17479404681810.4935188212756513'
+    type: customAsyncCode
+    name: save_info
+    params:
+      - type: asyncCode
+        value: ./save_info.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17495900403690.05105689962786164'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17495900720670.20763833021729816'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17495851811940.49334670275671333'
+    type: customAsyncCode
+    name: build_line_items
+    params:
+      - type: asyncCode
+        value: ./build_line_items.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17483652070670.7949117212115864'
+    type: navigation
+    name: next_page
+    params:
+      - type: url
+        value: '{{routes.licensePayment.url}}'
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: openInNewTab
+        value: false
+        valueType: custom
+      - type: queryParams
+        value:
+          mode: structured
+          value:
+            custom: ''
+            structured:
+              - name: ''
+                value: ''
+        valueType: custom
+        interpolationType: string
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+    paused: false
+mode: manual
+modeConfigured: false
+parentPageId: '17477471567180.6287153283818414'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.new_application_submit.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.new_application_submit.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.new_application_submit.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: false

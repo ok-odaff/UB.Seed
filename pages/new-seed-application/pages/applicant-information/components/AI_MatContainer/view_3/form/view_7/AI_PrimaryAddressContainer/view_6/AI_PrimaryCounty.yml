@@ -1,0 +1,77 @@
+id: '17479266731930.8817247375339249'
+definitionId: selectWithAtomics
+parentSlotId: '17479416032370.7241486054773489'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 18
+      w: 10
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17479266731930.8817247375339249'
+      x: 0
+      y: 27
+      w: 7
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  options:
+    value:
+      - value: option_1
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: option_2
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '2'
+    dataValue: '{{state.ok_counties}}'
+    withData: true
+  name: AI_PrimaryCounty
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: county_id
+  showLoading:
+    withData: true
+    dataValue: 'false'
+    value: false
+  labelConfig:
+    text: County
+    position: horizontal
+    align: left
+  required:
+    value: false
+    dataValue: '{{Boolean(ui.AI_PrimaryState.value == ''OK'')}}'
+    withData: true
+actions: {}
+slots:
+  - id: '17479266731930.1432230730927646'
+    name: optionViewTypes
+    children:
+      - id: '17479266732190.5416481304269127'
+        definitionId: atomicString
+        parentSlotId: '17479266731930.1432230730927646'
+        styles: {}
+        properties:
+          name: atomicString5
+          prop: name
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        actions: {}
+        index: 1
+        slots: []

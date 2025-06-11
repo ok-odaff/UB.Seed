@@ -1,0 +1,11 @@
+id: '17496492997520.2618585004530486'
+kind: folder
+name: new company values
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17477484248050.7798491970641792'
+config:
+  preserveStateOnPageChange: true
+selected: false

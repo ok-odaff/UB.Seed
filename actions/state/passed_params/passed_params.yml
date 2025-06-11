@@ -1,0 +1,17 @@
+id: '17488738100830.5358213166161347'
+kind: store_item
+name: passed_params
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17477484248050.7798491970641792'
+storeItem:
+  value: '{}'
+  valueType: object
+  initialValue: '{}'
+  version: 1
+selected: true
+configured: true
+config:
+  preserveStateOnPageChange: true

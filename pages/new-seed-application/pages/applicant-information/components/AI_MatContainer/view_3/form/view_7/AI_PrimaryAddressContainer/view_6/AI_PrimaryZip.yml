@@ -1,0 +1,47 @@
+id: '17477737429860.5881638581836917'
+definitionId: numberEdit
+parentSlotId: '17479416032370.7241486054773489'
+styles:
+  xl:
+    gridItem:
+      x: 10
+      y: 18
+      w: 7
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17477737429860.5881638581836917'
+      x: 7
+      y: 36
+      w: 4
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: AI_PrimaryZip
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelConfig:
+    text: Zip
+    position: horizontal
+    align: left
+  placeholder: '00000'
+  required:
+    value: true
+    dataValue: 'false'
+    withData: false
+actions: {}
+slots: []

@@ -1,0 +1,1 @@
+return {{state.login_information.detail_id}};

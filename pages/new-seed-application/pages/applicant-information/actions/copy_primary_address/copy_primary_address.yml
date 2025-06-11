@@ -1,0 +1,38 @@
+id: '17477748888170.895720632665134'
+kind: workflow
+name: copy_primary_address
+nameConfigured: true
+steps:
+  - id: '17477749741140.5864713709755986'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17477471567180.6287153283818414'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.copy_primary_address.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.copy_primary_address.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.copy_primary_address.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

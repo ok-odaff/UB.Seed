@@ -1,0 +1,15 @@
+id: '17488806484960.10649830091811718'
+kind: store_item
+name: seed_types
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17477484248050.7798491970641792'
+storeItem:
+  value: '[]'
+  valueType: array
+  initialValue: '[]'
+  version: 1
+selected: true
+configured: true

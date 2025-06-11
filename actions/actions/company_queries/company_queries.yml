@@ -1,0 +1,11 @@
+id: '17483683147680.5692059558631833'
+kind: folder
+name: company_queries
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17477484042140.8743295555201271'
+selected: false
+config:
+  preserveStateOnPageChange: true

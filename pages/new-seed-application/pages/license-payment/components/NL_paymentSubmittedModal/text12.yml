@@ -1,0 +1,62 @@
+id: '17483690212950.5911482003758599'
+definitionId: text
+parentSlotId: '17483675377270.1819700520688462'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 79
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 24
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+    fontSize:
+      customValue: 20
+      customUnit: px
+      themeDefaultOverridePropertyKey: baseTextFontSize
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 6
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 24
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: text12
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  value: >-
+    __Payment has been successfully submitted.__ 
+
+
+    If you want a receipt you can either select to print a copy or have a copy
+    emailed to you.  Just click the button after closing this alert.
+
+
+    ---
+
+
+    An admin will review the renewal and send a permit to the email associated
+    with your primary contact.
+
+
+    ---
+
+
+    You can now close this tab or window.
+  heightMode: auto
+  alignment: center
+actions: {}
+slots: []

@@ -1,0 +1,113 @@
+id: '17483684751870.30851581403273043'
+kind: workflow
+name: braintree_return_event
+nameConfigured: true
+steps:
+  - id: '17483684815630.6372537818249818'
+    type: condition
+    name: payment_submitted_success
+    params:
+      - type: code
+        value: ./payment_submitted_success.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17483685190490.6821422241377443'
+                type: customAsyncCode
+                name: submit_to_database
+                params:
+                  - type: asyncCode
+                    value: ./submit_to_database.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 0
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '17483686557350.5544717272736402'
+                type: customAsyncCode
+                name: show_close_message
+                params:
+                  - type: asyncCode
+                    value: ./show_close_message.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+          - condition: false
+            steps:
+              - id: '17483687040730.3645155507436131'
+                type: condition
+                name: retries_condition
+                params:
+                  - type: code
+                    value: ./retries_condition.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps:
+                          - id: '17483687223050.8168752345191751'
+                            type: customAsyncCode
+                            name: contact_admin_message
+                            params:
+                              - type: asyncCode
+                                value: ./contact_admin_message.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                      - condition: false
+                        steps:
+                          - id: '17483687580270.3365507567138142'
+                            type: customAsyncCode
+                            name: increment_retries
+                            params:
+                              - type: asyncCode
+                                value: ./increment_retries.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                            nameConfigured: true
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: false
+                nameConfigured: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+mode: manual
+modeConfigured: false
+parentPageId: '17477471740250.8081042684627866'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.braintree_return_event.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.braintree_return_event.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.braintree_return_event.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

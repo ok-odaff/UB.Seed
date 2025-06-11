@@ -1,0 +1,29 @@
+id: '17477468308140.41045842855886727'
+name: New Seed Application
+url: new-seed-application
+roleIds: []
+disableInMenu: false
+hideFromMenu: false
+parentPageId: ''
+icon: ''
+slots:
+  - id: '17477468308140.11031362508839326'
+    name: content
+    children:
+      - id: '17477468308150.6749832976152564'
+        definitionId: grid
+        parentSlotId: '17477468308140.11031362508839326'
+        styles: {}
+        properties:
+          name: new-applicant
+          pageTitle: '{{app.name}} - {{activeRoute.name}}'
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 0
+        slots:
+          - id: '17477468308150.26063304822062916'
+            name: content
+            children:
+              - components/NA_Headign.yml
+              - components/container/container.yml

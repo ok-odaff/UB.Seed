@@ -1,0 +1,1 @@
+return {{data}}.payment_submitted;

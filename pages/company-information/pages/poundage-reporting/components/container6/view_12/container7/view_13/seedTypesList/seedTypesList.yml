@@ -1,0 +1,51 @@
+id: '17488927766360.584940232335125'
+definitionId: gridView
+parentSlotId: '17489586292310.5016151988832308'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 4
+      w: 24
+      h: 170
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 420
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17488927766360.584940232335125'
+      x: 0
+      y: 0
+      w: 24
+      h: 152
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 420
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  data:
+    value: UIB_DEMO_DATASET_SHORT
+    dataValue: '{{state.seed_types}}'
+    withData: true
+  columns: '2'
+  limit: '50'
+  name: seedTypesList
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  heightMode: auto
+actions: {}
+slots:
+  - id: '17488927766360.8223342021487725'
+    name: content
+    children:
+      - gridViewItem2/gridViewItem2.yml

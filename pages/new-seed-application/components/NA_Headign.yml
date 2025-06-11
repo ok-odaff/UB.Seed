@@ -1,0 +1,44 @@
+id: '17477525961870.7759386122615141'
+definitionId: heading
+parentSlotId: '17477468308150.26063304822062916'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 5
+      w: 10
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+    fontSize:
+      customValue: 24
+      customUnit: px
+  xs:
+    gridItem:
+      x: 0
+      y: 30
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: NA_Headign
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  text: Seed Dealer License Application
+  heightMode: auto
+  textStyle:
+    transform: none
+actions: {}
+slots: []

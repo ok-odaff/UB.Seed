@@ -1,0 +1,310 @@
+id: '17483526234230.642729751070407'
+kind: workflow
+name: execute_app_queries
+nameConfigured: true
+steps:
+  - id: '17483681691340.3081177871195254'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17483526686750.5035012163371567'
+    type: executeAction
+    name: states
+    params:
+      - type: action
+        value: '17477753881450.4724563020725686'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./states-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17483526960100.6213495667442688'
+    type: executeAction
+    name: counties
+    params:
+      - type: action
+        value: '17479267661130.3205713640112511'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./counties-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17488718729400.6953919768888641'
+    type: executeAction
+    name: execute
+    params:
+      - type: action
+        value: '17483679663970.0804247711769791'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./execute-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17483526311680.2988184412411692'
+    type: executeAction
+    name: program_variables
+    params:
+      - type: action
+        value: '17477483370360.3677059291650505'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./program_variables-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17488921637860.35689019419911017'
+    type: executeAction
+    name: seed_types
+    params:
+      - type: action
+        value: '17488805538980.26303137671508536'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./seed_types-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17488718953940.6657270671940189'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17496528284330.6457272049074705'
+                type: executeAction
+                name: company_info
+                params:
+                  - type: action
+                    value: '17488727010380.4522633111017351'
+                    valueType: custom
+                  - type: isActionsLibraryCall
+                    value: false
+                    valueType: custom
+                  - type: customParams
+                    value: ./company_info-customParams.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '17496533113020.9526753798391783'
+                type: LOAD_ENTITY
+                name: address
+                params:
+                  - type: datasourceId
+                    value: My Data
+                    valueType: string
+                  - type: resourceId
+                    value: dbo.company_address
+                    valueType: string
+                  - type: filters
+                    value:
+                      - column: detail_id
+                        operation: '='
+                        value:
+                          value: '{{state.login_information.detail_id}}'
+                    valueType: custom
+                  - type: customDatabaseName
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: successMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: failureMapper
+                    value: ''
+                    valueType: interpolatedValue
+                  - type: mapperEnabled
+                    value: false
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+              - id: '17488719194320.07000119380387637'
+                type: navigation
+                name: home
+                params:
+                  - type: url
+                    value: '{{routes.home.url}}'
+                    valueType: interpolatedValue
+                    interpolationType: string
+                  - type: openInNewTab
+                    value: false
+                    valueType: custom
+                  - type: queryParams
+                    value:
+                      mode: structured
+                      value:
+                        custom: ''
+                        structured:
+                          - name: ''
+                            value: ''
+                    valueType: custom
+                    interpolationType: string
+                level: 0
+                fallthroughError: false
+                isChanged: true
+                nameConfigured: true
+          - condition: false
+            steps:
+              - id: '17488719675740.36422247210244607'
+                type: navigation
+                name: navigate
+                params:
+                  - type: url
+                    value: '{{routes.newSeedApplication.url}}'
+                    valueType: interpolatedValue
+                    interpolationType: string
+                  - type: openInNewTab
+                    value: false
+                    valueType: custom
+                  - type: queryParams
+                    value:
+                      mode: structured
+                      value:
+                        custom: ''
+                        structured:
+                          - name: ''
+                            value: ''
+                    valueType: custom
+                    interpolationType: string
+                level: 0
+                fallthroughError: false
+                isChanged: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentId: '17483682823830.5384011930826919'
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.execute_app_queries.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.execute_app_queries.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.execute_app_queries.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+selected: true
+configured: true

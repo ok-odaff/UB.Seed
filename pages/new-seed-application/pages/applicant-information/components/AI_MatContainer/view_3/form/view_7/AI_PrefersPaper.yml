@@ -1,0 +1,42 @@
+id: '17477740573730.3412997058272681'
+definitionId: checkbox
+parentSlotId: '17484494134040.2376849489855153'
+styles:
+  xl:
+    gridItem:
+      x: 18
+      y: 5
+      w: 5
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17477740573730.3412997058272681'
+      x: 17
+      y: 32
+      w: 5
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: AI_PrefersPaper
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelConfig:
+    text: Prefer paper notices
+    position: horizontal
+    align: left
+actions: {}
+slots: []

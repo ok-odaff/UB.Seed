@@ -1,0 +1,17 @@
+id: '17480166104700.6165363850898449'
+kind: store_item
+name: license_type
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17477484248050.7798491970641792'
+storeItem:
+  value: '[]'
+  valueType: array
+  initialValue: '[]'
+  version: 1
+selected: false
+configured: true
+config:
+  preserveStateOnPageChange: true

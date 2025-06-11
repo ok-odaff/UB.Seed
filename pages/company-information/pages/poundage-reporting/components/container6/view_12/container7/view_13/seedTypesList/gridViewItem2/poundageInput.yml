@@ -1,0 +1,42 @@
+id: '17488927950170.01285022628760768'
+definitionId: stringEdit
+parentSlotId: '17488927766360.4324680155489502'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 3
+      w: 22
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: poundageInput
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  labelConfig:
+    text: '{{item}}'
+    position: horizontal
+    align: left
+  labelWidth: 65
+actions: {}
+slots: []

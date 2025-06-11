@@ -1,0 +1,90 @@
+id: '17479267661130.3205713640112511'
+kind: workflow
+name: get_counties
+nameConfigured: true
+steps:
+  - id: '17479267791270.970288426070099'
+    type: LOAD_COLLECTION
+    name: load
+    params:
+      - type: datasourceId
+        value: My Data
+        valueType: custom
+        mustSelectFirst: true
+      - type: resourceId
+        value: dbo.county
+        valueType: custom
+        mustSelectFirst: true
+      - type: filters
+        value: []
+        valueType: custom
+        interpolationType: string
+      - type: ordering
+        value:
+          limit:
+            value: 1000
+          offset:
+            value: ''
+          orderBy:
+            value: ''
+          orderDirection:
+            value: asc
+        valueType: custom
+        interpolationType: string
+      - type: additionalParams
+        value: []
+        valueType: custom
+        interpolationType: string
+      - type: customDatabaseName
+        value: ''
+        valueType: interpolatedValue
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: false
+  - id: '17479267881200.16751377178004012'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17479267934100.9269453843220871'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentId: '17483682823830.5384011930826919'
+config:
+  shouldConfirm: false
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.get_counties.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_counties.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_counties.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: true
+selected: true
+configured: false

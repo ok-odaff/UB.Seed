@@ -1,0 +1,116 @@
+id: '17490607480220.0092671294547223'
+kind: workflow
+name: get_report_period
+nameConfigured: true
+steps:
+  - id: '17491426088490.6917875260061929'
+    type: condition
+    name: condition
+    params:
+      - type: code
+        value: ./condition.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: steps
+        value:
+          - condition: true
+            steps:
+              - id: '17490607508120.930612079945574'
+                type: customAsyncCode
+                name: code
+                params:
+                  - type: asyncCode
+                    value: ./code.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 0
+                fallthroughError: false
+                isChanged: true
+              - id: '17491426234610.004193664922522933'
+                type: customAsyncCode
+                name: code2
+                params:
+                  - type: asyncCode
+                    value: ./code2.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 0
+                fallthroughError: false
+                isChanged: true
+                paused: false
+              - id: '17492211273650.7124368707829158'
+                type: putInStore
+                name: save2
+                params:
+                  - type: name
+                    value: '17491401205870.8182813131652839'
+                    valueType: string
+                  - type: value
+                    value: '{{data}}'
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: producible
+                    value: true
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
+          - condition: false
+            steps:
+              - id: '17491426420820.09407426792897144'
+                type: customAsyncCode
+                name: code3
+                params:
+                  - type: asyncCode
+                    value: ./code3.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 0
+                fallthroughError: false
+                isChanged: true
+                paused: false
+              - id: '17491417752850.9665887345298195'
+                type: putInStore
+                name: save
+                params:
+                  - type: name
+                    value: '17491401205870.8182813131652839'
+                    valueType: string
+                  - type: value
+                    value: '{{data}}'
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: producible
+                    value: true
+                    valueType: custom
+                level: 0
+                fallthroughError: false
+                isChanged: true
+                paused: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    paused: false
+mode: manual
+modeConfigured: false
+parentPageId: '17477469853160.5069296822295167'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.get_report_period.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_report_period.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_report_period.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

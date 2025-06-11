@@ -1,0 +1,48 @@
+id: '17488757867140.3512325212423004'
+definitionId: image
+parentSlotId: '17489582346960.31240890808369415'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 6
+      h: 31
+    flex:
+      size:
+        widthValue: 100
+        widthUnit: px
+        heightValue: 120
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+    src:
+      url: >-
+        {{`data:image/png;base64,${state.program_variables.find(v => v.name ==
+        'ODAFF_LOGO_WITH_NAME')?.value}`}}
+      uploadUrl: ''
+      name: ''
+      active: url
+  xs:
+    gridItem:
+      id: '17488757867140.3512325212423004'
+      x: 0
+      y: 0
+      w: 8
+      h: 23
+    flex:
+      size:
+        widthValue: 100
+        widthUnit: px
+        heightValue: 120
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: image6
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  heightMode: auto
+actions: {}
+slots: []
