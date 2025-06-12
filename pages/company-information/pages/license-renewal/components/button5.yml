@@ -19,7 +19,7 @@ styles:
   xs:
     gridItem:
       x: 0
-      y: 119
+      y: 233
       w: 24
       h: 9
     flex:

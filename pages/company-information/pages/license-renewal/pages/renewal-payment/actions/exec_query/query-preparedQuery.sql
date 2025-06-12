@@ -1,0 +1,18 @@
+DECLARE @sql NVARCHAR(MAX);
+DECLARE @local_vars NVARCHAR(MAX);
+
+BEGIN TRANSACTION;
+BEGIN TRY
+	SET @sql = ?;
+  SET @local_vars = N'' + ?;
+  
+  EXEC sp_executesql @sql,
+  @local_vars,
+  ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?;
+
+COMMIT TRANSACTION;
+END TRY
+BEGIN CATCH
+	THROW
+	ROLLBACK TRANSACTION;
+END CATCH;

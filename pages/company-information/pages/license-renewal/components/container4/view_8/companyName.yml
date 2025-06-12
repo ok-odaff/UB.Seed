@@ -1,11 +1,11 @@
-id: '17488774488460.7313067149619547'
+id: '17488759272250.21010888024566665'
 definitionId: text
 parentSlotId: '17488758300920.6095752828914027'
 styles:
   xl:
     gridItem:
       x: 1
-      y: 18
+      y: 15
       w: 8
       h: 6
     flex:
@@ -15,10 +15,14 @@ styles:
         heightUnit: px
       grow: '0'
       shrink: '0'
+    fontSize:
+      customValue: 16
+      customUnit: px
+      themeDefaultOverridePropertyKey: baseTextFontSize
   xs:
     gridItem:
       x: 0
-      y: 214
+      y: 30
       w: 24
       h: 6
     flex:
@@ -29,10 +33,15 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: companyAddress
+  name: companyName
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  value: '{{actions.display_physical_address.data}}'
+  value: '{{state.company[0].name}}'
+  heightMode: auto
+  textStyle:
+    transform: none
+    styles:
+      - bold
 actions: {}
 slots: []

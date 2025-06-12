@@ -39,6 +39,17 @@ steps:
                 fallthroughError: false
                 isChanged: true
                 nameConfigured: true
+              - id: '17497530405470.5641561647978237'
+                type: customAsyncCode
+                name: code
+                params:
+                  - type: asyncCode
+                    value: ./code.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                level: 1
+                fallthroughError: false
+                isChanged: true
           - condition: false
             steps:
               - id: '17496560360830.2252137126856849'

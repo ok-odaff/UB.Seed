@@ -13,5 +13,4 @@ actions: {}
 slots:
   - id: '17488758156230.2775534792435751'
     name: content
-    children:
-      - container4/container4.yml
+    children: []

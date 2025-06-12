@@ -1,13 +1,14 @@
 id: '17488759736910.3839351327740369'
 definitionId: container
-parentSlotId: '17488758300920.6095752828914027'
+parentSlotId: '17477469569500.830633847144003'
 styles:
   xl:
     gridItem:
-      x: 11
-      y: 21
-      w: 8
-      h: 35
+      id: '17488759736910.3839351327740369'
+      x: 0
+      y: 190
+      w: 24
+      h: 12
     flex:
       size:
         widthValue: 300
@@ -18,10 +19,11 @@ styles:
       shrink: '0'
   xs:
     gridItem:
+      id: '17488759736910.3839351327740369'
       x: 0
-      y: 27
+      y: 211
       w: 24
-      h: 80
+      h: 12
     flex:
       size:
         widthValue: 300
@@ -35,6 +37,7 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
+  heightMode: auto
 actions: {}
 slots:
   - id: '17488759736910.3020427075154729'

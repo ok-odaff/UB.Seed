@@ -42,5 +42,16 @@ properties:
     value: success-dark
     dataValue: primary
     withData: false
+  disabled:
+    value: false
+    dataValue: >-
+      {{state.login_information.detail_id == null ||
+      state.company_details.tonnage_payment_made == true}}
+    withData: true
+  cssClasses:
+    value:
+      - section_selection
+    dataValue: ''
+    withData: false
 actions: {}
 slots: []

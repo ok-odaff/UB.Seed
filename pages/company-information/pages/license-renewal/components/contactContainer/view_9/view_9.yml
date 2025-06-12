@@ -14,6 +14,4 @@ slots:
   - id: '17488759736910.9545567065553086'
     name: content
     children:
-      - contactName.yml
       - phone.yml
-      - email.yml

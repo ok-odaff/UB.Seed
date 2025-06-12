@@ -1,13 +1,13 @@
-id: '17488758844360.7113874338749941'
+id: '17488774458300.30961131184118007'
 definitionId: text
 parentSlotId: '17488758300920.6095752828914027'
 styles:
   xl:
     gridItem:
       x: 1
-      y: 9
-      w: 12
-      h: 6
+      y: 17
+      w: 8
+      h: 7
     flex:
       size:
         widthValue: auto
@@ -19,18 +19,12 @@ styles:
       customValue: 14
       customUnit: px
       themeDefaultOverridePropertyKey: baseTextFontSize
-    color:
-      value: primary
-      dataValue: basic
-      withData: false
-    iconPlacement: left
   xs:
     gridItem:
-      id: '17488758844360.7113874338749941'
-      x: 1
-      y: 0
-      w: 5
-      h: 6
+      x: 0
+      y: 83
+      w: 24
+      h: 7
     flex:
       size:
         widthValue: auto
@@ -39,18 +33,15 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: text16
+  name: physicalAddress
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  value: 'Review the information below and make changes, if necessary. '
+  value: Physical Address
+  heightMode: auto
   textStyle:
     transform: none
     styles:
       - bold
-  icon:
-    value: edit-2
-    dataValue: star-outline
-    withData: false
 actions: {}
 slots: []

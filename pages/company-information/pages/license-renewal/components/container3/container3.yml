@@ -23,9 +23,9 @@ styles:
   xs:
     gridItem:
       x: 0
-      y: 39
+      y: 232
       w: 24
-      h: 80
+      h: 221
     flex:
       size:
         widthValue: 300
@@ -45,4 +45,4 @@ slots:
   - id: '17488758156230.87124015027854'
     name: views
     children:
-      - view_4/view_4.yml
+      - view_4.yml
