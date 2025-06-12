@@ -1,13 +1,13 @@
-id: '17488759309900.8159026940107227'
+id: '17488760365230.14377586940659648'
 definitionId: text
 parentSlotId: '17488758300920.6095752828914027'
 styles:
   xl:
     gridItem:
-      x: 1
-      y: 16
+      x: 0
+      y: 47
       w: 5
-      h: 6
+      h: 9
     flex:
       size:
         widthValue: auto
@@ -15,10 +15,14 @@ styles:
         heightUnit: px
       grow: '0'
       shrink: '0'
+    fontSize:
+      customValue: 14
+      customUnit: px
+      themeDefaultOverridePropertyKey: baseTextFontSize
   xs:
     gridItem:
       x: 0
-      y: 21
+      y: 90
       w: 24
       h: 6
     flex:
@@ -29,11 +33,15 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: licenseNumber
+  name: mailingAddress
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  value: '{{state.company[0].license_number}}'
-  heightMode: auto
+  value: Mailing Address
+  markdownSupport: false
+  textStyle:
+    transform: none
+    styles:
+      - bold
 actions: {}
 slots: []

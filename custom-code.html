@@ -1,10 +1,43 @@
-<style>
-.no-border-radius {
-  border-radius: 0px
-  }
- 
-</style>
+<script src="https://cdn.jsdelivr.net/npm/print-js@1.6.0/dist/print.min.js"></script>
+<script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.3/dist/purify.min.js"></script>
 
-<style>
+<style> 
+  .tab1 {
+    background-color: white;
+    padding-left: 5px;
+    border: solid white 2px;
+    border-radius: 3px 0px 0px 3px;
+  }
   
+  .hd-pad {
+    padding-left: 10px;
+  }
+    
+  .list_border {
+  	border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 3px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .tag_sm * {
+  	font-size: 9px !important; 
+  }
+  
+  .section_selection span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  	font-size: 24px !important;
+    min-height: 100%
+  }
+    
+  .button-text.truncate {
+    overflow: visible;
+  }
+  
+  .lg-text * {
+  	font-size: 16px !important;
+  }
 </style>

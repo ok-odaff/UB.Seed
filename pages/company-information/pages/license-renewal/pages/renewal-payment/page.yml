@@ -26,6 +26,6 @@ slots:
             name: content
             children:
               - components/module2.yml
-              - components/button2.yml
+              - components/returnHomeButton.yml
               - components/LR_paymentSubmittedModal/LR_paymentSubmittedModal.yml
               - components/LR_paymentFailed/LR_paymentFailed.yml

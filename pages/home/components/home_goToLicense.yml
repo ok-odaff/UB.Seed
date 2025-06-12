@@ -42,5 +42,16 @@ properties:
     active: internalPath
     internalPath: '{{routes.licenseRenewal.url}}'
     externalPath: ''
+  disabled:
+    value: false
+    dataValue: >-
+      {{state.not_license_renewal_period ||
+      state.company_details?.license_payment_made}}
+    withData: true
+  cssClasses:
+    value:
+      - section_selection
+    dataValue: ''
+    withData: false
 actions: {}
 slots: []

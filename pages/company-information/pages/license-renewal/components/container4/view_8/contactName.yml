@@ -1,13 +1,13 @@
-id: '17488758577820.7333981516608021'
-definitionId: heading
+id: '17488760754920.327732194554472'
+definitionId: stringEdit
 parentSlotId: '17488758300920.6095752828914027'
 styles:
   xl:
     gridItem:
-      id: '17488758577820.7333981516608021'
+      id: '17488760754920.327732194554472'
       x: 0
-      y: 0
-      w: 6
+      y: 92
+      w: 24
       h: 9
     flex:
       size:
@@ -16,15 +16,11 @@ styles:
         heightUnit: px
       grow: '0'
       shrink: '0'
-    fontSize:
-      customValue: 20
-      customUnit: px
   xs:
     gridItem:
-      id: '17488758577820.7333981516608021'
       x: 0
-      y: 6
-      w: 6
+      y: 175
+      w: 24
       h: 9
     flex:
       size:
@@ -34,11 +30,18 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: heading5
+  name: contactName
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  text: Company Details
-  type: h1
+  value: '{{state.company_contacts.contact_name}}'
+  labelConfig:
+    text: Name
+    position: horizontal
+    align: left
+  required:
+    value: true
+    dataValue: 'false'
+    withData: false
 actions: {}
 slots: []
