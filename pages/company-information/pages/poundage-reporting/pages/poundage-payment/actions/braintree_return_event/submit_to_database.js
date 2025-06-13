@@ -27,7 +27,7 @@ for (let report of poundageReports) {
   
 	if (report.seed_types.length > 0) {
     for (let seed_type of report.seed_types) {
-    	reportInserts.push(`(@detail_id, '${company_type}', '${seed_type.category}', '${seed_type.pounds}', ${state.report_periods.fiscal_year}, ${state.report_periods.fiscal_quarter},  @INSERTED_ID,  @reviewed_by, @created_date, @created_by)`);
+    	reportInserts.push(`(@detail_id, '${company_type}', '${seed_type.category}', ${seed_type.pounds}, ${state.report_periods.fiscal_year}, ${state.report_periods.fiscal_quarter},  @INSERTED_ID,  @reviewed_by, @created_date, @created_by)`);
     }
     }
   }
@@ -46,7 +46,7 @@ const SEED_POUNDAGE_SQL = `
 const CHANGES_SQL = `
 	INSERT INTO change_history(company_id, program_id, detail_id, action_type, associated_table_id, modified_table, modified_by, modified_date)
   VALUES
-  	(${company_id}, ${PROGRAM}, ${detail_id}, 'CREATE', @output_payment_id, 'payment_history', ${user.email}, ${created_date});
+  	(@company_id, @program_id, @detail_id, 'CREATE', @output_payment_id, 'payment_history', '${user.email}', @created_date);
 `;
 
 // Execute query
@@ -57,8 +57,10 @@ const CHANGES_SQL = `
       ${DETAIL_SQL}
      	${changeInserts.length > 0 ? CHANGES_SQL : ''}`,
   local_vars: `
-  	@detail_id INT, @payment_type_id INT, @created_date DATETIME, @braintree_id NVARCHAR(20), @receipt_id NVARCHAR(20), @speedtype_id INT, @fee DECIMAL(10,2), @late_fee DECIMAL(10,2), @processing_fee DECIMAL(10,2), @needs_review BIT, @payment_date DATETIME, @created_by NVARCHAR(150), @reviewed_by NVARCHAR(150)`,
+  	@detail_id INT, @payment_type_id INT, @created_date DATETIME, @braintree_id NVARCHAR(20), @receipt_id NVARCHAR(20), @speedtype_id INT, @fee DECIMAL(10,2), @late_fee DECIMAL(10,2), @processing_fee DECIMAL(10,2), @needs_review BIT, @payment_date DATETIME, @created_by NVARCHAR(150), @reviewed_by NVARCHAR(150), @program_id INT, @company_id INT`,
+    
   braintree_id: data.braintree_id,
+  program_id: {{PROGRAM}},
   created_by: state.login_information.email || user.email || 'error fetching email',
   created_date: moment(),
   detail_id: state.company.detail_id,

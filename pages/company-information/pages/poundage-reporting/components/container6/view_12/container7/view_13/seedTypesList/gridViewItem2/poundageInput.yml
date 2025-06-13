@@ -1,12 +1,12 @@
-id: '17488927950170.01285022628760768'
-definitionId: stringEdit
+id: '17498400663920.010406387773830295'
+definitionId: numberEdit
 parentSlotId: '17488927766360.4324680155489502'
 styles:
   xl:
     gridItem:
       x: 0
-      y: 3
-      w: 22
+      y: 0
+      w: 24
       h: 9
     flex:
       size:
@@ -17,9 +17,10 @@ styles:
       shrink: '0'
   xs:
     gridItem:
+      id: '17498400663920.010406387773830295'
       x: 0
       y: 0
-      w: 24
+      w: 14
       h: 9
     flex:
       size:
@@ -33,11 +34,12 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
+  value: ''
   labelConfig:
     text: '{{item}}'
     position: horizontal
     align: left
-  labelWidth: 65
   placeholder: '0'
+  labelWidth: 73
 actions: {}
 slots: []
