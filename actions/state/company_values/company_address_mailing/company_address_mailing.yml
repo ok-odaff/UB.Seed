@@ -1,6 +1,6 @@
-id: '17488734109970.6328496075295605'
+id: '17498234098030.5031371731482664'
 kind: store_item
-name: company_addresses
+name: company_address_mailing
 nameConfigured: true
 steps: []
 mode: manual
@@ -11,5 +11,7 @@ storeItem:
   valueType: object
   initialValue: '{}'
   version: 1
-selected: false
+config:
+  preserveStateOnPageChange: true
+selected: true
 configured: true

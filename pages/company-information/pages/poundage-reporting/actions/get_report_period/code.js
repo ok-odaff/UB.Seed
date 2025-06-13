@@ -28,7 +28,9 @@ tableLabels.push(`${period2begin.toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
   })}`);
-  {{state.report_periods}}.push(`${period2begin.toLocaleString('en-US', {month: 'short', year: '2-digit'})} - ${period2end.toLocaleString('en-US', {month: 'short', year: '2-digit'})}`);
+  {{state.report_periods}}.report_period = `${period2begin.toLocaleString('en-US', {month: 'short', year: '2-digit'})} - ${period2end.toLocaleString('en-US', {month: 'short', year: '2-digit'})}`;
+  {{state.report_periods}}.fiscal_year = currentYear; 
+  {{state.report_periods}}.fiscal_quarter = 3;
 } else if (stopSale < period2end && stopSale > period2begin) {
   tableLabels.push(`${period1begin.toLocaleDateString('en-US', {
     year: 'numeric',
@@ -39,7 +41,9 @@ tableLabels.push(`${period2begin.toLocaleDateString('en-US', {
     month: 'long',
     day: 'numeric',
   })}`);
-  {{state.report_periods}}.push(`${period1begin.toLocaleString('en-US', {month: 'short', year: '2-digit'})} - ${period1end.toLocaleString('en-US', {month: 'short', year: '2-digit'})}`);
+  {{state.report_periods}}.report_period = `${period1begin.toLocaleString('en-US', {month: 'short', year: '2-digit'})} - ${period1end.toLocaleString('en-US', {month: 'short', year: '2-digit'})}`;
+  {{state.report_periods}}.fiscal_year = currentYear; 
+  {{state.report_periods}}.fiscal_quarter = 1;
 }
   }
 

@@ -44,9 +44,7 @@ properties:
     externalPath: ''
   disabled:
     value: false
-    dataValue: >-
-      {{state.not_license_renewal_period ||
-      state.company_details?.license_payment_made}}
+    dataValue: '{{state.company.license_payment_made == 1}}'
     withData: true
   cssClasses:
     value:

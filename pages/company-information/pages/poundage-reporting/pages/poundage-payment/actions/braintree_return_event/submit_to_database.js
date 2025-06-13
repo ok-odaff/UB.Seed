@@ -1,19 +1,8 @@
 const reportInserts = [];
 const changeInserts = [];
 
-let company_type = '';
+const company_type = {{state.company.company_type}};
 
-switch ({{state.company}}) {
-  case isRetail:
-    company_type = 'Retail';
-    break;
-  case isWholesale:
-    company_type = 'Wholesale';
-    break;
-  case isMedicalMarijuana:
-    company_type = 'Medical Marijuana';
-    break;
-}
 
 // Payment history
 const PAYMENT_HISTORY_SQL = `
@@ -28,7 +17,7 @@ const PAYMENT_HISTORY_SQL = `
 // Detail sql
 const DETAIL_SQL = `
 	UPDATE company_detail
-  SET payment_made = @payment_made
+  SET tonnage_payment_made = 1
   WHERE detail_id = @detail_id;
 `;
 
@@ -38,7 +27,8 @@ for (let report of poundageReports) {
   
 	if (report.seed_types.length > 0) {
     for (let seed_type of report.seed_types) {
-    	reportInserts.push(`(@detail_id, ${company_type}, ${seed_type.category}', ${seed_type.pounds}, ${report.fiscal_year}, ${report.fiscal_quarter},  @INSERTED_ID,  @reviewed_by, @created_date, @created_by)`);
+    	reportInserts.push(`(@detail_id, '${company_type}', '${seed_type.category}', '${seed_type.pounds}', ${state.report_periods.fiscal_year}, ${state.report_periods.fiscal_quarter},  @INSERTED_ID,  @reviewed_by, @created_date, @created_by)`);
+    }
     }
   }
   
@@ -54,9 +44,9 @@ const SEED_POUNDAGE_SQL = `
 
 // Change history
 const CHANGES_SQL = `
-	INSERT INTO change_history(company_id, program_id, detail_id, action_type, associated_table_id, modified_table, modified_column, previous_value, new_value, modified_by, modified_date, accepted, reviewed_by)
+	INSERT INTO change_history(company_id, program_id, detail_id, action_type, associated_table_id, modified_table, modified_by, modified_date)
   VALUES
-  	${changeInserts.join(',')};
+  	(${company_id}, ${PROGRAM}, ${detail_id}, 'CREATE', @output_payment_id, 'payment_history', ${user.email}, ${created_date});
 `;
 
 // Execute query
@@ -67,17 +57,17 @@ const CHANGES_SQL = `
       ${DETAIL_SQL}
      	${changeInserts.length > 0 ? CHANGES_SQL : ''}`,
   local_vars: `
-  	@detail_id INT, @payment_type_id INT, @created_date DATETIME, @braintree_id NVARCHAR(20), @receipt_id NVARCHAR(20), @speedtype_id INT, @fee DECIMAL(10,2), @late_fee DECIMAL(10,2), @processing_fee DECIMAL(10,2), @needs_review BIT, @payment_date DATETIME, @payment_made BIT, @created_by NVARCHAR(150), @reviewed_by NVARCHAR(150)`,
+  	@detail_id INT, @payment_type_id INT, @created_date DATETIME, @braintree_id NVARCHAR(20), @receipt_id NVARCHAR(20), @speedtype_id INT, @fee DECIMAL(10,2), @late_fee DECIMAL(10,2), @processing_fee DECIMAL(10,2), @needs_review BIT, @payment_date DATETIME, @created_by NVARCHAR(150), @reviewed_by NVARCHAR(150)`,
   braintree_id: data.braintree_id,
   created_by: state.login_information.email || user.email || 'error fetching email',
   created_date: moment(),
-  detail_id: state.company_details.detail_id,
+  detail_id: state.company.detail_id,
+  company_id: state.company.company_id,
   fee: Number(data.poundage_fee),
   late_fee: Number(data.poundage_late_fee),
   needs_review: 1,
   payment_date: moment(),
-  payment_made: state.fees.length <= 0 ? 1 : 0,
-  payment_type_id: PAYMENT_TYPES.POUNDAGE,
+  payment_type_id: PAYMENT_TYPES.TONNAGE,
   processing_fee: Number(data.processing_fee),
   receipt_id: data.receipt_id,
   reviewed_by: 'AUTO',

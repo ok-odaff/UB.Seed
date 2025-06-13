@@ -5,8 +5,8 @@ WITH contacts AS (
 )
 
 SELECT
-	c.name,
-	d.detail_id, d.company_type, d.license_number, d.license_start_date, d.license_created_date, d.license_expiration_date,
+	c.*,
+	d.detail_id, d.company_type, d.license_number, d.license_start_date, d.license_created_date, d.license_expiration_date, d.license_payment_made, d.tonnage_payment_made,
 	cc.contact_id, cc.contact_name, cc.title, cc.contact_type_id, cc.phone, cc.secondary_phone, cc.email, cc.prefers_paper, cc.is_primary, cc.receives_email, cc.can_login,
 	p.name as program
 FROM company c

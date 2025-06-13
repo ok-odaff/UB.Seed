@@ -45,4 +45,4 @@ slots:
   - id: '17488758156230.87124015027854'
     name: views
     children:
-      - view_4.yml
+      - view_4/view_4.yml

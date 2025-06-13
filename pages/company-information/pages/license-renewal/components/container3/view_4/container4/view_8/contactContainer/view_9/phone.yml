@@ -1,11 +1,11 @@
-id: '17488760566980.5969734363395885'
+id: '17488760797830.4350982981082956'
 definitionId: stringEdit
-parentSlotId: '17488759999240.5393049364737782'
+parentSlotId: '17488759736910.9545567065553086'
 styles:
   xl:
     gridItem:
       x: 0
-      y: 9
+      y: 24
       w: 24
       h: 9
     flex:
@@ -18,7 +18,7 @@ styles:
   xs:
     gridItem:
       x: 0
-      y: 9
+      y: 3
       w: 24
       h: 9
     flex:
@@ -29,17 +29,26 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: addressLine2
+  name: phone
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  value: >-
-    {{state.company_addresses.find(a => a.address_type_id ==
-    2)?.address_line_2}}
+  placeholder: ''
+  value: '{{state.company_contacts.phone}}'
   labelConfig:
-    text: ''
+    text: Phone
     position: horizontal
     align: left
-  placeholder: Address Line 2
+  required:
+    value: false
+    dataValue: '!{{ui.email.value}}'
+    withData: true
+  maskConfig:
+    value: none
+    dataValue: |-
+      {
+        mask: '[+99 ]999-999-9999'
+      }
+    withData: true
 actions: {}
 slots: []

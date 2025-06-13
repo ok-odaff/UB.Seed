@@ -1,1 +1,1 @@
-return {{ui.returnHomeButton.setValue(true)}};
+return {{ui.returnHomeButton.setDisabled(false)}}

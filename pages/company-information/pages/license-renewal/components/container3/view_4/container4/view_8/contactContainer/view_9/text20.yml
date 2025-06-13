@@ -1,12 +1,12 @@
 id: '17488760427540.2102847820370628'
 definitionId: text
-parentSlotId: '17488758300920.6095752828914027'
+parentSlotId: '17488759736910.9545567065553086'
 styles:
   xl:
     gridItem:
-      x: 12
-      y: 50
-      w: 5
+      x: 0
+      y: 0
+      w: 13
       h: 6
     flex:
       size:
@@ -21,9 +21,10 @@ styles:
       themeDefaultOverridePropertyKey: baseTextFontSize
   xs:
     gridItem:
+      id: '17488760427540.2102847820370628'
       x: 0
-      y: 169
-      w: 24
+      y: 12
+      w: 8
       h: 6
     flex:
       size:

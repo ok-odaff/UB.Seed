@@ -1,12 +1,12 @@
 id: '17488760933890.8321787656449343'
 definitionId: button
-parentSlotId: '17488758300920.6095752828914027'
+parentSlotId: '17488759999240.5393049364737782'
 styles:
   xl:
     gridItem:
-      x: 5
-      y: 47
-      w: 5
+      x: 15
+      y: 0
+      w: 9
       h: 9
     flex:
       size:
@@ -17,9 +17,10 @@ styles:
       shrink: '0'
   xs:
     gridItem:
-      x: 0
-      y: 96
-      w: 24
+      id: '17488760933890.8321787656449343'
+      x: 12
+      y: 63
+      w: 12
       h: 9
     flex:
       size:
