@@ -1,1 +1,1 @@
-return {{data}};
+return {{data}}.payment_submitted;

@@ -5,10 +5,10 @@ nameConfigured: true
 steps:
   - id: '17488727143040.24085337154190056'
     type: customSQLQuery
-    name: query
+    name: company_detail
     params:
       - type: query
-        value: ./query-query.sql
+        value: ./company_detail-query.sql
         valueType: interpolatedValue
         interpolationType: string
       - type: datasourceId
@@ -16,7 +16,7 @@ steps:
         valueType: custom
         mustSelectFirst: true
       - type: preparedQuery
-        value: ./query-preparedQuery.sql
+        value: ./company_detail-preparedQuery.sql
         valueType: interpolatedValue
       - type: preparedQueryParams
         value:
@@ -40,6 +40,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
   - id: '17488728230250.1952349761115849'
     type: putInStore
     name: save
@@ -48,7 +49,7 @@ steps:
         value: '17483677373960.9495011422711037'
         valueType: string
       - type: value
-        value: '{{data}}'
+        value: '{{data}}[0]'
         valueType: interpolatedValue
         interpolationType: code
       - type: producible
@@ -59,7 +60,7 @@ steps:
     isChanged: true
   - id: '17496533917780.8699420919358719'
     type: LOAD_ENTITY
-    name: get
+    name: company_address
     params:
       - type: datasourceId
         value: My Data
@@ -89,6 +90,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
   - id: '17496534121480.616670998960664'
     type: putInStore
     name: save2
@@ -108,7 +110,7 @@ steps:
     isChanged: true
   - id: '17496534284450.9494892875551189'
     type: LOAD_ENTITY
-    name: get2
+    name: company_contacts
     params:
       - type: datasourceId
         value: My Data
@@ -138,6 +140,7 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
   - id: '17496534576120.5098864262134466'
     type: putInStore
     name: save3

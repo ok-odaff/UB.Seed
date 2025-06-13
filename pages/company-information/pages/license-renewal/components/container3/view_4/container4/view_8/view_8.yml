@@ -14,14 +14,11 @@ slots:
   - id: '17488758300920.6095752828914027'
     name: content
     children:
+      - contactContainer/contactContainer.yml
       - heading5.yml
       - text16.yml
       - companyName.yml
       - licenseNumber.yml
       - addressContainer/addressContainer.yml
-      - mailingAddress.yml
-      - text20.yml
-      - button4.yml
       - physicalAddress.yml
       - companyAddress.yml
-      - contactName.yml

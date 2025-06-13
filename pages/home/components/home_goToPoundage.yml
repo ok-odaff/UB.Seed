@@ -44,9 +44,7 @@ properties:
     withData: false
   disabled:
     value: false
-    dataValue: >-
-      {{state.login_information.detail_id == null ||
-      state.company_details.tonnage_payment_made == true}}
+    dataValue: '{{state.company.tonnage_payment_made == 1}}'
     withData: true
   cssClasses:
     value:

@@ -1,11 +1,11 @@
-id: '17488760513350.2287074416434226'
+id: '17488760566980.5969734363395885'
 definitionId: stringEdit
 parentSlotId: '17488759999240.5393049364737782'
 styles:
   xl:
     gridItem:
       x: 0
-      y: 0
+      y: 18
       w: 24
       h: 9
     flex:
@@ -18,7 +18,7 @@ styles:
   xs:
     gridItem:
       x: 0
-      y: 0
+      y: 9
       w: 24
       h: 9
     flex:
@@ -29,7 +29,7 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: streetAddress
+  name: addressLine2
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
@@ -40,11 +40,6 @@ properties:
     text: ''
     position: horizontal
     align: left
-  placeholder: Address Line 1
-  required:
-    value: true
-    dataValue: 'false'
-    withData: false
-  labelWidth: 30
+  placeholder: Address Line 2
 actions: {}
 slots: []

@@ -33,11 +33,15 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  __UIBAKERY__SHOW__CONDITION__CODE__: 'false'
+  __UIBAKERY__SHOW__CONDITION__CODE__: ''
   text: Back to Home
   linkInfo:
     active: internalPath
     internalPath: '{{routes.home.url}}'
     externalPath: ''
+  disabled:
+    value: false
+    dataValue: 'true'
+    withData: true
 actions: {}
 slots: []

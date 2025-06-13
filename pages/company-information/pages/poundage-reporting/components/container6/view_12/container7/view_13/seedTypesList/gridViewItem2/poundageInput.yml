@@ -38,5 +38,6 @@ properties:
     position: horizontal
     align: left
   labelWidth: 65
+  placeholder: '0'
 actions: {}
 slots: []

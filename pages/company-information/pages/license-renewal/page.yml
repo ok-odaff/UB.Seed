@@ -28,6 +28,3 @@ slots:
               - components/heading4.yml
               - components/container3/container3.yml
               - components/button5.yml
-              - components/container4/container4.yml
-              - components/contactContainer/contactContainer.yml
-              - components/email.yml

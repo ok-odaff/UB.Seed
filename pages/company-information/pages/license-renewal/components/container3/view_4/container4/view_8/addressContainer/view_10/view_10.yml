@@ -14,6 +14,8 @@ slots:
   - id: '17488759999240.5393049364737782'
     name: content
     children:
+      - mailingAddress.yml
+      - button4.yml
       - streetAddress.yml
       - addressLine2.yml
       - city.yml

@@ -18,3 +18,4 @@ slots:
       - seedTypesList/seedTypesList.yml
       - reportPeriod.yml
       - seedTypesHeader.yml
+      - text24.yml
