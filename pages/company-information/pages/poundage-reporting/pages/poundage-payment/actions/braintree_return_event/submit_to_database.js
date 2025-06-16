@@ -37,7 +37,7 @@ const SEED_POUNDAGE_SQL = `
 	SELECT @INSERTED_ID = payment_id
   FROM @outputTable;
 
-	INSERT INTO seed_poundage(detail_id, company_type, category, pounds, fiscal_year, fiscal_quarter, payment_id, reviewed_by, created_date, created_by)
+	INSERT INTO seed_poundage(detail_id, company_type, category, pounds, fiscal_year, fiscal_quarter, payment_id, created_date, created_by)
   VALUES
   	${reportInserts.join(',')}
 `;
