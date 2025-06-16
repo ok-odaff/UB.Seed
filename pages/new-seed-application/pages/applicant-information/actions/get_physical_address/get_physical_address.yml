@@ -1,0 +1,55 @@
+id: '17501025983080.4410856931817674'
+kind: workflow
+name: get_physical_address
+nameConfigured: true
+steps:
+  - id: '17501025983080.7030373667003197'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17501025983080.854012262862523'
+    type: putInStore
+    name: save
+    params:
+      - type: name
+        value: '17480176889890.29791283991710504'
+        valueType: string
+      - type: value
+        value: '{{data}}'
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: producible
+        value: true
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '17477471567180.6287153283818414'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.get_physical_address.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.get_physical_address.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.get_physical_address.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true

@@ -2,5 +2,6 @@
 - copy_primary_address
 - new_application_submit
 - get_companies
-- get_addresses
+- get_mailing_addresss
+- get_physical_address
 - exec_query
