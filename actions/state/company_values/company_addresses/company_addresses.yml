@@ -11,5 +11,5 @@ storeItem:
   valueType: object
   initialValue: '{}'
   version: 1
-selected: false
+selected: true
 configured: true

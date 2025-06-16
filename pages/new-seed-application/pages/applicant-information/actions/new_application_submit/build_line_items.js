@@ -4,7 +4,7 @@ const LICENSE_FEE_WHOLESALE_AND_MEDICAL_MARIJUANA = {{state.program_variables.fi
 let LICENSE_FEE;
 
 
-if ({{state.company.company_type == "Retail"}}) {
+if ({{state.applicant_info.license_type[0] == 1}}) {
   LICENSE_FEE = LICENSE_FEE_RETAIL
 } else {
   LICENSE_FEE = LICENSE_FEE_WHOLESALE_AND_MEDICAL_MARIJUANA

@@ -3,9 +3,38 @@ kind: workflow
 name: new_application_submit
 nameConfigured: true
 steps:
+  - id: '17501031821410.877071852572912'
+    type: executeAction
+    name: physical_address
+    params:
+      - type: action
+        value: '17501025983080.4410856931817674'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./physical_address-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
   - id: '17483651644570.6558211170411231'
     type: executeAction
-    name: get_addresses
+    name: mail_address
     params:
       - type: action
         value: '17480176636340.7168963392423028'
@@ -14,7 +43,7 @@ steps:
         value: false
         valueType: custom
       - type: customParams
-        value: ./get_addresses-customParams.js
+        value: ./mail_address-customParams.js
         valueType: interpolatedValue
         interpolationType: code
       - type: successMapper

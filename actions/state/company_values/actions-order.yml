@@ -4,6 +4,7 @@
 - company_contacts
 - company_addresses
 - company_address_mailing
+- company_address_physical
 - company_stop_sales
 - seed
 - applicant_info

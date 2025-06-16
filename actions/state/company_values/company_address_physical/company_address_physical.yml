@@ -1,17 +1,17 @@
 id: '17480176889890.29791283991710504'
 kind: store_item
-name: addresses
+name: company_address_physical
 nameConfigured: true
 steps: []
 mode: manual
 modeConfigured: false
-parentId: '17477484248050.7798491970641792'
+parentId: '17483677096750.77303552721274'
 storeItem:
   value: '{}'
   valueType: object
   initialValue: '{}'
   version: 1
-selected: true
+selected: false
 configured: true
 config:
   preserveStateOnPageChange: true
