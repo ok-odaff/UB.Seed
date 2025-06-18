@@ -69,24 +69,18 @@ steps:
                 fallthroughError: false
                 isChanged: true
                 paused: false
-              - id: '17491417752850.9665887345298195'
-                type: putInStore
-                name: save
+              - id: '17502579915910.6086564661879089'
+                type: customAsyncCode
+                name: code4
                 params:
-                  - type: name
-                    value: '17491401205870.8182813131652839'
-                    valueType: string
-                  - type: value
-                    value: '{{data}}'
+                  - type: asyncCode
+                    value: ./code4.js
                     valueType: interpolatedValue
                     interpolationType: code
-                  - type: producible
-                    value: true
-                    valueType: custom
                 level: 0
                 fallthroughError: false
                 isChanged: true
-                paused: true
+                paused: false
         valueType: custom
     level: 0
     fallthroughError: false

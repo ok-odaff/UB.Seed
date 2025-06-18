@@ -14,17 +14,6 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
-  - id: '17491454453090.8463493117576284'
-    type: customAsyncCode
-    name: code2
-    params:
-      - type: asyncCode
-        value: ./code2.js
-        valueType: interpolatedValue
-        interpolationType: code
-    level: 0
-    fallthroughError: false
-    isChanged: true
   - id: '17491484409330.5493898970233122'
     type: executeAction
     name: execute
