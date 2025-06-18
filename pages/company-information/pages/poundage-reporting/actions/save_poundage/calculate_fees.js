@@ -72,7 +72,7 @@ if (page == 'Poundage Reporting') {
     } else if (now >= poundage_late_fee_date && now < license_first_notice_date) {
       // If the time has passed the first late fee date but not entered into the second reporting period of the reporting year
     	fees.push({
-       	description: `${report.report_period.value} Poundage Late Fee`,
+       	description: `${report.report_period} Poundage Late Fee`,
         type: 'poundage_late_fee',
         amount: lateFee
       });

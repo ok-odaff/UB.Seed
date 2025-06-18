@@ -36,5 +36,5 @@ slots:
               - components/divider3.yml
               - components/poundageGoToPayment.yml
               - components/container6/container6.yml
-              - components/button6.yml
+              - components/addAnotherReportButoon.yml
               - components/skipReportModal/skipReportModal.yml

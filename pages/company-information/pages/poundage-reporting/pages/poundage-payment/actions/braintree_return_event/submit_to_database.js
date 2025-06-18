@@ -27,7 +27,7 @@ for (let report of poundageReports) {
   
 	if (report.seed_types.length > 0) {
     for (let seed_type of report.seed_types) {
-    	reportInserts.push(`(@detail_id, '${company_type}', '${seed_type.category}', ${seed_type.pounds}, ${state.report_periods.fiscal_year}, ${state.report_periods.fiscal_quarter},  @INSERTED_ID,  @reviewed_by, @created_date, @created_by)`);
+    	reportInserts.push(`(@detail_id, '${company_type}', '${seed_type.category}', ${seed_type.pounds}, ${state.report_periods.fiscal_year}, ${state.report_periods.fiscal_quarter},  @INSERTED_ID, @created_date, @created_by)`);
     }
     }
   }
@@ -72,6 +72,6 @@ const CHANGES_SQL = `
   payment_type_id: PAYMENT_TYPES.TONNAGE,
   processing_fee: Number(data.processing_fee),
   receipt_id: data.receipt_id,
-  reviewed_by: 'AUTO',
+  reviewed_by: null,
   speedtype_id: data.speedtype_id
 });

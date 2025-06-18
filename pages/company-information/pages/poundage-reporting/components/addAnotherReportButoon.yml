@@ -29,11 +29,11 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: button6
+  name: addAnotherReportButoon
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.stop_sales_list.length > state.seed_poundage.length}}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: ''
   text: Add another report
 actions:
   buttonClick:
