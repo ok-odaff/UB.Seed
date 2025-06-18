@@ -45,7 +45,8 @@ properties:
       "program": {{state.program.name}},
       "speedtype": {{LICENSE_SPEEDTYPE}},
       "line_items": {{state.fees}},
-      "customer_email": {{state.primary_contact.email}}
+      "customer_email": {{state.primary_contact.email}},
+      "company_detail_id": 0
     }
   heightMode: auto
 actions:
