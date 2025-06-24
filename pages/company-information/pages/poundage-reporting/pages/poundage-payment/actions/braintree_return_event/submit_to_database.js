@@ -22,12 +22,13 @@ const DETAIL_SQL = `
 `;
 
 // Tonnage reports
-const poundageReports = state.seed_poundage;
+const poundageReports = {{state.seed_poundage}};
 for (let report of poundageReports) {
-  
+   let fiscal_year = report.fiscal_year;
+    let fiscal_quarter = report.fiscal_quarter;
 	if (report.seed_types.length > 0) {
     for (let seed_type of report.seed_types) {
-    	reportInserts.push(`(@detail_id, '${company_type}', '${seed_type.category}', ${seed_type.pounds}, ${state.report_periods.fiscal_year}, ${state.report_periods.fiscal_quarter},  @INSERTED_ID, @created_date, @created_by)`);
+    	reportInserts.push(`(@detail_id, '${company_type}', '${seed_type.category}', ${seed_type.pounds}, ${fiscal_year}, ${fiscal_quarter},  @INSERTED_ID, @created_date, @created_by)`);
     }
     }
   }

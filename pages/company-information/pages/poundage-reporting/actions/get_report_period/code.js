@@ -1,5 +1,5 @@
 //get stop sale date to fulfill year 
-let stopSaleDates = [...{{state.stop_sales_list}}]           
+let stopSaleDates = [...{{data}}]           
 let tableLabels = []
 //set period 1 end as one day before period 2 begin
 function subtractDay(dt) {
@@ -31,7 +31,7 @@ for (let i = 0; i < stopSaleDates.length; i++) {
     })}`, 
       report_period: `${period2begin.toLocaleString('en-US', {month: 'short', year: '2-digit'})} - ${period2end.toLocaleString('en-US', {month: 'short', year: '2-digit'})}`,
       fiscal_year: year, 
-    fiscal_quarter: 3
+    	fiscal_quarter: 3
     }
   } else if (stopSale < period2end && stopSale > period2begin) { 
     {{state.report_periods}} = {

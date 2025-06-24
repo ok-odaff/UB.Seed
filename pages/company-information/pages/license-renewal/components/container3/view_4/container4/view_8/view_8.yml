@@ -22,3 +22,4 @@ slots:
       - addressContainer/addressContainer.yml
       - physicalAddress.yml
       - companyAddress.yml
+      - text25.yml

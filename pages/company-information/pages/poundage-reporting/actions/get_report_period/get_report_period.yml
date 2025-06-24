@@ -3,6 +3,18 @@ kind: workflow
 name: get_report_period
 nameConfigured: true
 steps:
+  - id: '17503491327600.8491984927865084'
+    type: customAsyncCode
+    name: tonnage_stop_sales
+    params:
+      - type: asyncCode
+        value: ./tonnage_stop_sales.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
   - id: '17491426088490.6917875260061929'
     type: condition
     name: condition

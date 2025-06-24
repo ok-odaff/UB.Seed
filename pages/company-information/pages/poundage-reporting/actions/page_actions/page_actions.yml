@@ -3,34 +3,6 @@ kind: workflow
 name: page_actions
 nameConfigured: true
 steps:
-  - id: '17491468790090.75422662681394'
-    type: executeAction
-    name: execute
-    params:
-      - type: action
-        value: '17490515293450.04185752342938187'
-        valueType: custom
-      - type: isActionsLibraryCall
-        value: false
-        valueType: custom
-      - type: customParams
-        value: ./execute-customParams.js
-        valueType: interpolatedValue
-        interpolationType: code
-      - type: successMapper
-        value: ''
-        valueType: interpolatedValue
-        interpolationType: code
-      - type: failureMapper
-        value: ''
-        valueType: interpolatedValue
-        interpolationType: code
-      - type: mapperEnabled
-        value: false
-        valueType: custom
-    level: 0
-    fallthroughError: false
-    isChanged: true
   - id: '17491468881670.5694836916534449'
     type: executeAction
     name: execute2

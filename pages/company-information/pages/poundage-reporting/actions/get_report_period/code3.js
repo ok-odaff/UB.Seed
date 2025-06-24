@@ -26,7 +26,7 @@ tableLabels.push(`${period2begin.toLocaleDateString('en-US', {
   {{state.report_periods}} = {
     report_period: `${period2begin.toLocaleString('en-US', {month: 'short', year: '2-digit'})} - ${period2end.toLocaleString('en-US', {month: 'short', year: '2-digit'})}`,
   	fiscal_year: currentYear, 
-  fiscal_quarter: 3
+ 		fiscal_quarter: 3
   }
 } else if (currentDate < period2end && currentDate > period2begin) {
 
@@ -48,4 +48,4 @@ tableLabels.push(`${period2begin.toLocaleDateString('en-US', {
 }
 
 ui.reportPeriod.setValue(tableLabels[0]);
-return tableLabels
+return {{state.report_periods}}
