@@ -38,5 +38,6 @@ properties:
     text: Fees paid by HQ
     position: horizontal
     align: left
+  __UIBAKERY__SHOW__CONDITION__CODE__: 'false'
 actions: {}
 slots: []

@@ -1,3 +1,3 @@
-if ({{state.stop_sales_list}} && {{state.stop_sales_list.length}} > {{state.seed_poundage.length}}) {
+if ({{state.company_stop_sales}} && {{state.company_stop_sales.length}} > {{state.seed_poundage.length}}) {
   return
 }

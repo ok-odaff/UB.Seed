@@ -48,7 +48,7 @@ properties:
     withData: true
     dataValue: 'false'
     value: false
-  value: '{{state.company_addresses.find(a => a.address_type_id == 2)?.state}}'
+  value: '{{state.company.find(v => v.address_type_id == 2)?.state}}'
   labelConfig:
     text: ''
     position: horizontal

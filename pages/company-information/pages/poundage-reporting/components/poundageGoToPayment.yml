@@ -34,7 +34,7 @@ properties:
     - xl
     - xs
   text: Continue to Payment
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.stop_sales_list.length <= state.seed_poundage.length}}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: ''
 actions:
   buttonClick:
     - action: '17488911500510.7593015813338881'

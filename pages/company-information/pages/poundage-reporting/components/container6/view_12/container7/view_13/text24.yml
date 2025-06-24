@@ -44,8 +44,7 @@ properties:
     into the material field at the bottom of this page, then report as normal.
     <br /> <br />All back poundage must be reported before proceeding to report
     for the current period. Once back poundage has been reported, you will have
-    the option to proceed directly to payment and defer reporting to a later
-    time.
+    the option to proceed directly to payment.
   heightMode: auto
   alignment: center
 actions: {}

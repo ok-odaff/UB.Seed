@@ -5,9 +5,9 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 1
+      y: 10
       w: 24
-      h: 88
+      h: 176
     flex:
       size:
         widthValue: 100
@@ -49,6 +49,7 @@ properties:
       "line_items": {{state.fees}},
       "customer_email": {{state.primary_contact.email}}
     }
+  __UIBAKERY__SHOW__CONDITION__CODE__: ''
 actions:
   triggerEvent:
     - action: '17492250326060.6373351097144955'
