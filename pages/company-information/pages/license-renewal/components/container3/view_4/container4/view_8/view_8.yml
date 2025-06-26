@@ -23,3 +23,4 @@ slots:
       - physicalAddress.yml
       - companyAddress.yml
       - text25.yml
+      - container8/container8.yml

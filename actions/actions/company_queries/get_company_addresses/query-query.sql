@@ -4,4 +4,4 @@ SELECT
 FROM company_address a
 LEFT JOIN county c
 	ON c.county_id = a.county_id
-WHERE a.detail_id = {{state.passed_params.detail_id}};
+WHERE a.detail_id = {{state.login_information.detail_id}};

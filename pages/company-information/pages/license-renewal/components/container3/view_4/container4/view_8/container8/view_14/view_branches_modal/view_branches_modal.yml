@@ -1,0 +1,67 @@
+id: '17507906166560.5562185074790209'
+definitionId: modal
+parentSlotId: '17507901571590.19439826243735947'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 7
+      w: 11
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+    modalSize:
+      widthValue: '50'
+      widthUnit: '%'
+      heightValue: auto
+      heightUnit: null
+      minWidthValue: 0
+      minWidthUnit: px
+      minHeightValue: 0
+      minHeightUnit: px
+      maxWidthValue: none
+      maxWidthUnit: null
+      maxHeightValue: none
+      maxHeightUnit: null
+  xs:
+    gridItem:
+      x: 0
+      y: 6
+      w: 24
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  name: view_branches_modal
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  buttonText: View Licenses
+  showHeader: true
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.branches}}'
+  closeOnBackdrop: true
+  closeOnEsc: true
+actions: {}
+slots:
+  - id: '17507906166560.5866763036664614'
+    name: header
+    children:
+      - heading11.yml
+  - id: '17507906166560.41566680146160806'
+    name: body
+    children:
+      - save_branch_info_button.yml
+      - table.yml
+  - id: '17507906166560.6676134005041717'
+    name: footer
+    children: []

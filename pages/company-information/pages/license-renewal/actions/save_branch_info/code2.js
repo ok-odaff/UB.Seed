@@ -1,0 +1,1 @@
+return {{state.saved_branches = true}},{{ui.view_branches_modal.close()}};

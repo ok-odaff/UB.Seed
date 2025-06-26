@@ -42,7 +42,11 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  value: 'Review the information below and make changes, if necessary. '
+  value: >-
+    Review the information below and make changes, if necessary. <br>
+
+    Please review your companies licenses and verify if fees are paid by
+    headquarters.
   textStyle:
     transform: none
     styles:
@@ -51,5 +55,6 @@ properties:
     value: edit-2
     dataValue: star-outline
     withData: false
+  heightMode: auto
 actions: {}
 slots: []

@@ -1,9 +1,20 @@
-id: '17488733798540.924644812352118'
+id: '17488735030070.8357348282091608'
 kind: workflow
-name: get_company_addresses
+name: get_stop_sales
 nameConfigured: true
 steps:
-  - id: '17488733910820.413121362635417'
+  - id: '17509558840540.7115062322099597'
+    type: customAsyncCode
+    name: code
+    params:
+      - type: asyncCode
+        value: ./code.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+  - id: '17488735068760.2575042867747892'
     type: customSQLQuery
     name: query
     params:
@@ -20,7 +31,7 @@ steps:
         valueType: interpolatedValue
       - type: preparedQueryParams
         value:
-          - __UI_BAKERY__FORMAT_IF_DATE__(state.passed_params.detail_id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data)
         valueType: custom
       - type: customDatabaseName
         value: ''
@@ -40,12 +51,12 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
-  - id: '17488734376130.8623562227216791'
+  - id: '17488735219550.25273905335328406'
     type: putInStore
     name: save
     params:
       - type: name
-        value: '17488734109970.6328496075295605'
+        value: '17488735265410.6493994180824448'
         valueType: string
       - type: value
         value: '{{data}}'
@@ -59,23 +70,20 @@ steps:
     isChanged: true
 mode: manual
 modeConfigured: false
-parentPageId: '1'
-parentId: null
+parentId: '17483683147680.5692059558631833'
 config:
   shouldConfirm: false
-  confirmMessage: >-
-    Are you sure you'd like to proceed with
-    "{{actions.get_company_addresses.name}}"?
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.get_stop_sales.name}}"?
   showSuccessToast: false
-  successToast: Action "{{actions.get_company_addresses.name}}" successfully executed
+  successToast: Action "{{actions.get_stop_sales.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.get_company_addresses.name}}" has failed
+  errorToast: Action "{{actions.get_stop_sales.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
   runWhenFirstReferenced: true
-  preserveStateOnPageChange: false
+  preserveStateOnPageChange: true
 selected: true
 configured: true

@@ -34,7 +34,7 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  value: '{{state.company_contacts.contact_name}}'
+  value: '{{state.company_contacts.find(v => v.is_primary == true)?.contact_name}}'
   labelConfig:
     text: Name
     position: horizontal

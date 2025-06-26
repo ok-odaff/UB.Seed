@@ -15,6 +15,7 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+    paused: false
   - id: '17491426088490.6917875260061929'
     type: condition
     name: condition
@@ -38,6 +39,7 @@ steps:
                 level: 0
                 fallthroughError: false
                 isChanged: true
+                paused: false
               - id: '17491426234610.004193664922522933'
                 type: customAsyncCode
                 name: code2
@@ -67,6 +69,7 @@ steps:
                 level: 1
                 fallthroughError: false
                 isChanged: true
+                paused: false
           - condition: false
             steps:
               - id: '17491426420820.09407426792897144'

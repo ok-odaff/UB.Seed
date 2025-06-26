@@ -1,0 +1,15 @@
+id: '17507888131250.8786582375438742'
+kind: store_item
+name: branches
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17483677096750.77303552721274'
+storeItem:
+  value: '[]'
+  valueType: array
+  initialValue: '[]'
+  version: 1
+selected: true
+configured: true

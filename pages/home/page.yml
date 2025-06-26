@@ -18,12 +18,7 @@ slots:
             - xl
             - xs
         actions:
-          pageLoad:
-            - action: '17483526234230.642729751070407'
-              paramCode: ''
-              blockPageLoad: false
-              preventDefault: false
-              index: 0
+          pageLoad: []
         slots:
           - id: '2'
             name: content

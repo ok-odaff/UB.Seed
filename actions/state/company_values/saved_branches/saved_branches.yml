@@ -1,0 +1,15 @@
+id: '17508642517240.5109241561022001'
+kind: store_item
+name: saved_branches
+nameConfigured: true
+steps: []
+mode: manual
+modeConfigured: false
+parentId: '17483677096750.77303552721274'
+storeItem:
+  value: 'false'
+  valueType: boolean
+  initialValue: 'false'
+  version: 1
+selected: true
+configured: true

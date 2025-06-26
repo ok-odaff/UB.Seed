@@ -49,8 +49,17 @@ const PAYMENT_HISTORY_SQL = `
   VALUES(@detail_id, @payment_type_id, @braintree_id, @receipt_id, @speedtype_id, @fee, @late_fee, @processing_fee, @created_date, @created_date);
 `;
 
+let branches = {{state.branches}}.filter(licenses => licenses.paid_by_headquarter_license == true);
+let branches_updates = [];
+if ({{state.company.exempt_from_license}} != true) {
+branches_updates.push({{state.login_information.detail_id}})
+}
+for (let branch of branches) {
+  branches_updates.push(branch.detail_id)
+}
+
 const COMPANY_DETAIL_UPDATE_SQL = `
-	UPDATE company_detail SET needs_review = @needs_review, license_payment_made = 1 WHERE detail_id = @detail_id; 
+	UPDATE company_detail SET needs_review = @needs_review, license_payment_made = 1 WHERE detail_id in (${branches_updates.join(', ')}); 
 `;
 
 for (const [key, value] of Object.entries(contact_differences)) {

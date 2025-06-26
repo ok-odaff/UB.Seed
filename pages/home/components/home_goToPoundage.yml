@@ -44,7 +44,9 @@ properties:
     withData: false
   disabled:
     value: false
-    dataValue: '{{state.company.tonnage_payment_made == 1}}'
+    dataValue: >-
+      {{state.company.tonnage_payment_made == 1 ||
+      state.company.should_report_poundage == 0}}
     withData: true
   cssClasses:
     value:

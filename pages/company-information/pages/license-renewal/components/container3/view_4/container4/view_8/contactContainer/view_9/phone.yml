@@ -34,7 +34,7 @@ properties:
     - xl
     - xs
   placeholder: ''
-  value: '{{state.company_contacts.phone}}'
+  value: '{{state.company_contacts.find(v => v.is_primary == true)?.phone}}'
   labelConfig:
     text: Phone
     position: horizontal
