@@ -1,9 +1,9 @@
-id: '17488736378360.3969113076544655'
+id: '17507887646770.8756721581538962'
 kind: workflow
-name: get_seed
+name: get_branches
 nameConfigured: true
 steps:
-  - id: '17488736437150.8677996007962546'
+  - id: '17507887690180.1118941419494276'
     type: customSQLQuery
     name: query
     params:
@@ -20,7 +20,8 @@ steps:
         valueType: interpolatedValue
       - type: preparedQueryParams
         value:
-          - __UI_BAKERY__FORMAT_IF_DATE__(state.passed_params.detail_id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(state.company.company_id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(state.company.company_id)
         valueType: custom
       - type: customDatabaseName
         value: ''
@@ -40,15 +41,15 @@ steps:
     level: 0
     fallthroughError: false
     isChanged: true
-  - id: '17488736911740.17639287521481173'
+  - id: '17507888525840.9136030918508065'
     type: putInStore
     name: save
     params:
       - type: name
-        value: '17488736791520.9199803395771983'
+        value: '17507888131250.8786582375438742'
         valueType: string
       - type: value
-        value: '{{data}}[0]'
+        value: '{{data}}'
         valueType: interpolatedValue
         interpolationType: code
       - type: producible
@@ -59,20 +60,20 @@ steps:
     isChanged: true
 mode: manual
 modeConfigured: false
-parentPageId: '1'
+parentId: '17483683147680.5692059558631833'
 config:
   shouldConfirm: false
-  confirmMessage: Are you sure you'd like to proceed with "{{actions.get_seed.name}}"?
+  confirmMessage: Are you sure you'd like to proceed with "{{actions.get_branches.name}}"?
   showSuccessToast: false
-  successToast: Action "{{actions.get_seed.name}}" successfully executed
+  successToast: Action "{{actions.get_branches.name}}" successfully executed
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.get_seed.name}}" has failed
+  errorToast: Action "{{actions.get_branches.name}}" has failed
   errorToastDuration: '3000'
   errorToastHideByClick: false
   delay: '0'
   runWhenFirstReferenced: true
-  preserveStateOnPageChange: false
+  preserveStateOnPageChange: true
 selected: true
 configured: true

@@ -1,1 +1,6 @@
 - get_company_details
+- get_company
+- get_company_addresses
+- get_company_contacts
+- get_branches
+- get_stop_sales

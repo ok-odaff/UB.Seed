@@ -3,60 +3,151 @@ kind: workflow
 name: get_company_details
 nameConfigured: true
 steps:
-  - id: '17507754367050.7459521415190942'
-    type: customSQLQuery
-    name: query
+  - id: '17509572208140.41875374508268937'
+    type: executeAction
+    name: company
     params:
-      - type: query
-        value: ./query-query.sql
-        valueType: interpolatedValue
-        interpolationType: string
-      - type: datasourceId
-        value: My Data
+      - type: action
+        value: '17509571689260.37479537897603543'
         valueType: custom
-        mustSelectFirst: true
-      - type: preparedQuery
-        value: ./query-preparedQuery.sql
-        valueType: interpolatedValue
-      - type: preparedQueryParams
-        value:
-          - __UI_BAKERY__FORMAT_IF_DATE__(state.login_information.detail_id)
+      - type: isActionsLibraryCall
+        value: false
         valueType: custom
-      - type: customDatabaseName
-        value: ''
+      - type: customParams
+        value: ./company-customParams.js
         valueType: interpolatedValue
-      - type: stepVersion
-        value: 2
-        valueType: custom
+        interpolationType: code
       - type: successMapper
         value: ''
         valueType: interpolatedValue
+        interpolationType: code
       - type: failureMapper
         value: ''
         valueType: interpolatedValue
+        interpolationType: code
       - type: mapperEnabled
         value: false
         valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
-  - id: '17507761614620.09993953908496844'
-    type: putInStore
-    name: save
+    nameConfigured: true
+  - id: '17509572969130.6552028052109594'
+    type: executeAction
+    name: address
     params:
-      - type: name
-        value: '17483677373960.9495011422711037'
-        valueType: string
-      - type: value
-        value: '{{data}}'
+      - type: action
+        value: '17488733798540.924644812352118'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./address-customParams.js
         valueType: interpolatedValue
         interpolationType: code
-      - type: producible
-        value: true
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
         valueType: custom
     level: 0
     fallthroughError: false
     isChanged: true
+    nameConfigured: true
+  - id: '17509573582210.7061224305773547'
+    type: executeAction
+    name: contact
+    params:
+      - type: action
+        value: '17488728867100.6106797105912577'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./contact-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17508595160670.8112552283969182'
+    type: executeAction
+    name: branches
+    params:
+      - type: action
+        value: '17507887646770.8756721581538962'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./branches-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
+  - id: '17509573812030.8871962216181037'
+    type: executeAction
+    name: stop_sales
+    params:
+      - type: action
+        value: '17488735030070.8357348282091608'
+        valueType: custom
+      - type: isActionsLibraryCall
+        value: false
+        valueType: custom
+      - type: customParams
+        value: ./stop_sales-customParams.js
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: successMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: failureMapper
+        value: ''
+        valueType: interpolatedValue
+        interpolationType: code
+      - type: mapperEnabled
+        value: false
+        valueType: custom
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
 mode: manual
 modeConfigured: false
 parentId: '17483683147680.5692059558631833'

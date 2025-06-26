@@ -19,3 +19,4 @@ slots:
       - reportPeriod.yml
       - seedTypesHeader.yml
       - text24.yml
+      - license_number_select.yml

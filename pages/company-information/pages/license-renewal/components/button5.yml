@@ -39,6 +39,11 @@ properties:
     value: chevron-right
     dataValue: star-outline
     withData: false
+  __UIBAKERY__SHOW__CONDITION__CODE__: ''
+  disabled:
+    value: false
+    dataValue: '{{state.branches.length > 0 && state.saved_branches == false}}'
+    withData: true
 actions:
   buttonClick:
     - action: '17488793144460.1535940716870282'

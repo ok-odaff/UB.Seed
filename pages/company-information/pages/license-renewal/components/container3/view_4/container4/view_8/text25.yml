@@ -4,8 +4,8 @@ parentSlotId: '17488758300920.6095752828914027'
 styles:
   xl:
     gridItem:
-      x: 1
-      y: 20
+      x: 4
+      y: 19
       w: 4
       h: 6
     flex:
@@ -33,6 +33,6 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  value: '{{state.company[0].company_type}} License'
+  value: '{{state.company.company_type || ''''}} License'
 actions: {}
 slots: []

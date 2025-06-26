@@ -5,8 +5,8 @@ styles:
   xl:
     gridItem:
       x: 1
-      y: 18
-      w: 8
+      y: 10
+      w: 7
       h: 7
     flex:
       size:
@@ -37,7 +37,7 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  value: '{{state.company[0].name}}'
+  value: '{{state.company.name}}'
   heightMode: auto
   textStyle:
     transform: none

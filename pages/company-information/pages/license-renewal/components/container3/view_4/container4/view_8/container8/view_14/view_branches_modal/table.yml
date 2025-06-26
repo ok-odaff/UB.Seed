@@ -1,0 +1,190 @@
+id: '17508011646770.14500606035370467'
+definitionId: smartTable
+parentSlotId: '17507906166560.41566680146160806'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 80
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 149
+      w: 24
+      h: 80
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 320
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  dynamicColumns:
+    value: []
+    dataValue: |-
+      [
+        {
+          "prop": "id",
+          "type": "number",
+          "primaryKey": true
+        },
+        "name",
+        {
+          "prop": "avatar",
+          "type": "image"
+        },
+        {
+          "prop": "email",
+          "type": "link"
+        }
+      ]
+    withData: false
+  data:
+    value: UIB_DEMO_DATASET_FULL
+    dataValue: '{{actions.get_branches.data}}'
+    withData: true
+  name: table
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  title: Tables
+  showLoading:
+    withData: true
+    dataValue: 'false'
+    value: false
+  limit: '{{state.branches.length}}'
+  heightMode: auto
+  multiplyRowSelection:
+    value: true
+    dataValue: 'false'
+    withData: false
+  rowSelectionType:
+    value: checkbox
+    dataValue: row
+    withData: false
+  resetPageOnFilterOrSortChange:
+    value: false
+    dataValue: 'true'
+    withData: false
+  showExportAction:
+    value: false
+    dataValue: 'true'
+    withData: false
+  showFilter:
+    value: true
+    dataValue: 'false'
+    withData: false
+  selectedRowIndex: '-1'
+actions: {}
+slots:
+  - id: '17508011646770.8836032743418685'
+    name: columns
+    children:
+      - id: '17508011648720.5026258585539269'
+        definitionId: atomicNumber
+        parentSlotId: '17508011646770.8836032743418685'
+        styles:
+          xl:
+            visible: true
+        properties:
+          name: atomicNumber
+          prop: license_number
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          filter: true
+          widthMode: fixed
+          width: '150'
+          disableFormatting: true
+          filterVariation:
+            value: includes
+            dataValue: includes
+            withData: false
+        index: 0
+        slots: []
+      - id: '17508011865680.05803604970995535'
+        definitionId: atomicString
+        parentSlotId: '17508011646770.8836032743418685'
+        styles: {}
+        properties:
+          name: atomicString
+          prop: name
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        index: 1
+        slots: []
+      - id: '17508012613750.5980400507981961'
+        definitionId: atomicBoolean
+        parentSlotId: '17508011646770.8836032743418685'
+        styles: {}
+        properties:
+          name: atomicBoolean
+          prop: paid_by_headquarter_license
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          primaryKey: false
+          inlineEditable:
+            value: false
+            dataValue: 'false'
+            withData: false
+          inlineEditMode: onclick
+          title: HQ pays license
+          alignment: left
+          width: '50'
+          sortable: false
+          enableAdding: false
+          inlineEditSubmitTriggers:
+            - blur
+            - change
+          viewContentHidden:
+            value: false
+            dataValue: '{{item.paid_by_headquarter_license != null}}'
+            withData: true
+        actions: {}
+        index: 2
+        slots: []
+      - id: '17508014309790.6970719234225581'
+        definitionId: atomicBoolean
+        parentSlotId: '17508011646770.8836032743418685'
+        styles: {}
+        properties:
+          name: atomicBoolean
+          prop: paid_by_headquarter_tonnage
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          inlineEditable:
+            value: false
+            dataValue: 'false'
+            withData: false
+          inlineEditMode: always
+          title: HQ pays poundage
+          width: '50'
+          inlineEditSubmitTriggers:
+            - blur
+            - change
+          enableAdding: false
+          sortable: false
+          viewContentHidden:
+            value: false
+            dataValue: '{{item.paid_by_headquarter_license != null}}'
+            withData: true
+        index: 3
+        slots: []

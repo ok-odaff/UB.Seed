@@ -52,7 +52,7 @@ if (page == 'Poundage Reporting') {
     // Sum tons
     report.seed_types.forEach(r => pounds += r.pounds);
     
-    if (pounds >= 12500) fee = Math.round(pounds) * HIGH_POUNDAGE_FEE;
+    if (pounds >= 12500) fee = Math.round(pounds) * HIGH_POUNDAGE_FEE / 100;
     
   	fees.push({
       description: `${report.report_period} Poundage Fee`,

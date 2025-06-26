@@ -33,7 +33,7 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  value: '{{state.company.find(v => v.address_type_id == 2)?.city}}'
+  value: '{{state.company_addresses.find(v => v.address_type_id == 2)?.city}}'
   labelConfig:
     text: ''
     position: horizontal

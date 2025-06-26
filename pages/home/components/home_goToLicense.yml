@@ -44,7 +44,7 @@ properties:
     externalPath: ''
   disabled:
     value: false
-    dataValue: '{{state.company.license_payment_made == 1}}'
+    dataValue: '{{state.company?.license_payment_made == 1}}'
     withData: true
   cssClasses:
     value:

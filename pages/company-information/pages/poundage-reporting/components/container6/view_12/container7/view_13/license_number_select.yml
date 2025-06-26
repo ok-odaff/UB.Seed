@@ -1,0 +1,88 @@
+id: '17508752954810.11955122135467078'
+definitionId: selectMulti
+parentSlotId: '17489586292310.5016151988832308'
+styles:
+  xl:
+    gridItem:
+      x: 7
+      y: 4
+      w: 9
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      id: '17508752954810.11955122135467078'
+      x: 8
+      y: 200
+      w: 8
+      h: 9
+    flex:
+      size:
+        widthValue: auto
+        heightValue: 36
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  options:
+    value:
+      - value: option_1
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '1'
+      - value: option_2
+        title: ''
+        __UIBAKERY__SYSTEM_ID__: '2'
+    dataValue: >-
+      {{ [{detail_id: state.company.detail_id, license_number:
+      state.company.license_number}, {detail_id: state.branches.find(b =>
+      b.paid_by_headquarter_tonnage == true)?.detail_id,
+
+      license_number: state.branches.find(b => b.paid_by_headquarter_tonnage ==
+      true)?.license_number}]}}
+    withData: true
+  name: license_number_select
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  optionValueKey: detail_id
+  showLoading:
+    withData: true
+    dataValue: 'false'
+    value: false
+  value: '{{state.report_periods.detail_id}}'
+  labelConfig:
+    text: 'Branch license:'
+    position: horizontal
+    align: left
+  multi: false
+  allowResetValue:
+    value: true
+    dataValue: 'true'
+    withData: false
+  placeholder: Select license
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.branches.length > 0}}'
+actions: {}
+slots:
+  - id: '17508752954810.9375525370387106'
+    name: optionViewTypes
+    children:
+      - id: '17508752955380.9731914722569401'
+        definitionId: atomicNumber
+        parentSlotId: '17508752954810.9375525370387106'
+        styles: {}
+        properties:
+          name: atomicNumber
+          prop: license_number
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          disableFormatting: true
+        index: 1
+        slots: []

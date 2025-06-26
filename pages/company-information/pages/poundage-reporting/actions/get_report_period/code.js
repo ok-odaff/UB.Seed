@@ -7,8 +7,8 @@ function subtractDay(dt) {
 }
 
 for (let i = 0; i < stopSaleDates.length; i++) {
-	let stopSale = new Date(stopSaleDates[i])
-  let year = stopSale.getFullYear()
+	let stopSale = new Date(stopSaleDates[i].date)
+  let year = new Date(stopSaleDates[i].date).getFullYear()
 
 
   //set begin and end of periods
@@ -20,6 +20,7 @@ for (let i = 0; i < stopSaleDates.length; i++) {
   //compare dates to find period
   if (stopSale < period1end && stopSale > period1begin) {
     {{state.report_periods}} = {
+      detail_id: stopsale[i].detail_id,
       label: `${period2begin.toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
@@ -35,6 +36,8 @@ for (let i = 0; i < stopSaleDates.length; i++) {
     }
   } else if (stopSale < period2end && stopSale > period2begin) { 
     {{state.report_periods}} = {
+    
+      detail_id: stopSaleDates[i].detail_id,
     	label: `${period1begin.toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',

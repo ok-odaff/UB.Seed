@@ -24,6 +24,7 @@ tableLabels.push(`${period2begin.toLocaleDateString('en-US', {
     day: 'numeric',
   })}`);
   {{state.report_periods}} = {
+    detail_id: {{state.company.detail_id}},
     report_period: `${period2begin.toLocaleString('en-US', {month: 'short', year: '2-digit'})} - ${period2end.toLocaleString('en-US', {month: 'short', year: '2-digit'})}`,
   	fiscal_year: currentYear, 
  		fiscal_quarter: 3
@@ -41,6 +42,8 @@ tableLabels.push(`${period2begin.toLocaleDateString('en-US', {
   })}`);
   
 {{state.report_periods}} = {
+
+    detail_id: {{state.company.detail_id}},
     report_period: `${period1begin.toLocaleString('en-US', {month: 'short', year: '2-digit'})} - ${period1end.toLocaleString('en-US', {month: 'short', year: '2-digit'})}`,
   	fiscal_year: currentYear, 
   fiscal_quarter: 1

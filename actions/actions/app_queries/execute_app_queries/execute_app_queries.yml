@@ -232,6 +232,13 @@ steps:
                 fallthroughError: false
                 isChanged: true
                 nameConfigured: true
+              - id: '17508868670480.835941282095009'
+                type: draft
+                name: newStep
+                params: []
+                level: 1
+                fallthroughError: false
+                isChanged: false
               - id: '17488719194320.07000119380387637'
                 type: navigation
                 name: home
