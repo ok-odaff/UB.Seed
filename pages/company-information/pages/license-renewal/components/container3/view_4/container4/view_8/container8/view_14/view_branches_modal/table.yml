@@ -5,9 +5,9 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 0
+      y: 6
       w: 24
-      h: 80
+      h: 60
     flex:
       size:
         widthValue: 500
@@ -59,7 +59,7 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  title: Tables
+  title: ''
   showLoading:
     withData: true
     dataValue: 'false'
