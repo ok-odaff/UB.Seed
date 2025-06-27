@@ -1,12 +1,11 @@
-id: '17507887311990.7174604521871114'
+id: '17509697099640.15610058956860884'
 definitionId: text
-parentSlotId: '17507901571590.19439826243735947'
+parentSlotId: '17507906166560.41566680146160806'
 styles:
   xl:
     gridItem:
-      id: '17507887311990.7174604521871114'
       x: 0
-      y: 1
+      y: 0
       w: 24
       h: 6
     flex:
@@ -22,9 +21,8 @@ styles:
       themeDefaultOverridePropertyKey: baseTextFontSize
   xs:
     gridItem:
-      id: '17507887311990.7174604521871114'
       x: 0
-      y: 0
+      y: 229
       w: 24
       h: 6
     flex:
@@ -35,10 +33,16 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: text26
+  name: text27
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  value: There are {{state.branches.length}} licenses associated with your company.
+  value: >-
+    To help us verify the accuracy of our records, please review the following
+    branch information. If there are any corrections that need to be made,
+    please contact the Seed Program Administrator Tori Gillispie by phone at
+    405-522-5452 or by email at Tori.Gillispie@ag.ok.gov
+  heightMode: auto
+  alignment: center
 actions: {}
 slots: []
