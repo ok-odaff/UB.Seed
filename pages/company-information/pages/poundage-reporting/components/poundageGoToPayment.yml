@@ -35,6 +35,10 @@ properties:
     - xs
   text: Continue to Payment
   __UIBAKERY__SHOW__CONDITION__CODE__: ''
+  disabled:
+    value: false
+    dataValue: '{{ui.addAnotherReportButton.}}'
+    withData: true
 actions:
   buttonClick:
     - action: '17488911500510.7593015813338881'

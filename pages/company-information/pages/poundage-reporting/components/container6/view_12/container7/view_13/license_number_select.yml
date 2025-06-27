@@ -38,13 +38,10 @@ properties:
       - value: option_2
         title: ''
         __UIBAKERY__SYSTEM_ID__: '2'
-    dataValue: >-
-      {{ [{detail_id: state.company.detail_id, license_number:
-      state.company.license_number}, {detail_id: state.branches.find(b =>
-      b.paid_by_headquarter_tonnage == true)?.detail_id,
-
-      license_number: state.branches.find(b => b.paid_by_headquarter_tonnage ==
-      true)?.license_number}]}}
+    dataValue: |-
+      {{ [{detail_id: state.company.detail_id, 
+           license_number: state.company.license_number}, 
+          actions.get_branch_reports.data] }}
     withData: true
   name: license_number_select
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
