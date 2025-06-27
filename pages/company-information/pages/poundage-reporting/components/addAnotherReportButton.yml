@@ -29,12 +29,16 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: addAnotherReportButoon
+  name: addAnotherReportButton
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
   __UIBAKERY__SHOW__CONDITION__CODE__: ''
   text: Add another report
+  disabled:
+    value: false
+    dataValue: ''
+    withData: true
 actions:
   buttonClick:
     - action: '17490489851100.12450931447137326'
