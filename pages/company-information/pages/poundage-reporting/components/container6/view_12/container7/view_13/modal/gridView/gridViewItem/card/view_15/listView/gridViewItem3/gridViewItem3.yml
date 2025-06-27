@@ -1,0 +1,16 @@
+id: '17510504405970.2973441466418718'
+definitionId: gridViewItem
+styles: {}
+properties:
+  name: gridViewItem3
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '17510504405970.45974253223069617'
+index: 0
+actions: {}
+slots:
+  - id: '17510504405970.15293225295780888'
+    name: content
+    children:
+      - card2/card2.yml
