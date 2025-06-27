@@ -19,6 +19,10 @@ steps:
             operation: '='
             value:
               value: '{{state.login_information.detail_id}}'
+          - column: address_type_id
+            operation: '='
+            value:
+              value: '1'
         valueType: custom
       - type: ordering
         value:
