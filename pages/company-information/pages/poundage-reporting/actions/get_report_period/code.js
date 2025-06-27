@@ -1,5 +1,5 @@
 //get stop sale date to fulfill year 
-let stopSaleDates = [...{{data}}]           
+let stopSaleDates = [...{{state.stop_sale_tonnage}}]           
 let tableLabels = []
 //set period 1 end as one day before period 2 begin
 function subtractDay(dt) {

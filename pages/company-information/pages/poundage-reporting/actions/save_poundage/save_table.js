@@ -1,6 +1,6 @@
-let obj = {license_number: '',report_period: '', seed_types: [], fiscal_year: '', fiscal_quarter: ''};
+let obj = {detail_id: '',report_period: '', seed_types: [], fiscal_year: '', fiscal_quarter: ''};
 
-obj.license_number = {{ui.license_number_select.value}};
+obj.detail_id = {{ui.license_number_select.value}};
 obj.report_period =  {{state.report_periods.report_period}};
 obj.fiscal_year = {{state.report_periods.fiscal_year}};
 obj.fiscal_quarter = {{state.report_periods.fiscal_quarter}};

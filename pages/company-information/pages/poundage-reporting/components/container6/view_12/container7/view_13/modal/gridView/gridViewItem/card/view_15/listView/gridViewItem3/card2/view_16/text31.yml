@@ -1,0 +1,28 @@
+id: '17510504405970.9109079932934515'
+definitionId: text
+styles:
+  xl:
+    fontSize:
+      themeDefaultOverridePropertyKey: baseTextFontSize
+      customValue: 12
+      customUnit: px
+    gridItem:
+      x: 13
+      y: 2
+      w: 11
+      h: 6
+properties:
+  name: text31
+  text: '{{item.username}}'
+  verticalAlignment: top
+  alignment: left
+  textStyle:
+    transform: none
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  value: '{{item.pounds}} pounds'
+parentSlotId: '17510504405970.605218117071952'
+index: 1
+actions: {}
+slots: []

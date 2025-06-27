@@ -1,6 +1,6 @@
 id: '17488736791520.9199803395771983'
 kind: store_item
-name: seed
+name: stop_sale_tonnage
 nameConfigured: true
 steps: []
 mode: manual
@@ -11,5 +11,5 @@ storeItem:
   valueType: object
   initialValue: '{}'
   version: 1
-selected: true
+selected: false
 configured: true

@@ -37,7 +37,7 @@ properties:
   __UIBAKERY__SHOW__CONDITION__CODE__: ''
   disabled:
     value: false
-    dataValue: '{{ui.addAnotherReportButton.}}'
+    dataValue: ''
     withData: true
 actions:
   buttonClick:

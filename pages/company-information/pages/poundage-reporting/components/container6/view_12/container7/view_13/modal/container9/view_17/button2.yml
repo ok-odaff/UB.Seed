@@ -1,12 +1,12 @@
-id: '17492242075460.9168991491443053'
+id: '17510573302700.11645441459525885'
 definitionId: button
-parentSlotId: '17492233415780.7341455108696621'
+parentSlotId: '17510573088580.3163600353163257'
 styles:
   xl:
     gridItem:
-      x: 0
-      y: 1
-      w: 7
+      x: 20
+      y: 0
+      w: 4
       h: 9
     flex:
       size:
@@ -18,7 +18,7 @@ styles:
   xs:
     gridItem:
       x: 0
-      y: 6
+      y: 0
       w: 24
       h: 9
     flex:
@@ -29,18 +29,9 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: button7
+  name: button2
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  text: Back to report
-  disabled:
-    value: false
-    dataValue: 'true'
-    withData: true
-actions:
-  buttonClick:
-    - action: '17492243262700.37840638672323557'
-      paramCode: ''
-      index: 0
+actions: {}
 slots: []

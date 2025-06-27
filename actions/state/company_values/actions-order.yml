@@ -6,7 +6,7 @@
 - company_address_mailing
 - company_address_physical
 - company_stop_sales
-- seed
+- stop_sale_tonnage
 - applicant_info
 - branches
 - saved_branches

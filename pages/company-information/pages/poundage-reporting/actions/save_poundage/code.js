@@ -1,0 +1,1 @@
+{{ui.confirm_report_modal.open()}}
