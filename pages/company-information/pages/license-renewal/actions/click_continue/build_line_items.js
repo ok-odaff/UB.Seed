@@ -1,12 +1,14 @@
 const date = new Date();
+let number_of_licenses;
+if ({{state.branches > 1}}) {
 let licenses = {{state.branches}}.filter(licenses => licenses.paid_by_headquarter_license == true && licenses.license_payment_made == false);
-let number_of_licenses = licenses.length;
-
+number_of_licenses = licenses.length;
+console.log(licenses)
 if ({{state.company.exempt_from_license}} != true) {
 number_of_licenses++
 }
+} else { number_of_licenses = 1}
 
-console.log(number_of_licenses)
 const LICENSE_FEE_RETAIL = {{state.program_variables.find(p => p.name == 'LICENSE_FEE_RETAIL').value}};
 const LICENSE_FEE_WHOLESALE_AND_MEDICAL_MARIJUANA = {{state.program_variables.find(p => p.name == 'LICENSE_FEE_WHOLESALE_AND_MEDICAL_MARIJUANA').value}};
 let LICENSE_FEE;
@@ -47,5 +49,4 @@ if (date > FULL_LATE_FEE_DATE || date > new Date(state.company_details.license_e
     'amount': Number(LICENSE_LATE_FEE * number_of_licenses)
   });
 }
-
 return {{state.fees}} = fees;
