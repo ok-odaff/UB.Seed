@@ -34,7 +34,7 @@ properties:
     - xl
     - xs
   __UIBAKERY__SHOW__CONDITION__CODE__: ''
-  text: Add another report
+  text: Save report
   disabled:
     value: false
     dataValue: ''

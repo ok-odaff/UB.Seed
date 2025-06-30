@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 0
-      y: 89
+      y: 2
       w: 24
       h: 80
     flex:
@@ -35,7 +35,10 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  __UIBAKERY__SHOW__CONDITION__CODE__: 'false'
+  __UIBAKERY__SHOW__CONDITION__CODE__: >-
+    {{state.seed_poundage.length >= actions.get_branch_reports.data.length +
+    state.stop_sale_tonnage.length}}
+  heightMode: auto
 actions: {}
 slots:
   - id: '17510573088580.46565950002738743'
