@@ -67,7 +67,7 @@ properties:
   limit: '{{state.branches.length}}'
   heightMode: auto
   multiplyRowSelection:
-    value: true
+    value: false
     dataValue: 'false'
     withData: false
   rowSelectionType:
@@ -156,6 +156,7 @@ slots:
             value: false
             dataValue: '{{item.paid_by_headquarter_license != null}}'
             withData: true
+          filter: false
         actions: {}
         index: 2
         slots: []
@@ -186,5 +187,6 @@ slots:
             value: false
             dataValue: '{{item.paid_by_headquarter_license != null}}'
             withData: true
+          filter: false
         index: 3
         slots: []

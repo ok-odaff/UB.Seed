@@ -36,6 +36,11 @@ properties:
     - xs
   text: Duplicate Physical Address
   fieldTooltip: Copy all physical address information into the mail address fields
+  disabled:
+    value: false
+    dataValue: 'true'
+    withData: true
+  __UIBAKERY__SHOW__CONDITION__CODE__: 'false'
 actions:
   buttonClick:
     - action: '17488784896980.047514841476729686'
