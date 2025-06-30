@@ -20,4 +20,4 @@ slots:
       - seedTypesHeader.yml
       - text24.yml
       - license_number_select.yml
-      - modal/modal.yml
+      - view_reports/view_reports.yml

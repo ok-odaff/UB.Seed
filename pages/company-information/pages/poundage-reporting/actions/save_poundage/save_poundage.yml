@@ -15,6 +15,7 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+    paused: true
   - id: '17510572314840.4101205114921691'
     type: customAsyncCode
     name: code

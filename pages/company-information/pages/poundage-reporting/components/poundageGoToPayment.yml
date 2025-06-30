@@ -37,11 +37,13 @@ properties:
   __UIBAKERY__SHOW__CONDITION__CODE__: ''
   disabled:
     value: false
-    dataValue: ''
+    dataValue: >-
+      {{state.seed_poundage.length < state.branch_reports.length +
+      state.stop_sale_tonnage.length}}
     withData: true
 actions:
   buttonClick:
-    - action: '17488911500510.7593015813338881'
+    - action: '17513016281510.5620775026931155'
       paramCode: ''
       blockPageLoad: false
       preventDefault: false

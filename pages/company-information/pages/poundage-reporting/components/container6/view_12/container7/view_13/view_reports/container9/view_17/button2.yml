@@ -33,5 +33,13 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-actions: {}
+  text: Submit
+actions:
+  buttonClick:
+    - action: '17488911500510.7593015813338881'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  init: []
 slots: []

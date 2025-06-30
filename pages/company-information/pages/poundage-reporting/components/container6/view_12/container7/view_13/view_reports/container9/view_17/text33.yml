@@ -4,11 +4,10 @@ parentSlotId: '17510573088580.3163600353163257'
 styles:
   xl:
     gridItem:
-      id: '17510573202410.4149333977591676'
       x: 0
       y: 0
-      w: 5
-      h: 6
+      w: 13
+      h: 13
     flex:
       size:
         widthValue: auto
@@ -37,5 +36,6 @@ properties:
     - xs
   value: You are about to submit the poundage above for review
   __UIBAKERY__SHOW__CONDITION__CODE__: ''
+  heightMode: auto
 actions: {}
 slots: []

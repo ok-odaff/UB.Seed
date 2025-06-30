@@ -14,26 +14,29 @@ const PAYMENT_HISTORY_SQL = `
   VALUES(@detail_id, @payment_type_id, @braintree_id, @receipt_id, @speedtype_id, @fee, @late_fee, @processing_fee, @payment_date, @created_date);
 `;
 
-// Detail sql
-const DETAIL_SQL = `
-	UPDATE company_detail
-  SET tonnage_payment_made = 1
-  WHERE detail_id = @detail_id;
-`;
-
 // Tonnage reports
 const poundageReports = {{state.seed_poundage}};
+let detail_ids = []
 for (let report of poundageReports) {
    let fiscal_year = report.fiscal_year;
     let fiscal_quarter = report.fiscal_quarter;
+  	let detail_id = report.detail_id;
 	if (report.seed_types.length > 0) {
     for (let seed_type of report.seed_types) {
     	reportInserts.push(`(${detail_id}, '${company_type}', '${seed_type.category}', ${seed_type.pounds}, ${fiscal_year}, ${fiscal_quarter},  @INSERTED_ID, @created_date, @created_by)`);
+        detail_ids.push(detail_id);
+      console.log(typeof(detail_id))
     }
     }
   }
   
 
+//Detail sql
+const DETAIL_SQL = `
+	UPDATE company_detail
+  SET tonnage_payment_made = 1
+  WHERE detail_id in (${detail_ids.join(', ')});
+`;
 const SEED_POUNDAGE_SQL = `
 	SELECT @INSERTED_ID = payment_id
   FROM @outputTable;
@@ -49,13 +52,12 @@ const CHANGES_SQL = `
   VALUES
   	(@company_id, @program_id, @detail_id, 'CREATE', @output_payment_id, 'payment_history', '${user.email}', @created_date);
 `;
-
 // Execute query
   {{actions.exec_query}}.trigger({
   query: `
     	${PAYMENT_HISTORY_SQL}
+		  ${DETAIL_SQL}
       ${reportInserts.length > 0 ? SEED_POUNDAGE_SQL : ''}
-      ${DETAIL_SQL}
      	${changeInserts.length > 0 ? CHANGES_SQL : ''}`,
   local_vars: `
   	@detail_id INT, @payment_type_id INT, @created_date DATETIME, @braintree_id NVARCHAR(20), @receipt_id NVARCHAR(20), @speedtype_id INT, @fee DECIMAL(10,2), @late_fee DECIMAL(10,2), @processing_fee DECIMAL(10,2), @needs_review BIT, @payment_date DATETIME, @created_by NVARCHAR(150), @reviewed_by NVARCHAR(150), @program_id INT, @company_id INT`,
