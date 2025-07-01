@@ -49,7 +49,7 @@ properties:
     withData: true
     dataValue: 'false'
     value: false
-  value: '{{state.report_periods.detail_id}}'
+  value: ''
   labelConfig:
     text: 'Branch license:'
     position: horizontal
@@ -62,9 +62,10 @@ properties:
   placeholder: Select license
   __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.branches.length > 0}}'
   required:
-    value: true
+    value: false
     dataValue: 'false'
     withData: false
+  withOptionsAutocomplete: false
 actions: {}
 slots:
   - id: '17508752954810.9375525370387106'
