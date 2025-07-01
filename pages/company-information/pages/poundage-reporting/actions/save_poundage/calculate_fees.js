@@ -29,12 +29,21 @@ const MINIMUM_POUNDAGE_FEE = Number({{state.program_variables.find(p => p.name =
 const HIGH_POUNDAGE_FEE = Number({{state.program_variables.find(p => p.name == 'HIGH_POUNDAGE_FEE')?.value}});
 const POUNDAGE_LATE_FEE = Number({{state.program_variables.find(p => p.name == 'POUNDAGE_LATE_FEE')?.value}});
 const HIGH_POUNDAGE_LATE_FEE = Number({{state.program_variables.find(p => p.name == 'HIGH_POUNDAGE_LATE_FEE')?.value}});
-const POUNDAGE_LATE_FEE_DATE = {{state.program_variables.find(p => p.name == 'POUNDAGE_LATE_FEE_DATE')?.value}};
+const POUNDAGE_FIRST_LATE_FEE_DATE = {{state.program_variables.find(p => p.name == 'POUNDAGE_FIRST_LATE_FEE_DATE')?.value}};
+const POUNDAGE_SECOND_LATE_FEE_DATE = {{state.program_variables.find(p => p.name == 'POUNDAGE_SECOND_LATE_FEE_DATE')?.value}};
 
 // Licensee dates
 const now = new Date();
-const license_expiration_date = new Date(state.company.license_expiration_date);
-const license_late_date = new Date(`${license_expiration_date.getFullYear()}-${LICENSE_LATE_FEE_DATE}`);
+let license_expiration_date;
+let waive_tonnage_late_fee;
+let waive_license_late_fee;
+let license_late_date;
+if (state.company) {
+	license_expiration_date = new Date({{state.company_details.license_expiration_date}});
+  waive_tonnage_late_fee = {{state.company_details?.waive_tonnage_late_fee}} ?? 0;
+  waive_license_late_fee = {{state.company_details.waive_license_late_fee}} ?? 0;
+  license_late_date = new Date(`${license_expiration_date.getFullYear()}-${LICENSE_LATE_FEE_DATE}`);
+}
 
 const fees = [];
 if (page == 'Poundage Reporting') {
@@ -45,8 +54,8 @@ if (page == 'Poundage Reporting') {
     let lateFee = POUNDAGE_LATE_FEE;
     let pounds = 0;
     const yyyy = new Date(`${report.date}`).getFullYear();
-    const poundage_late_fee_date = new Date(`${yyyy}-${POUNDAGE_LATE_FEE_DATE}`);
-    const license_late_fee_date = new Date(`${yyyy}-${LICENSE_LATE_FEE_DATE}`);
+    const poundage_first_late_date = new Date(`${yyyy}-${POUNDAGE_FIRST_LATE_FEE_DATE}`);
+    const poundage_second_late_date = new Date(`${yyyy}-${POUNDAGE_SECOND_LATE_FEE_DATE}`);
     const license_first_notice_date = new Date(`${yyyy}-${LICENSE_FIRST_NOTICE_DATE}`);
 
     // Sum tons
@@ -61,15 +70,16 @@ if (page == 'Poundage Reporting') {
     })
     
     if (pounds >= 125000) lateFee = fee * HIGH_POUNDAGE_LATE_FEE;
-    
-    if (now >= license_late_fee_date) {
+   
+   if (waive_tonnage_late_fee == false) {
+    if (now >= poundage_first_late_date) {
       // If the time has passed the second late fee date for the reporting year and maybe even beyond
       fees.push({
        	description: `${report.report_period} Poundage Late Fee`,
         type: 'poundage_late_fee',
         amount: lateFee
       });
-    } else if (now >= poundage_late_fee_date && now < license_first_notice_date) {
+    } else if (now >= poundage_second_late_date && now < license_first_notice_date) {
       // If the time has passed the first late fee date but not entered into the second reporting period of the reporting year
     	fees.push({
        	description: `${report.report_period} Poundage Late Fee`,
@@ -78,7 +88,7 @@ if (page == 'Poundage Reporting') {
       });
     }
   }
-  
+  }
 
 } else {
   // Build fees for license renewal or new applications
