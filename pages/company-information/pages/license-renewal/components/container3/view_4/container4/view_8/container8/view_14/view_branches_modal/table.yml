@@ -154,7 +154,7 @@ slots:
             - change
           viewContentHidden:
             value: false
-            dataValue: '{{item.paid_by_headquarter_license != null}}'
+            dataValue: '{{item.paid_by_headquarter_license != 0}}'
             withData: true
           filter: false
         actions: {}

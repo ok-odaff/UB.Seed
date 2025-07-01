@@ -36,7 +36,7 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.branches.length > 0}}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.branches.length > 1}}'
 actions: {}
 slots:
   - id: '17507901571590.03347399552970187'
