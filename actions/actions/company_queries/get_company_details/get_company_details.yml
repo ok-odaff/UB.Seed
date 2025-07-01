@@ -148,6 +148,18 @@ steps:
     fallthroughError: false
     isChanged: true
     nameConfigured: true
+  - id: '17513828785830.2743645301750096'
+    type: customAsyncCode
+    name: buttons
+    params:
+      - type: asyncCode
+        value: ./buttons.js
+        valueType: interpolatedValue
+        interpolationType: code
+    level: 0
+    fallthroughError: false
+    isChanged: true
+    nameConfigured: true
 mode: manual
 modeConfigured: false
 parentId: '17483683147680.5692059558631833'

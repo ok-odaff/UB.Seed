@@ -5,7 +5,7 @@ styles:
   xl:
     gridItem:
       x: 2
-      y: 41
+      y: 29
       w: 19
       h: 32
     flex:
@@ -42,9 +42,12 @@ properties:
     Please enter the amount of seed sold, in pounds, only for the appropriate
     categories. If you do not see a category listed here, you may type the name
     into the material field at the bottom of this page, then report as normal.
-    <br /> <br />All back poundage must be reported before proceeding to report
+    <br /> <br /> All back poundage must be reported before proceeding to report
     for the current period. Once back poundage has been reported, you will have
-    the option to proceed directly to payment.
+    the option to proceed directly to payment. <br /> <br /> If you are
+    reporting poundage for multiple licenses, please use the dropdown box to
+    select the license number you would like to report for. You will be asked to
+    review poundage for all licenses before proceeding to payment.
   heightMode: auto
   alignment: center
 actions: {}
