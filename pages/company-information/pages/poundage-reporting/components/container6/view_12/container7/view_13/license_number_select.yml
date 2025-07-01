@@ -38,7 +38,7 @@ properties:
       - value: option_2
         title: ''
         __UIBAKERY__SYSTEM_ID__: '2'
-    dataValue: '{{ [  state.branch_reports] }}'
+    dataValue: '{{ [actions.get_branch_reports.data] }}'
     withData: true
   name: license_number_select
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
