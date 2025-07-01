@@ -51,9 +51,7 @@ const PAYMENT_HISTORY_SQL = `
 
 let branches = {{state.branches}}.filter(licenses => licenses.paid_by_headquarter_license == true);
 let branches_updates = [];
-if ({{state.company.exempt_from_license}} != true) {
 branches_updates.push({{state.login_information.detail_id}})
-}
 for (let branch of branches) {
   branches_updates.push(branch.detail_id)
 }

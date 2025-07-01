@@ -4,7 +4,6 @@ parentSlotId: '17507901571590.19439826243735947'
 styles:
   xl:
     gridItem:
-      id: '17507887311990.7174604521871114'
       x: 0
       y: 1
       w: 24
@@ -40,5 +39,6 @@ properties:
     - xl
     - xs
   value: There are {{state.branches.length}} licenses associated with your company.
+  heightMode: auto
 actions: {}
 slots: []
