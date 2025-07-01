@@ -42,7 +42,7 @@ properties:
   __UIBAKERY__SHOW__CONDITION__CODE__: ''
   disabled:
     value: false
-    dataValue: '{{state.branches.length > 0 && state.saved_branches == false}}'
+    dataValue: '{{state.branches.length > 1 && state.saved_branches == false}}'
     withData: true
 actions:
   buttonClick:
