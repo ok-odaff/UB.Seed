@@ -7,7 +7,7 @@ number_of_licenses = licenses.length;
 if ({{state.company.exempt_from_license}} != true) {
 number_of_licenses++
 }  else { number_of_licenses += 0}
-}
+} else { number_of_licenses = 1}
 console.log(number_of_licenses)
 
 const LICENSE_FEE_RETAIL = {{state.program_variables.find(p => p.name == 'LICENSE_FEE_RETAIL').value}};
