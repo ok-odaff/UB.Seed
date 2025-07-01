@@ -4,9 +4,9 @@ parentSlotId: '17489586292310.5016151988832308'
 styles:
   xl:
     gridItem:
-      x: 7
-      y: 73
-      w: 9
+      x: 6
+      y: 30
+      w: 10
       h: 9
     flex:
       size:
@@ -61,6 +61,10 @@ properties:
     withData: false
   placeholder: Select license
   __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.branches.length > 0}}'
+  required:
+    value: true
+    dataValue: 'false'
+    withData: false
 actions: {}
 slots:
   - id: '17508752954810.9375525370387106'
