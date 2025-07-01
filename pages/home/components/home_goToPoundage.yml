@@ -35,7 +35,7 @@ properties:
     - xs
   linkInfo:
     active: internalPath
-    internalPath: '{{routes.poundageReporting.url}}'
+    internalPath: ''
     externalPath: ''
   text: Report Poundage
   status:
@@ -51,5 +51,12 @@ properties:
       - section_selection
     dataValue: ''
     withData: false
-actions: {}
+actions:
+  buttonClick:
+    - action: '17513952910850.24611052794634714'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  init: []
 slots: []

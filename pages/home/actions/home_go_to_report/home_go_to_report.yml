@@ -1,0 +1,51 @@
+id: '17513952910850.24611052794634714'
+kind: workflow
+name: home_go_to_report
+nameConfigured: true
+steps:
+  - id: '17513953024090.7920091209938542'
+    type: navigation
+    name: navigate
+    params:
+      - type: url
+        value: '{{routes.poundageReporting.url}}'
+        valueType: interpolatedValue
+        interpolationType: string
+      - type: openInNewTab
+        value: false
+        valueType: custom
+      - type: queryParams
+        value:
+          mode: structured
+          value:
+            custom: ''
+            structured:
+              - name: ''
+                value: ''
+        valueType: custom
+        interpolationType: string
+    level: 0
+    fallthroughError: false
+    isChanged: true
+mode: manual
+modeConfigured: false
+parentPageId: '1'
+parentId: null
+config:
+  shouldConfirm: false
+  confirmMessage: >-
+    Are you sure you'd like to proceed with
+    "{{actions.home_go_to_report.name}}"?
+  showSuccessToast: false
+  successToast: Action "{{actions.home_go_to_report.name}}" successfully executed
+  successToastDuration: '3000'
+  successToastHideByClick: false
+  showErrorToast: true
+  errorToast: Action "{{actions.home_go_to_report.name}}" has failed
+  errorToastDuration: '3000'
+  errorToastHideByClick: false
+  delay: '0'
+  runWhenFirstReferenced: true
+  preserveStateOnPageChange: false
+selected: true
+configured: true
