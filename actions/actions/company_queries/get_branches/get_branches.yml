@@ -22,6 +22,7 @@ steps:
         value:
           - __UI_BAKERY__FORMAT_IF_DATE__(state.company.company_id)
           - __UI_BAKERY__FORMAT_IF_DATE__(state.company.company_id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(PROGRAM)
         valueType: custom
       - type: customDatabaseName
         value: ''

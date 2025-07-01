@@ -11,7 +11,7 @@ styles:
       w: 6
 properties:
   name: heading13
-  text: Card title
+  text: ''
   verticalAlignment: middle
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
