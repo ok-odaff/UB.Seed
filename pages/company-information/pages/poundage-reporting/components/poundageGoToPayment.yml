@@ -37,9 +37,7 @@ properties:
   __UIBAKERY__SHOW__CONDITION__CODE__: ''
   disabled:
     value: false
-    dataValue: >-
-      {{state.seed_poundage.length < state.branch_reports.length +
-      state.stop_sale_tonnage.length}}
+    dataValue: ''
     withData: true
 actions:
   buttonClick:

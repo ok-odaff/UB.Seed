@@ -66,7 +66,36 @@ steps:
                 fallthroughError: false
                 isChanged: true
           - condition: false
-            steps: []
+            steps:
+              - id: '17513858223560.4010540173740512'
+                type: condition
+                name: condition2
+                params:
+                  - type: code
+                    value: ./condition2.js
+                    valueType: interpolatedValue
+                    interpolationType: code
+                  - type: steps
+                    value:
+                      - condition: true
+                        steps: []
+                      - condition: false
+                        steps:
+                          - id: '17513854565600.6445127882832364'
+                            type: customAsyncCode
+                            name: code2
+                            params:
+                              - type: asyncCode
+                                value: ./code2.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                            level: 0
+                            fallthroughError: false
+                            isChanged: true
+                    valueType: custom
+                level: 1
+                fallthroughError: false
+                isChanged: true
         valueType: custom
     level: 0
     fallthroughError: false
@@ -77,14 +106,14 @@ parentPageId: '17477469853160.5069296822295167'
 config:
   shouldConfirm: false
   confirmMessage: Are you sure you'd like to proceed with "{{actions.save_table.name}}"?
-  showSuccessToast: false
-  successToast: Action "{{actions.save_table.name}}" successfully executed
+  showSuccessToast: true
+  successToast: Report added!
   successToastDuration: '3000'
   successToastHideByClick: false
   showErrorToast: true
-  errorToast: Action "{{actions.save_table.name}}" has failed
+  errorToast: Please select license number.
   errorToastDuration: '3000'
-  errorToastHideByClick: false
+  errorToastHideByClick: true
   delay: '0'
   runWhenFirstReferenced: true
   preserveStateOnPageChange: false
