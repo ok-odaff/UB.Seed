@@ -8,7 +8,7 @@ styles:
       customUnit: px
     gridItem:
       x: 0
-      y: 34
+      y: 1
       w: 24
       h: 6
 properties:
@@ -18,7 +18,11 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
+  value: >-
+    License number: {{state.branches.find(b => b.detail_id ==
+    item.detail_id)?.license_number}}
+  heightMode: auto
 parentSlotId: '17514858017040.6343380829440587'
-index: 2
+index: 1
 actions: {}
 slots: []

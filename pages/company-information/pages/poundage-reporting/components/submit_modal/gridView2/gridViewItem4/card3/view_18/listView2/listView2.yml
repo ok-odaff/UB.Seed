@@ -1,11 +1,11 @@
-id: '17510504405970.8061060454392556'
+id: '17514868373410.14240441559056627'
 definitionId: listView
-parentSlotId: '17510503949510.6212188148103513'
+parentSlotId: '17514858017040.6343380829440587'
 styles:
   xl:
     gridItem:
       x: 0
-      y: 20
+      y: 8
       w: 24
       h: 20
     flex:
@@ -19,7 +19,7 @@ styles:
   xs:
     gridItem:
       x: 0
-      y: 13
+      y: 18
       w: 24
       h: 140
     flex:
@@ -33,17 +33,17 @@ styles:
 properties:
   data:
     value: UIB_DEMO_DATASET_SHORT
-    dataValue: '{{item.seed_types}}'
-    withData: false
+    dataValue: ''
+    withData: true
   limit: '6'
-  name: listView
+  name: listView2
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
   heightMode: auto
 actions: {}
 slots:
-  - id: '17510504405970.45974253223069617'
+  - id: '17514868373410.7826386116670883'
     name: content
     children:
-      - gridViewItem3/gridViewItem3.yml
+      - gridViewItem5/gridViewItem5.yml

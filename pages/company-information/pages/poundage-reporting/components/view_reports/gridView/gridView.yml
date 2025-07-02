@@ -34,7 +34,7 @@ properties:
   data:
     value: UIB_DEMO_DATASET_SHORT
     dataValue: '{{state.seed_poundage}}'
-    withData: true
+    withData: false
   columns: '2'
   limit: '6'
   name: gridView
