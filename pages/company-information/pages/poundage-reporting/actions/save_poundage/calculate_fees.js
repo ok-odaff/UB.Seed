@@ -53,7 +53,7 @@ if (page == 'Poundage Reporting') {
     let fee = MINIMUM_POUNDAGE_FEE;
     let lateFee = POUNDAGE_LATE_FEE;
     let pounds = 0;
-    const yyyy = new Date(`${report.date}`).getFullYear();
+    const yyyy = report.fiscal_year;
     const poundage_first_late_date = new Date(`${yyyy}-${POUNDAGE_FIRST_LATE_FEE_DATE}`);
     const poundage_second_late_date = new Date(`${yyyy}-${POUNDAGE_SECOND_LATE_FEE_DATE}`);
     const license_first_notice_date = new Date(`${yyyy}-${LICENSE_FIRST_NOTICE_DATE}`);
@@ -65,7 +65,7 @@ if (page == 'Poundage Reporting') {
     
   	fees.push({
       description: `${report.report_period} Poundage Fee`,
-      type: 'poundage_fee',
+      type: 'tonnage_fee',
       amount: fee
     })
     
@@ -76,7 +76,7 @@ if (page == 'Poundage Reporting') {
       // If the time has passed the second late fee date for the reporting year and maybe even beyond
       fees.push({
        	description: `${report.report_period} Poundage Late Fee`,
-        type: 'poundage_late_fee',
+        type: 'tonnage_late_fee',
         amount: lateFee
       });
     } else if (now >= poundage_second_late_date && now < license_first_notice_date) {

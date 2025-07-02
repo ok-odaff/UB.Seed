@@ -35,9 +35,7 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  __UIBAKERY__SHOW__CONDITION__CODE__: >-
-    {{state.seed_poundage.length >= actions.get_branch_reports.data.length +
-    state.stop_sale_tonnage.length}}
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{state.seed_poundage.length >= state.branch_reports.length}}'
   heightMode: auto
 actions: {}
 slots:
