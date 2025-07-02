@@ -1,2 +1,2 @@
-{{ui.addAnotherReportButton.setDisabled(true)}}
-{{ui.poundageGoToPayment.setDisabled(false)}}
+{{ui.addAnotherReportButton.setDisabled(false)}}
+{{ui.poundageGoToPayment.setDisabled(true)}}

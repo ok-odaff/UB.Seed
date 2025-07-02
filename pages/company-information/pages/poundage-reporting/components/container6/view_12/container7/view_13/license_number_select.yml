@@ -67,12 +67,7 @@ properties:
     withData: false
   withOptionsAutocomplete: false
 actions:
-  selectChange:
-    - action: '17510424079700.7118150085173665'
-      paramCode: ''
-      blockPageLoad: false
-      preventDefault: false
-      index: 0
+  selectChange: []
   validate: []
   focusEvent: []
   blurEvent: []
