@@ -37,6 +37,8 @@ steps:
           - __UI_BAKERY__FORMAT_IF_DATE__(data.reviewed_by)
           - __UI_BAKERY__FORMAT_IF_DATE__(data.program_id)
           - __UI_BAKERY__FORMAT_IF_DATE__(data.company_id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.description)
+          - __UI_BAKERY__FORMAT_IF_DATE__(data.paid_by_headquarter)
         valueType: custom
       - type: customDatabaseName
         value: ''
