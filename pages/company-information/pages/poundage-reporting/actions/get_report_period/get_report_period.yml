@@ -89,34 +89,6 @@ steps:
                 paused: false
           - condition: false
             steps:
-              - id: '17510551775070.5624451420811422'
-                type: executeAction
-                name: execute
-                params:
-                  - type: action
-                    value: '17510424079700.7118150085173665'
-                    valueType: custom
-                  - type: isActionsLibraryCall
-                    value: false
-                    valueType: custom
-                  - type: customParams
-                    value: ./execute-customParams.js
-                    valueType: interpolatedValue
-                    interpolationType: code
-                  - type: successMapper
-                    value: ''
-                    valueType: interpolatedValue
-                    interpolationType: code
-                  - type: failureMapper
-                    value: ''
-                    valueType: interpolatedValue
-                    interpolationType: code
-                  - type: mapperEnabled
-                    value: false
-                    valueType: custom
-                level: 1
-                fallthroughError: false
-                isChanged: true
               - id: '17510484061720.5353128626718605'
                 type: condition
                 name: condition2

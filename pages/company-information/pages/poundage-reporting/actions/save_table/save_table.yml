@@ -67,7 +67,7 @@ steps:
                 isChanged: true
           - condition: false
             steps:
-              - id: '17513858223560.4010540173740512'
+              - id: '17514736142590.12798215415834113'
                 type: condition
                 name: condition2
                 params:
@@ -78,10 +78,8 @@ steps:
                   - type: steps
                     value:
                       - condition: true
-                        steps: []
-                      - condition: false
                         steps:
-                          - id: '17513854565600.6445127882832364'
+                          - id: '17514736306010.6864599188099542'
                             type: customAsyncCode
                             name: code2
                             params:
@@ -89,11 +87,24 @@ steps:
                                 value: ./code2.js
                                 valueType: interpolatedValue
                                 interpolationType: code
-                            level: 0
+                            level: 1
+                            fallthroughError: false
+                            isChanged: true
+                      - condition: false
+                        steps:
+                          - id: '17514736424130.6111729871707893'
+                            type: customAsyncCode
+                            name: code4
+                            params:
+                              - type: asyncCode
+                                value: ./code4.js
+                                valueType: interpolatedValue
+                                interpolationType: code
+                            level: 1
                             fallthroughError: false
                             isChanged: true
                     valueType: custom
-                level: 1
+                level: 0
                 fallthroughError: false
                 isChanged: true
         valueType: custom

@@ -257,6 +257,7 @@ steps:
                 fallthroughError: false
                 isChanged: true
                 nameConfigured: true
+                paused: true
           - condition: false
             steps:
               - id: '17488719675740.36422247210244607'

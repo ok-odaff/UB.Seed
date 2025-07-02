@@ -1,1 +1,1 @@
-({{state.seed_poundage.length < state.branch_reports.length + state.stop_sale_tonnage.length}})
+{{state.branch_reports.length}} > 0
