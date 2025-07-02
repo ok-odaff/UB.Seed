@@ -34,7 +34,8 @@ slots:
             children:
               - components/poundageHeader.yml
               - components/divider3.yml
-              - components/poundageGoToPayment.yml
               - components/container6/container6.yml
               - components/addAnotherReportButton.yml
               - components/skipReportModal/skipReportModal.yml
+              - components/view_reports/view_reports.yml
+              - components/submit_modal/submit_modal.yml

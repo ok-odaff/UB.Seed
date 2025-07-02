@@ -154,9 +154,18 @@ slots:
             - change
           viewContentHidden:
             value: false
-            dataValue: '{{item.paid_by_headquarter_license != 0}}'
+            dataValue: '{{}}'
             withData: true
           filter: false
+          summaryFunction:
+            value: none
+            dataValue: ''
+            withData: false
+          editContentHidden:
+            value: false
+            dataValue: ''
+            withData: true
+          __UIBAKERY__SHOW__CONDITION__CODE__: ''
         actions: {}
         index: 2
         slots: []
@@ -185,7 +194,7 @@ slots:
           sortable: false
           viewContentHidden:
             value: false
-            dataValue: '{{item.paid_by_headquarter_license != null}}'
+            dataValue: '{{item.paid_by_headquarter_license != 1}}'
             withData: true
           filter: false
         index: 3

@@ -1,0 +1,22 @@
+id: '17514858017040.6751024123949354'
+definitionId: heading
+styles:
+  xl:
+    fontSize:
+      customValue: 12
+      customUnit: px
+      themeDefaultOverridePropertyKey: baseTextFontSize
+    gridItem:
+      h: 9
+      w: 6
+properties:
+  name: heading16
+  text: Card title
+  verticalAlignment: middle
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+parentSlotId: '17514858017040.2589011405324577'
+index: 0
+actions: {}
+slots: []
