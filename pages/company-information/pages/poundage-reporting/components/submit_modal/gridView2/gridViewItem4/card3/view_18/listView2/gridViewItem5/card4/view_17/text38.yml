@@ -1,4 +1,4 @@
-id: '17514858017040.6879752591200103'
+id: '17514868373410.6242252292163929'
 definitionId: text
 styles:
   xl:
@@ -7,22 +7,22 @@ styles:
       customValue: 12
       customUnit: px
     gridItem:
-      x: 0
-      y: 0
-      w: 24
+      x: 11
+      y: 2
+      w: 13
       h: 6
 properties:
-  name: text34
-  value: '{{state.branches.find(b => b.detail_id == item.detail_id)?.name}}'
+  name: text38
+  text: '{{item.username}}'
+  verticalAlignment: top
+  alignment: left
   textStyle:
     transform: none
-    styles:
-      - bold
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
-  heightMode: auto
-parentSlotId: '17514858017040.6343380829440587'
-index: 0
+  value: '{{item.pounds}} pounds'
+parentSlotId: '17514868373410.28632823035454436'
+index: 1
 actions: {}
 slots: []

@@ -3,6 +3,7 @@ definitionId: cardNew
 styles:
   xl:
     gridItem:
+      x: 0
       w: 24
       h: 46
 properties:
@@ -11,6 +12,7 @@ properties:
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
+  heightMode: auto
 parentSlotId: '17514858017040.28074653790213544'
 index: 0
 actions: {}

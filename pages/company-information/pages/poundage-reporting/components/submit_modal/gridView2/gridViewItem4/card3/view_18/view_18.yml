@@ -14,6 +14,7 @@ slots:
   - id: '17514858017040.6343380829440587'
     name: content
     children:
-      - image.yml
       - text34.yml
       - text35.yml
+      - text33.yml
+      - listView2/listView2.yml
