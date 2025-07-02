@@ -10,9 +10,9 @@ const PAYMENT_HISTORY_SQL = `
 	DECLARE @outputTable TABLE (payment_id INT);
   DECLARE @INSERTED_ID INT;
   
-  INSERT INTO payment_history(detail_id, payment_type_id, braintree_id, receipt_id, speedtype_id, fee, late_fee, processing_fee, payment_date, created_date)
+  INSERT INTO payment_history(detail_id, payment_type_id, braintree_id, receipt_id, speedtype_id, description, fee, late_fee, processing_fee, paid_by_headquarter, payment_date, created_date)
   OUTPUT INSERTED.payment_id INTO @outputTable(payment_id)
-  VALUES(@detail_id, @payment_type_id, @braintree_id, @receipt_id, @speedtype_id, @fee, @late_fee, @processing_fee, @payment_date, @created_date);
+  VALUES(@detail_id, @payment_type_id, @braintree_id, @receipt_id, @speedtype_id, @description, @fee, @late_fee, @processing_fee, @paid_by_headquarter, @payment_date, @created_date);
 `;
 
 // Tonnage reports
@@ -30,7 +30,6 @@ for (let report of poundageReports) {
     }
     }
   }
-console.log(detail_ids)
 //Detail sql
 const DETAIL_SQL = `
 	UPDATE company_detail
@@ -60,7 +59,7 @@ const CHANGES_SQL = `
       ${reportInserts.length > 0 ? SEED_POUNDAGE_SQL : ''}
      	${changeInserts.length > 0 ? CHANGES_SQL : ''}`,
   local_vars: `
-  	@detail_id INT, @payment_type_id INT, @created_date DATETIME, @braintree_id NVARCHAR(20), @receipt_id NVARCHAR(20), @speedtype_id INT, @fee DECIMAL(10,2), @late_fee DECIMAL(10,2), @processing_fee DECIMAL(10,2), @needs_review BIT, @payment_date DATETIME, @created_by NVARCHAR(150), @reviewed_by NVARCHAR(150), @program_id INT, @company_id INT`,
+  	@detail_id INT, @payment_type_id INT, @created_date DATETIME, @braintree_id NVARCHAR(20), @receipt_id NVARCHAR(20), @speedtype_id INT, @fee DECIMAL(10,2), @late_fee DECIMAL(10,2), @processing_fee DECIMAL(10,2), @needs_review BIT, @payment_date DATETIME, @created_by NVARCHAR(150), @reviewed_by NVARCHAR(150), @program_id INT, @company_id INT, @description NVARCHAR(75), @paid_by_headquarter BIT`,
     
   braintree_id: data.braintree_id,
   program_id: {{PROGRAM}},
@@ -68,12 +67,14 @@ const CHANGES_SQL = `
   created_date: moment(),
   detail_id: state.company.detail_id,
   company_id: state.company.company_id,
+  description: 'Seed poundage',
   fee: Number(data.tonnage_fee),
   late_fee: Number(data.tonnage_late_fee),
   needs_review: 1,
   payment_date: moment(),
   payment_type_id: PAYMENT_TYPES.TONNAGE,
   processing_fee: Number(data.processing_fee),
+  paid_by_headquarter: {{state.company.headquarter_id}} == null ? '1' : '0',
   receipt_id: data.receipt_id,
   reviewed_by: null,
   speedtype_id: data.speedtype_id
