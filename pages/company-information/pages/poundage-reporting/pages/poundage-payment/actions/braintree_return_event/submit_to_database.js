@@ -3,7 +3,8 @@ const changeInserts = [];
 
 const company_type = {{state.company.company_type}};
 
-
+let fees;
+let late_fee;
 // Payment history
 const PAYMENT_HISTORY_SQL = `
 	DECLARE @outputTable TABLE (payment_id INT);
@@ -15,22 +16,21 @@ const PAYMENT_HISTORY_SQL = `
 `;
 
 // Tonnage reports
-const poundageReports = {{state.seed_poundage}};
+
 let detail_ids = []
+const poundageReports = {{state.seed_poundage}};
 for (let report of poundageReports) {
    let fiscal_year = report.fiscal_year;
     let fiscal_quarter = report.fiscal_quarter;
   	let detail_id = report.detail_id;
+        detail_ids.push(detail_id);
 	if (report.seed_types.length > 0) {
     for (let seed_type of report.seed_types) {
     	reportInserts.push(`(${detail_id}, '${company_type}', '${seed_type.category}', ${seed_type.pounds}, ${fiscal_year}, ${fiscal_quarter},  @INSERTED_ID, @created_date, @created_by)`);
-        detail_ids.push(detail_id);
-      console.log(typeof(detail_id))
     }
     }
   }
-  
-
+console.log(detail_ids)
 //Detail sql
 const DETAIL_SQL = `
 	UPDATE company_detail
@@ -68,8 +68,8 @@ const CHANGES_SQL = `
   created_date: moment(),
   detail_id: state.company.detail_id,
   company_id: state.company.company_id,
-  fee: Number(data.poundage_fee),
-  late_fee: Number(data.poundage_late_fee),
+  fee: Number(data.tonnage_fee),
+  late_fee: Number(data.tonnage_late_fee),
   needs_review: 1,
   payment_date: moment(),
   payment_type_id: PAYMENT_TYPES.TONNAGE,

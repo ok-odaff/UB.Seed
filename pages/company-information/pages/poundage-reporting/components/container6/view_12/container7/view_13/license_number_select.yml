@@ -66,7 +66,17 @@ properties:
     dataValue: 'false'
     withData: false
   withOptionsAutocomplete: false
-actions: {}
+actions:
+  selectChange:
+    - action: '17510424079700.7118150085173665'
+      paramCode: ''
+      blockPageLoad: false
+      preventDefault: false
+      index: 0
+  validate: []
+  focusEvent: []
+  blurEvent: []
+  init: []
 slots:
   - id: '17508752954810.9375525370387106'
     name: optionViewTypes

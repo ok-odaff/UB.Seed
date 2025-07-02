@@ -1,11 +1,11 @@
 let address_differences;
 let address_updates = [],
   address_changes = [];
-let address_changes_object;
+let address_changes_object = {};
 
 let ADDRESS_UPDATE_SQL;
 
-if ('address_id' in {{state.company_address_mailing}}) {
+if ({{state.company_address_mailing}}) {
   address_differences = findObjectDifferences({{state.company_address_mailing}}, {{state.new_mailing_address}});
 
   for (const [key, value] of Object.entries(address_differences)) {

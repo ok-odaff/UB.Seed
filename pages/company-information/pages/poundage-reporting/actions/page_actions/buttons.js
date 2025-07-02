@@ -1,0 +1,1 @@
+{{state.seed_poundage}} >= {{state.branch_reports}}
