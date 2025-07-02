@@ -1,11 +1,11 @@
-id: '17510573088580.25858221887093635'
+id: '17514858858550.1675489937924186'
 definitionId: container
-parentSlotId: '17510503744320.49875358142256754'
+parentSlotId: '17514857064590.6379125088761488'
 styles:
   xl:
     gridItem:
       x: 0
-      y: 2
+      y: 1
       w: 24
       h: 80
     flex:
@@ -31,7 +31,7 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: container9
+  name: container10
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
@@ -39,7 +39,7 @@ properties:
   heightMode: auto
 actions: {}
 slots:
-  - id: '17510573088580.46565950002738743'
+  - id: '17514858858550.7158338423505095'
     name: views
     children:
-      - view_17/view_17.yml
+      - view_19/view_19.yml

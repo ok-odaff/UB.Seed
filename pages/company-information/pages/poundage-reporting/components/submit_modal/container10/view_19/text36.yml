@@ -1,6 +1,5 @@
-id: '17510573202410.4149333977591676'
+id: '17514858858550.5432877369930406'
 definitionId: text
-parentSlotId: '17510573088580.3163600353163257'
 styles:
   xl:
     gridItem:
@@ -30,12 +29,14 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: text33
+  name: text36
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
   value: You are about to submit the poundage above for review
   __UIBAKERY__SHOW__CONDITION__CODE__: ''
   heightMode: auto
+parentSlotId: '17514858858550.5134506063367446'
+index: 0
 actions: {}
 slots: []

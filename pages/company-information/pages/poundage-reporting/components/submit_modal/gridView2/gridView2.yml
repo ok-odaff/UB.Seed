@@ -1,0 +1,50 @@
+id: '17514858017040.8439738460796392'
+definitionId: gridView
+parentSlotId: '17514857064590.6379125088761488'
+styles:
+  xl:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 105
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 420
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+  xs:
+    gridItem:
+      x: 0
+      y: 0
+      w: 24
+      h: 105
+    flex:
+      size:
+        widthValue: 500
+        widthUnit: px
+        heightValue: 420
+        heightUnit: px
+      grow: '0'
+      shrink: '0'
+properties:
+  data:
+    value: UIB_DEMO_DATASET_SHORT
+    dataValue: '{{state.seed_poundage}}'
+    withData: true
+  columns: '2'
+  limit: '6'
+  name: gridView2
+  __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+    - xl
+    - xs
+  heightMode: auto
+actions: {}
+slots:
+  - id: '17514858017040.7460419078947411'
+    name: content
+    children:
+      - gridViewItem4/gridViewItem4.yml
