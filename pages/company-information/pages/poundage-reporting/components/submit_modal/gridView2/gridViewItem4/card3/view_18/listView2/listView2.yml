@@ -33,7 +33,7 @@ styles:
 properties:
   data:
     value: UIB_DEMO_DATASET_SHORT
-    dataValue: ''
+    dataValue: '{{item.seed_types}}'
     withData: true
   limit: '6'
   name: listView2
