@@ -16,6 +16,18 @@ properties:
     - xl
     - xs
   heightMode: auto
+  containerStyles:
+    withData: false
+    dataValue: |-
+      {
+        padding: 'default',
+        shadow: 'default',
+        border: 'default'
+      }
+    value:
+      padding: none
+      shadow: none
+      border: none
 parentSlotId: '17514868373410.81867440954048'
 index: 0
 actions: {}
