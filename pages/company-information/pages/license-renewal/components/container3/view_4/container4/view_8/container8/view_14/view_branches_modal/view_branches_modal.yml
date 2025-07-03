@@ -63,6 +63,7 @@ slots:
       - save_branch_info_button.yml
       - table.yml
       - text27.yml
+      - text39.yml
   - id: '17507906166560.6676134005041717'
     name: footer
     children: []

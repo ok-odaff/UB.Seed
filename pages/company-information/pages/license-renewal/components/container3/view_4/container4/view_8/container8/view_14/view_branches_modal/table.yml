@@ -53,7 +53,9 @@ properties:
     withData: false
   data:
     value: UIB_DEMO_DATASET_FULL
-    dataValue: '{{actions.get_branches.data}}'
+    dataValue: >-
+      {{actions.get_branches.data.filter(b => b.headquarter_id != null ||
+      b.headquarter_id == null && b.exempt_from_license == false)}}
     withData: true
   name: table
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
@@ -129,73 +131,69 @@ slots:
         index: 1
         slots: []
       - id: '17508012613750.5980400507981961'
-        definitionId: atomicBoolean
+        definitionId: atomicString
         parentSlotId: '17508011646770.8836032743418685'
         styles: {}
         properties:
-          name: atomicBoolean
+          name: atomicString8
           prop: paid_by_headquarter_license
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          primaryKey: false
+          mappedValue: "{{\n(() => {\n\tif (row.paid_by_headquarter_license || row.headquarter_id == null) return '\\u2714 Yes';\tif (row.paid_by_headquarter_license == false) return '\\u2716 No';\n})()\n}}"
+          summaryFunction:
+            value: none
+            dataValue: ''
+            withData: false
+          viewContentHidden:
+            value: false
+            dataValue: ''
+            withData: true
+          editContentHidden:
+            value: false
+            dataValue: ''
+            withData: true
           inlineEditable:
             value: false
             dataValue: 'false'
             withData: false
           inlineEditMode: onclick
           title: HQ pays license
-          alignment: left
-          width: '50'
+          primaryKey: false
           sortable: false
-          enableAdding: false
-          inlineEditSubmitTriggers:
-            - blur
-            - change
-          viewContentHidden:
-            value: false
-            dataValue: '{{}}'
-            withData: true
           filter: false
-          summaryFunction:
-            value: none
-            dataValue: ''
-            withData: false
-          editContentHidden:
-            value: false
-            dataValue: ''
-            withData: true
-          __UIBAKERY__SHOW__CONDITION__CODE__: ''
+          enableAdding: false
+          width: '50'
+          alignment: center
         actions: {}
         index: 2
         slots: []
       - id: '17508014309790.6970719234225581'
-        definitionId: atomicBoolean
+        definitionId: atomicString
         parentSlotId: '17508011646770.8836032743418685'
         styles: {}
         properties:
-          name: atomicBoolean
+          name: atomicString9
           prop: paid_by_headquarter_tonnage
-          primaryKey: false
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
+          viewContentHidden:
+            value: false
+            dataValue: ''
+            withData: true
           inlineEditable:
             value: false
             dataValue: 'false'
             withData: false
           inlineEditMode: always
           title: HQ pays poundage
-          width: '50'
-          inlineEditSubmitTriggers:
-            - blur
-            - change
-          enableAdding: false
+          primaryKey: false
           sortable: false
-          viewContentHidden:
-            value: false
-            dataValue: '{{item.paid_by_headquarter_license != 1}}'
-            withData: true
           filter: false
+          enableAdding: false
+          width: '50'
+          mappedValue: "{{\n(() => {\n\tif (row.paid_by_headquarter_license || row.headquarter_id == null) return '\\u2714 Yes';\tif (row.paid_by_headquarter_license == false) return '\\u2716 No';\n})()\n}}"
+        actions: {}
         index: 3
         slots: []
