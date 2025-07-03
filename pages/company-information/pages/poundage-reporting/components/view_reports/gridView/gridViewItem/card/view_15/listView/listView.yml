@@ -34,7 +34,7 @@ properties:
   data:
     value: UIB_DEMO_DATASET_SHORT
     dataValue: '{{item.seed_types}}'
-    withData: false
+    withData: true
   limit: '6'
   name: listView
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
