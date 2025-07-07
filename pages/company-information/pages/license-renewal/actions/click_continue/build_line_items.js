@@ -21,9 +21,9 @@ let licenses = {{state.branches}}.filter(licenses => licenses.paid_by_headquarte
 }
 
 if ({{state.company.exempt_from_license}} != true) {
- if (license.company_type == 'Retail') {
+ if (state.company.company_type == 'Retail') {
   total_license_fee += LICENSE_FEE_RETAIL
-  } else if (license.company_type == 'Wholesale' || license.company_type == 'Medical Marijuana') {
+  } else if (state.company.company_type == 'Wholesale' || license.company_type == 'Medical Marijuana') {
   total_license_fee += LICENSE_FEE_WHOLESALE_AND_MEDICAL_MARIJUANA 
   }
 }
@@ -44,9 +44,9 @@ let licenses = {{state.branches}}.filter(licenses => licenses.paid_by_headquarte
 }
 
 if ({{state.company.exempt_from_license}} != true) {
- if (license.company_type == 'Retail') {
+ if (state.company.company_type == 'Retail') {
   total_license_late_fee += LICENSE_LATE_FEE_RETAIL
-  } else if (license.company_type == 'Wholesale' || license.company_type == 'Medical Marijuana') {
+  } else if (state.company.company_type == 'Wholesale' || license.company_type == 'Medical Marijuana') {
   total_license_late_fee += LICENSE_LATE_FEE_WHOLESALE_AND_MEDICAL_MARIJUANA 
   }
 }
