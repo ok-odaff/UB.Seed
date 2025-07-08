@@ -6,8 +6,8 @@ styles:
     gridItem:
       x: 2
       y: 31
-      w: 19
-      h: 80
+      w: 20
+      h: 132
     flex:
       size:
         widthValue: 300

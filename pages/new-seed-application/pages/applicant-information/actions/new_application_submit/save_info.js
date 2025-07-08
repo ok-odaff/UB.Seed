@@ -3,6 +3,8 @@
 let applicantInfo = {
 company_name: ui.AI_CompanyName.value,
 headquarters: ui.AI_Headquarters.value != 0 ? ui.AI_Headquarters.value : null,
+paid_by_headquarter_license: {{ui.AI_HQ_pays_license.value}},
+paid_by_headquarter_tonnage: {{ui.AI_HQ_pays_poundage.value}},
 program_id: {{PROGRAM}},
 license_type: state.license_type,
 license_number: '',

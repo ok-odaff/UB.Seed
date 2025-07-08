@@ -1,12 +1,12 @@
-id: '17479425476540.5292113609909915'
+id: '17520071857960.5664392079427509'
 definitionId: checkbox
 parentSlotId: '17484494134040.2376849489855153'
 styles:
   xl:
     gridItem:
-      x: 0
+      x: 11
       y: 14
-      w: 6
+      w: 5
       h: 9
     flex:
       size:
@@ -17,10 +17,9 @@ styles:
       shrink: '0'
   xs:
     gridItem:
-      id: '17479425476540.5292113609909915'
-      x: 13
-      y: 23
-      w: 4
+      x: 0
+      y: 174
+      w: 24
       h: 9
     flex:
       size:
@@ -30,14 +29,14 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: AI_hqPays
+  name: AI_HQ_pays_poundage
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
   labelConfig:
-    text: Company has headquarters
+    text: HQ pays poundage fees
     position: horizontal
     align: left
-  __UIBAKERY__SHOW__CONDITION__CODE__: ''
+  __UIBAKERY__SHOW__CONDITION__CODE__: '{{ui.AI_hqPays.value == 1}}'
 actions: {}
 slots: []

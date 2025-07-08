@@ -1,13 +1,12 @@
 id: '17479413470440.4035413587063973'
 definitionId: container
-parentSlotId: '17484494134040.2376849489855153'
+parentSlotId: '17479416032370.7241486054773489'
 styles:
   xl:
     gridItem:
-      id: '17479413470440.4035413587063973'
       x: 0
-      y: 29
-      w: 19
+      y: 27
+      w: 20
       h: 36
     flex:
       size:
@@ -21,8 +20,8 @@ styles:
     gridItem:
       id: '17479413470440.4035413587063973'
       x: 0
-      y: 82
-      w: 19
+      y: 51
+      w: 15
       h: 36
     flex:
       size:
