@@ -67,7 +67,7 @@ properties:
     text: ''
     position: horizontal
     align: left
-  placeholder: Type of Business
+  placeholder: Type of License
   required:
     value: true
     dataValue: 'false'

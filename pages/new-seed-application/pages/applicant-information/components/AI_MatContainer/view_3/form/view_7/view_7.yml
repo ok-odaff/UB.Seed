@@ -22,7 +22,8 @@ slots:
       - AI_PrefersPaper.yml
       - divider.yml
       - divider2.yml
-      - AI_MailAddressContainer/AI_MailAddressContainer.yml
       - AI_PrimaryAddressContainer/AI_PrimaryAddressContainer.yml
       - AI_hqPays.yml
       - AI_Headquarters.yml
+      - AI_HQ_pays_license.yml
+      - AI_HQ_pays_poundage.yml
