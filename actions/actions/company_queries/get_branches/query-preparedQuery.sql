@@ -7,6 +7,7 @@ left join company_detail cd
 on c.company_id = cd.company_id
 left join seed s
 on s.detail_id = cd.detail_id
-where c.headquarter_id = ?
+where cd.deactivated_date is null
+and c.headquarter_id = ?
 or c.company_id = ?
 and program_id = ?
