@@ -66,7 +66,7 @@ if (page == 'Poundage Reporting') {
   	fees.push({
       description: `${report.report_period} Poundage Fee`,
       type: 'tonnage_fee',
-      amount: fee
+      amount: Number(fee.toFixed(2))
     })
     
     if (pounds >= 125000) lateFee = fee * HIGH_POUNDAGE_LATE_FEE;
