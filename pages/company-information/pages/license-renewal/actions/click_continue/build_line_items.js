@@ -58,7 +58,7 @@ let fees = [];
 fees.push({
   'description': 'License Fee',
 	'type': 'license_fee',
-  'amount': total_license_fee
+  'amount': Number(total_license_fee.toFixed(2))
 });
            
 // Add late fee if past date
