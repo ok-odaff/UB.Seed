@@ -12,7 +12,7 @@ const date = new Date();
 if ({{state.branches.length > 1}}) {
 let licenses = {{state.branches}}.filter(licenses => licenses.paid_by_headquarter_license == true && licenses.license_payment_made == false);
   for (let license of licenses) {
-  if (license.company_type.toLowercase() == 'retail') {
+  if (license.company_type.toLowerCase() == 'retail') {
   total_license_fee += LICENSE_FEE_RETAIL
   } else if (license.company_type.toLowerCase == 'wholesale' || license.company_type.toLowerCase() == 'marijuana') {
   total_license_fee += LICENSE_FEE_WHOLESALE_AND_MEDICAL_MARIJUANA 
