@@ -1,6 +1,6 @@
 select DISTINCT
 c.name, c.headquarter_id, c.company_id,
-cd.company_type, cd.license_number, cd.license_payment_made, cd.tonnage_payment_made, cd.detail_id, cd.waive_license_late_fee, cd.waive_tonnage_late_fee,
+cd.company_type, cd.license_number, cd.license_expiration_date, cd.license_payment_made, cd.tonnage_payment_made, cd.detail_id, cd.waive_license_late_fee, cd.waive_tonnage_late_fee,
 s.exempt_from_license, s.should_report_poundage
 
 from company c 
