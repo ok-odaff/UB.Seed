@@ -10,7 +10,7 @@ BEGIN TRY
   @local_vars,
   {{data.braintree_id}},
   {{data.can_login}},
-  {{data.company_type}}
+  {{data.company_type}},
   {{data.contact_email}},
   {{data.contact_name}},
   {{data.contact_phone}},
@@ -31,7 +31,7 @@ BEGIN TRY
   {{data.mailing_county_id}},
   {{data.mailing_state}},
   {{data.mailing_zip}},
-  {{data.name}}
+  {{data.name}},
   {{data.needs_review}},
   {{data.paid_by_detail_id}},
   {{data.paid_by_headquarter_license}},
