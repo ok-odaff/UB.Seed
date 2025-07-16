@@ -1,1 +1,0 @@
-{{ui.view_reports.open()}}

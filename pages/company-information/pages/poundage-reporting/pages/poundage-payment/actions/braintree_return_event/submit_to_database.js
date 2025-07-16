@@ -3,18 +3,6 @@ const changeInserts = [];
 
 const company_type = {{state.company.company_type}};
 
-let fees;
-let late_fee;
-// Payment history
-const PAYMENT_HISTORY_SQL = `
-	DECLARE @outputTable TABLE (payment_id INT);
-  DECLARE @INSERTED_ID INT;
-  
-  INSERT INTO payment_history(detail_id, payment_type_id, braintree_id, receipt_id, speedtype_id, description, fee, late_fee, processing_fee, paid_by_headquarter, payment_date, created_date)
-  OUTPUT INSERTED.payment_id INTO @outputTable(payment_id)
-  VALUES(@detail_id, @payment_type_id, @braintree_id, @receipt_id, @speedtype_id, @description, @fee, @late_fee, @processing_fee, @paid_by_headquarter, @payment_date, @created_date);
-`;
-
 // Tonnage reports
 
 let detail_ids = []
@@ -42,7 +30,7 @@ const SEED_POUNDAGE_SQL = `
 
 	INSERT INTO seed_poundage(detail_id, company_type, category, pounds, fiscal_year, fiscal_quarter, payment_id, created_date, created_by)
   VALUES
-  	${reportInserts.join(',')}
+  	${reportInserts.join(', ')}
 `;
 
 // Change history
@@ -51,6 +39,34 @@ const CHANGES_SQL = `
   VALUES
   	(@company_id, @program_id, @detail_id, 'CREATE', @output_payment_id, 'payment_history', '${user.email}', @created_date);
 `;
+
+
+let payment_inserts = []
+for (let detail in detail_ids) {
+payment_inserts.push(`(${detail_ids[detail]}, @payment_type_id, @braintree_id, @receipt_id, @speedtype_id, @description, @fee, @late_fee, @processing_fee, @detail_id, @payment_date, @created_date)`)
+}
+// Payment history
+const PAYMENT_HISTORY_SQL = `
+	DECLARE @outputTable TABLE (payment_id INT);
+  DECLARE @INSERTED_ID INT;
+  
+  INSERT INTO payment_history(detail_id, payment_type_id, braintree_id, receipt_id, speedtype_id, description, fee, late_fee, processing_fee, paid_by_detail_id, payment_date, created_date)
+  OUTPUT INSERTED.payment_id INTO @outputTable(payment_id)
+  VALUES ${payment_inserts.join(', ')}
+  
+  INSERT INTO change_history(company_id, program_id, detail_id, action_type, associated_table_id, accepted)
+SELECT
+    cd.company_id,
+    cd.program_id,
+    cd.detail_id,
+    'CREATE',
+    o.payment_id,
+    1
+FROM @outputTable o
+JOIN payment_history ph on o.payment_id = ph.payment_id
+JOIN company_detail cd on ph.detail_id = cd.detail_id;
+`;
+
 // Execute query
   {{actions.exec_query}}.trigger({
   query: `
@@ -59,7 +75,7 @@ const CHANGES_SQL = `
       ${reportInserts.length > 0 ? SEED_POUNDAGE_SQL : ''}
      	${changeInserts.length > 0 ? CHANGES_SQL : ''}`,
   local_vars: `
-  	@detail_id INT, @payment_type_id INT, @created_date DATETIME, @braintree_id NVARCHAR(20), @receipt_id NVARCHAR(20), @speedtype_id INT, @fee DECIMAL(10,2), @late_fee DECIMAL(10,2), @processing_fee DECIMAL(10,2), @needs_review BIT, @payment_date DATETIME, @created_by NVARCHAR(150), @reviewed_by NVARCHAR(150), @program_id INT, @company_id INT, @description NVARCHAR(75), @paid_by_headquarter BIT`,
+  	@detail_id INT, @payment_type_id INT, @created_date DATETIME, @braintree_id NVARCHAR(20), @receipt_id NVARCHAR(20), @speedtype_id INT, @fee DECIMAL(10,2), @late_fee DECIMAL(10,2), @processing_fee DECIMAL(10,2), @needs_review BIT, @payment_date DATETIME, @created_by NVARCHAR(150), @reviewed_by NVARCHAR(150), @program_id INT, @company_id INT, @description NVARCHAR(75)`,
     
   braintree_id: data.braintree_id,
   program_id: {{PROGRAM}},
@@ -74,7 +90,6 @@ const CHANGES_SQL = `
   payment_date: moment(),
   payment_type_id: PAYMENT_TYPES.TONNAGE,
   processing_fee: Number(data.processing_fee),
-  paid_by_headquarter: {{state.company.headquarter_id}} == null ? '1' : '0',
   receipt_id: data.receipt_id,
   reviewed_by: null,
   speedtype_id: data.speedtype_id

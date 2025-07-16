@@ -14,7 +14,7 @@ slots:
   - id: '17489586292310.5016151988832308'
     name: content
     children:
-      - container5/container5.yml
+      - other_seed_container/other_seed_container.yml
       - seedTypesList/seedTypesList.yml
       - reportPeriod.yml
       - seedTypesHeader.yml

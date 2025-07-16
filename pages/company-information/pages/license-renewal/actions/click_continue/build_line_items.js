@@ -14,7 +14,7 @@ let licenses = {{state.branches}}.filter(licenses => licenses.paid_by_headquarte
   for (let license of licenses) {
   if (license.company_type.toLowerCase() == 'retail') {
   total_license_fee += LICENSE_FEE_RETAIL
-  } else if (license.company_type.toLowerCase == 'wholesale' || license.company_type.toLowerCase() == 'marijuana') {
+  } else if (license.company_type.toLowerCase() == 'wholesale' || license.company_type.toLowerCase() == 'marijuana') {
   total_license_fee += LICENSE_FEE_WHOLESALE_AND_MEDICAL_MARIJUANA 
   }
   }
