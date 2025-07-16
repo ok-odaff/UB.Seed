@@ -1,4 +1,5 @@
 let hq_info = {{actions.get_companies.data}}.find(v => v.company_id == {{ui.AI_Headquarters.value}});
+let company_type = {{ui.AI_LicenseType.value}} == 'is_retail'? 'Retail' : 'is_wholesale' ? 'Wholesale' : 'is_medical_marijuana' ? 'medical_marijuana' : '';
 
 let applicantInfo = {
 company_name: ui.AI_CompanyName.value,
@@ -8,7 +9,7 @@ paid_by_headquarter_license: {{ui.AI_HQ_pays_license.value}},
 paid_by_headquarter_tonnage: {{ui.AI_HQ_pays_poundage.value}},
 program_id: {{PROGRAM}},
 license_type: {{state.license_type}},
-company_type: {{state.license_type}},
+company_type: company_type,
 license_number: '',
 physical_address: {{state.company_address_physical}},
 mailing_address: {{state.company_address_mailing}},
