@@ -127,7 +127,7 @@ await actions.exec_query.trigger({
     @program_id INT,
     @receipt_id NVARCHAR(20),
     @receives_email BIT,
-    @speedtype_id INT,
+    @speedtype_id INT
   `,
   braintree_id: {{data?.braintree_id}},
   can_login: 1,
