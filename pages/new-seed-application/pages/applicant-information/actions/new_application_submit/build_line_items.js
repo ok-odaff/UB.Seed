@@ -13,7 +13,7 @@ if ({{state.applicant_info.license_type[0] == 1}}) {
 const LICENSE_LATE_FEE_RETAIL = {{state.program_variables.find(p => p.name == 'LICENSE_LATE_FEE_RETAIL').value}};
 const LICENSE_LATE_FEE_WHOLESALE_AND_MEDICAL_MARIJUANA = {{state.program_variables.find(p => p.name == 'LICENSE_LATE_FEE_WHOLESALE_AND_MEDICAL_MARIJUANA').value}};
 let LICENSE_LATE_FEE;
-if ({{state.company.company_type == "Retail"}}) {
+if ({{state.applicant_info.company_type == "Retail"}}) {
   LICENSE_LATE_FEE = LICENSE_LATE_FEE_RETAIL
 } else {
   LICENSE_LATE_FEE = LICENSE_LATE_FEE_WHOLESALE_AND_MEDICAL_MARIJUANA
