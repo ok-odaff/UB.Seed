@@ -20,9 +20,9 @@ const COMPANY_DETAIL_UPDATE_SQL = `
 	DELETE FROM @outputTable;
 
 
-  INSERT INTO company_detail(company_id, program_id, paid_by_headquarter_license, paid_by_headquarter_tonnage, needs_review, license_payment_made, created_by, created_date)
+  INSERT INTO company_detail(company_id, program_id, company_type, paid_by_headquarter_license, paid_by_headquarter_tonnage, needs_review, license_payment_made, created_by, created_date)
   OUTPUT INSERTED.detail_id INTO @outputTable(detail_id)
-  VALUES(@output_company_id, ${PROGRAM}, @paid_by_headquarter_license, @paid_by_headquarter_tonnage, @needs_review, @license_payment_made, @created_by, @created_date);
+  VALUES(@output_company_id, ${PROGRAM}, @company_type, @paid_by_headquarter_license, @paid_by_headquarter_tonnage, @needs_review, @license_payment_made, @created_by, @created_date);
 
   SELECT @output_detail_id = detail_id 
   FROM @outputTable; 
@@ -60,9 +60,9 @@ FROM @outputTable;
 DELETE FROM @outputTable;`
 
 const PAYMENT_HISTORY_SQL = `
-  INSERT INTO payment_history(detail_id, payment_type_id, braintree_id, receipt_id, speedtype_id, fee, late_fee, processing_fee, payment_date, created_date)
+  INSERT INTO payment_history(detail_id, payment_type_id, braintree_id, receipt_id, speedtype_id, fee, late_fee, processing_fee, paid_by_detail_id, payment_date, created_date)
   OUTPUT INSERTED.payment_id INTO @outputTable(payment_id)
-  VALUES(@output_detail_id, @payment_type_id, @braintree_id, @receipt_id, @speedtype_id, @fee, @late_fee, @processing_fee, @created_date, @created_date);
+  VALUES(@output_detail_id, @payment_type_id, @braintree_id, @receipt_id, @speedtype_id, @fee, @late_fee, @processing_fee, @paid_by_detail_id, @created_date, @created_date);
 `
 
 const CHANGE_HISTORY_SQL = `
@@ -86,47 +86,89 @@ await actions.exec_query.trigger({
     `,
   
   local_vars: `
-			 @name NVARCHAR(250), @headquarter_id INT, @current_date DATETIME, @created_date DATETIME, @program_id INT, @created_by NVARCHAR(150), @is_retail BIT, @is_wholesale BIT, @is_medical_marijuana BIT, @contact_name nvarchar(150), @contact_phone nvarchar(100), @contact_email nvarchar(150), @prefers_paper BIT, @is_primary BIT, @can_login BIT, @receives_email BIT, @payment_type_id INT, @braintree_id nvarchar(20), @receipt_id nvarchar(20), @speedtype_id int, @fee decimal(10,2), @late_fee decimal(10,2), @processing_fee decimal(10,2), @payment_date datetime, @primary_address nvarchar(250), @primary_city nvarchar(250), @primary_state nvarchar(2), @primary_county_id int, @primary_zip nvarchar(10), @primary_address_type int, @mailing_address nvarchar(250), @mailing_city nvarchar(250), @mailing_state nvarchar(2), @mailing_county_id int, @mailing_zip nvarchar(10), @mailing_address_type int, @paid_by_headquarter_license BIT, @paid_by_headquarter_tonnage BIT, @license_payment_made BIT, @needs_review BIT
-    `,
-  company_name: {{state.applicant_info.company_name}},
-  headquarter_id: {{state.applicant_info.headquarters}} != 0 ? {{state.applicant_info.headquarters}} : null,
-  current_date: moment(),
-  created_date: moment(),
-  program_id: {{PROGRAM}},
-  created_by: {{state.login_information.email}} || {{user.email}} || 'error fetching email',
-  is_retail: {{state.license_type[0]}},
-  is_wholesale: {{state.license_type[1]}},
-  is_medical_marijuana: {{state.license_type[2]}},
+  	@braintree_id NVARCHAR(20),
+    @can_login BIT,
+    @company_type NVARCHAR(50),
+    @contact_email NVARCHAR(150),
+    @contact_name NVARCHAR(150),
+    @contact_phone NVARCHAR(100),
+    @created_by NVARCHAR(150),
+    @created_date DATETIME,
+    @current_date DATETIME,
+    @fee DECIMAL(10,2),
+    @headquarter_id INT,
+    @is_medical_marijuana BIT,
+    @is_primary BIT,
+    @is_retail BIT,
+    @is_wholesale BIT,
+    @late_fee decimal(10,2),
+    @license_payment_made BIT,
+    @mailing_address NVARCHAR(250),
+    @mailing_address_type INT,
+    @mailing_city NVARCHAR(250),
+    @mailing_county_id INT,
+    @mailing_state NVARCHAR(2),
+    @mailing_zip NVARCHAR(10),
+    @name NVARCHAR(250),
+    @needs_review BIT,
+    @paid_by_detail_id INT,
+    @paid_by_headquarter_license BIT,
+    @paid_by_headquarter_tonnage BIT,
+    @payment_date DATETIME,
+    @payment_type_id INT,
+    @prefers_paper BIT,
+    @primary_address NVARCHAR(250),
+    @primary_address_type INT,
+    @primary_city NVARCHAR(250),
+    @primary_county_id INT,
+    @primary_state NVARCHAR(2),
+    @primary_zip NVARCHAR(10),
+    @processing_fee DECIMAL(10,2),
+    @program_id INT,
+    @receipt_id NVARCHAR(20),
+    @receives_email BIT,
+    @speedtype_id INT,
+  `,
+  braintree_id: {{data?.braintree_id}},
+  can_login: 1,
+  company_type: {{state.applicant_info.company_type}},
+  contact_email: {{state.applicant_info.contact_email}},
   contact_name: {{state.applicant_info.contact_name}},
   contact_phone: {{state.applicant_info.contact_phone}},
-  contact_email: {{state.applicant_info.contact_email}},
-  prefers_paper: {{state.applicant_info.prefers_paper}},
-  is_primary: 1,
-  can_login: 1,
-  recieves_email: 1,
-  payment_type_id: PAYMENT_TYPES['LICENSE_REGISTRATION'],
-  //testing//
-    braintree_id: "jhdvmcc7",
-  receipt_id: "BT00001634",
-  speedtype_id: {{LICENSE_SPEEDTYPE}},
+  created_by: {{state.login_information.email}} || {{user.email}} || 'error fetching email',
+  created_date: moment(),
+  current_date: moment(),
   fee: {{state.fees.license_fee}},
+  headquarter_id: {{state.applicant_info.headquarters}} != 0 ? {{state.applicant_info.headquarters}} : null,
+  is_medical_marijuana: {{state.license_type[2]}},
+  is_primary: 1,
+  is_retail: {{state.license_type[0]}},
+  is_wholesale: {{state.license_type[1]}},
   late_fee: {{state.fees.license_late_fee}},
-  processing_fee: 0,// Number({{data.processing_fee}}),
-  payment_date: moment(),
-  primary_address: {{state.company_address_physical.primary_address}},
-  primary_city: {{state.company_address_physical.primary_city}},
-  primary_state: {{state.company_address_physical.primary_state}},
-  primary_county_id: {{state.company_address_physical.primary_county_id}},
-  primary_zip: {{state.company_address_physical.primary_zip}},
-  primary_address_type: {{state.company_address_physical.primary_address_type}},
+  license_payment_made: 1,
   mailing_address: {{state.company_address_mailing.mailing_address}},
-  mailing_city: {{state.company_address_mailing.mailing_city}},
-  mailing_state: {{state.company_address_mailing.mailing_state}},
-  mailing_county_id: {{state.company_address_mailing.mailing_county_id}},
-  mailing_zip: {{state.company_address_mailing.mailing_zip}},
   mailing_address_type: {{state.company_address_mailing.mailing_address_type}},
+  mailing_city: {{state.company_address_mailing.mailing_city}},
+  mailing_county_id: {{state.company_address_mailing.mailing_county_id}},
+  mailing_state: {{state.company_address_mailing.mailing_state}},
+  mailing_zip: {{state.company_address_mailing.mailing_zip}},
+  name: {{state.applicant_info.company_name}},
+  needs_review: 1,
+  paid_by_detail_id: {{state.applicant_info.headquarter_detail_id}} != null && {{state.applicant_info.paid_by_headquarter_license}} == true ? {{state.applicant_info.headquarter_detail_id}} : null,
   paid_by_headquarter_license: {{state.applicant_info.paid_by_headquarter_license}},
   paid_by_headquarter_tonnage: {{state.applicant_info.paid_by_headquarter_tonnage}},
-  license_payment_made: 1,
-  needs_review: 1
+  payment_date: moment(),
+  payment_type_id: {{PAYMENT_TYPES['LICENSE_REGISTRATION']}},
+  prefers_paper: {{state.applicant_info.prefers_paper}},
+  primary_address: {{state.company_address_physical.primary_address}},
+  primary_address_type: {{state.company_address_physical.primary_address_type}},
+  primary_city: {{state.company_address_physical.primary_city}},
+  primary_county_id: {{state.company_address_physical.primary_county_id}},
+  primary_state: {{state.company_address_physical.primary_state}},
+  primary_zip: {{state.company_address_physical.primary_zip}},
+  processing_fee: 0,// Number({{data.processing_fee}}),
+  program_id: {{PROGRAM}},
+  receipt_id: {{data?.receipt_id}},
+  recieves_email: 1,
+  speedtype_id: {{LICENSE_SPEEDTYPE}}
 });

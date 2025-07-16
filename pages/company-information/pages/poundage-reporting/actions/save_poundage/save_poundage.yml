@@ -3,31 +3,6 @@ kind: workflow
 name: save_poundage
 nameConfigured: true
 steps:
-  - id: '17488911684720.5908556245437929'
-    type: customAsyncCode
-    name: save_table
-    params:
-      - type: asyncCode
-        value: ./save_table.js
-        valueType: interpolatedValue
-        interpolationType: code
-    level: 0
-    fallthroughError: false
-    isChanged: true
-    nameConfigured: true
-    paused: true
-  - id: '17510572314840.4101205114921691'
-    type: customAsyncCode
-    name: code
-    params:
-      - type: asyncCode
-        value: ./code.js
-        valueType: interpolatedValue
-        interpolationType: code
-    level: 0
-    fallthroughError: false
-    isChanged: true
-    paused: true
   - id: '17495627922540.5386132527132204'
     type: customAsyncCode
     name: calculate_fees

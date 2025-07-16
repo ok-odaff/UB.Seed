@@ -44,14 +44,11 @@ let contact_updates = [],
   contact_changes = [];
 let contact_changes_object = {};
 
-const PAYMENT_HISTORY_SQL = `
-  INSERT INTO payment_history(detail_id, payment_type_id, braintree_id, receipt_id, speedtype_id, fee, late_fee, processing_fee, payment_date, created_date)
-  VALUES(@detail_id, @payment_type_id, @braintree_id, @receipt_id, @speedtype_id, @fee, @late_fee, @processing_fee, @created_date, @created_date);
-`;
-
-let branches = {{state.branches}}.filter(licenses => licenses.paid_by_headquarter_license == true);
+let branches = {{state.branches}}.filter(licenses => licenses.paid_by_headquarter_license == true && licenses.license_payment_made == false);
 let branches_updates = [];
+if ({{state.company.exempt_from_license}} != 1) {
 branches_updates.push({{state.login_information.detail_id}})
+}
 for (let branch of branches) {
   branches_updates.push(branch.detail_id)
 }
@@ -74,6 +71,38 @@ const CONTACT_UPDATE_SQL = `
     ', '
   )};
 `;
+
+let payment_inserts = []
+let payment_changes = []
+
+if ({{state.company.exempt_from_license}} != true) {
+payment_inserts.push(`(@detail_id, @payment_type_id, @braintree_id, @receipt_id, @speedtype_id, @fee, @late_fee, @processing_fee, null, @created_date, @created_date)`)
+payment_changes.push(`(@company_id, @program_id, @detail_id, 'CREATE', @payment_id, 'payment_history', @created_by, @created_date, 1, 'AUTO')`)
+}
+for (let branch of branches) {
+payment_inserts.push(`(${branch.detail_id}, @payment_type_id, @braintree_id, @receipt_id, @speedtype_id, @fee, @late_fee, @processing_fee, ${state.company.detail_id}, @created_date, @created_date)`)
+payment_changes.push(`(${branch.company_id}, @program_id, ${branch.detail_id}, 'CREATE', @payment_id, 'payment_history', @created_by, @created_date, 1, 'AUTO')`)
+}
+const PAYMENT_HISTORY_SQL = `
+   DECLARE @outputTable TABLE (payment_id INT);
+    DECLARE @output_payment_id INT;
+
+  INSERT INTO payment_history(detail_id, payment_type_id, braintree_id, receipt_id, speedtype_id, fee, late_fee, processing_fee, paid_by_detail_id, payment_date, created_date)
+ VALUES ${payment_inserts.join(', ')} ;
+ 
+INSERT INTO change_history(company_id, program_id, detail_id, action_type, associated_table_id, accepted)
+SELECT
+    cd.company_id,
+    cd.program_id,
+    cd.detail_id,
+    'CREATE',
+    o.payment_id,
+    1
+FROM @outputTable o
+JOIN payment_history ph on o.payment_id = ph.payment_id
+JOIN company_detail cd on ph.detail_id = cd.detail_id
+ 
+`;   
 
 actions.exec_query.trigger({
   query: `

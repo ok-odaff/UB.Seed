@@ -32,7 +32,7 @@ styles:
       grow: '0'
       shrink: '0'
 properties:
-  name: container5
+  name: other_seed_container
   __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
     - xl
     - xs
