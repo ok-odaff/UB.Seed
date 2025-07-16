@@ -1,6 +1,6 @@
 let hq_info = {{actions.get_companies.data}}.find(v => v.company_id == {{ui.AI_Headquarters.value}});
 let company_type = {{ui.AI_LicenseType.value}} == 'is_retail'? 'Retail' : 'is_wholesale' ? 'Wholesale' : 'is_medical_marijuana' ? 'medical_marijuana' : '';
-                                                  
+
 let applicantInfo = {
 company_name: ui.AI_CompanyName.value,
 headquarters: ui.AI_Headquarters.value != 0 ? ui.AI_Headquarters.value : null,
