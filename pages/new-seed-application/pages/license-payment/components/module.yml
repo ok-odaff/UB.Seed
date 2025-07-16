@@ -41,7 +41,7 @@ properties:
     {
       "merchant_account": {{MERCHANT_ACCOUNT}},
       "company": {{state.company.name}},
-      "license_number": {{state.company.license_number}},
+      "license_number": {{state.company.license_number}} ?? '',
       "program": {{state.program.name}},
       "speedtype": {{LICENSE_SPEEDTYPE}},
       "line_items": {{state.fees}},
