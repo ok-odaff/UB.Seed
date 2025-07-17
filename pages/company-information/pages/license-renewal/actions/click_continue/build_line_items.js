@@ -8,7 +8,7 @@ const LICENSE_LATE_FEE_WHOLESALE_AND_MEDICAL_MARIJUANA = Number({{state.program_
 
 const date = new Date();
 
-if ({{state.branches.length > 1}}) {
+if ({{state.branches.length >= 1}}) {
   let licenses = {{state.branches}}.filter((licenses) => licenses.paid_by_headquarter_license == true && licenses.license_payment_made == false);
   for (let license of licenses) {
     if (license.company_type.toLowerCase() == 'retail') {
