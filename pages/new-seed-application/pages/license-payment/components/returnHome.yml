@@ -37,7 +37,7 @@ properties:
     value: false
     dataValue: ''
     withData: true
-  __UIBAKERY__SHOW__CONDITION__CODE__: '{{Boolean(state.payment_made == true)}}'
+  __UIBAKERY__SHOW__CONDITION__CODE__: false//{{Boolean(state.payment_made == true)}}
   text: Back to Home Page
   linkInfo:
     active: internalPath
