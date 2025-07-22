@@ -140,7 +140,7 @@ slots:
           __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
             - xl
             - xs
-          mappedValue: "{{\n(() => {\n\tif (row.paid_by_headquarter_license || row.headquarter_id == null) return '\\u2714 Yes';\tif (row.paid_by_headquarter_license == false) return '\\u2716 No';\n})()\n}}"
+          mappedValue: "{{\n(() => {\n  if (row.headquarter_id != null) {\n\tif (row.paid_by_headquarter_license) return '\\u2714 Yes';\tif (row.paid_by_headquarter_license == false) return '\\u2716 No';\n  } else { return 'HQ' }\n})()\n}}"
           summaryFunction:
             value: none
             dataValue: ''
@@ -165,8 +165,14 @@ slots:
           enableAdding: false
           width: '50'
           alignment: center
+          showCopyButton: false
+          filterVariation:
+            value: includes
+            dataValue: includes
+            withData: false
+          __UIBAKERY__SHOW__CONDITION__CODE__: ''
         actions: {}
-        index: 2
+        index: 3
         slots: []
       - id: '17508014309790.6970719234225581'
         definitionId: atomicString
@@ -193,7 +199,44 @@ slots:
           filter: false
           enableAdding: false
           width: '50'
-          mappedValue: "{{\n(() => {\n\tif (row.paid_by_headquarter_license || row.headquarter_id == null) return '\\u2714 Yes';\tif (row.paid_by_headquarter_license == false) return '\\u2716 No';\n})()\n}}"
+          mappedValue: "{{\n(() => {\n  if (row.headquarter_id != null) {\n\tif (row.paid_by_headquarter_license) return '\\u2714 Yes';\tif (row.paid_by_headquarter_license == false) return '\\u2716 No';\n  } else { return 'HQ' }\n})()\n}}"
+          summaryFunction:
+            value: countDistinct
+            dataValue: ''
+            withData: false
+          viewTooltipMode: overflow
         actions: {}
-        index: 3
+        index: 4
+        slots: []
+      - id: '17528563718920.3366421017664307'
+        definitionId: atomicNumber
+        parentSlotId: '17508011646770.8836032743418685'
+        styles:
+          xl:
+            visible: false
+        properties:
+          name: atomicNumber2
+          prop: headquarter_id
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+        actions: {}
+        index: 5
+        slots: []
+      - id: '17532139283210.8539884100245057'
+        definitionId: atomicString
+        parentSlotId: '17508011646770.8836032743418685'
+        styles: {}
+        properties:
+          name: atomicString
+          prop: company_type
+          primaryKey: false
+          __UIBAKERY__RESPONSIVE__SHOW__CONDITION__CODE__:
+            - xl
+            - xs
+          title: License Type
+          sortable: true
+          filter: false
+          alignment: center
+        index: 2
         slots: []
