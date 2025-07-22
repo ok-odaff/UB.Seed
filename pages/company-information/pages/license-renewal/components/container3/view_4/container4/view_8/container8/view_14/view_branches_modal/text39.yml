@@ -4,10 +4,10 @@ parentSlotId: '17507906166560.41566680146160806'
 styles:
   xl:
     gridItem:
-      x: 5
-      y: 117
-      w: 15
-      h: 8
+      x: 0
+      y: 11
+      w: 24
+      h: 7
     flex:
       size:
         widthValue: auto
@@ -15,6 +15,10 @@ styles:
         heightUnit: px
       grow: '0'
       shrink: '0'
+    fontSize:
+      customValue: 16
+      customUnit: px
+      themeDefaultOverridePropertyKey: baseTextFontSize
   xs:
     gridItem:
       x: 0
@@ -39,5 +43,7 @@ properties:
     license(s) and poundage fees for {{state.branches.filter(b =>
     b.paid_by_headquarter_tonnage).length +
     state.company.should_report_poundage}} license(s).
+  heightMode: auto
+  alignment: center
 actions: {}
 slots: []

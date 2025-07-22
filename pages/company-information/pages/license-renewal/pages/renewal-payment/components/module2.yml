@@ -42,7 +42,7 @@ properties:
     {
       "merchant_account": {{MERCHANT_ACCOUNT}},
       "company": {{state.company.name}},
-      "license_number": {{state.company.license_number}},
+      "license_number": {{state.license_numbers_paid}} > 5 ? {{state.license_numbers_paid}}.length : {{state.license_numbers_paid}}.join(', '),
       "program": {{state.program.name}},
       "company_detail_id": {{state.company.detail_id}},
       "speedtype": {{LICENSE_SPEEDTYPE}},
