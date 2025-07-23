@@ -48,7 +48,7 @@ if ({{state.branches.length > 1}}) {
 
 FULL_LATE_FEE_DATE = new Date(LICENSE_LATE_FEE_DATE + '-' + new Date({{state.company.license_expiration_date}}).getFullYear());
 if ({{state.company.exempt_from_license}} != true) {
-  if (date > FULL_LATE_FEE_DATE || date > new Date(state.company.license_expiration_date)) {
+  if (date > FULL_LATE_FEE_DATE && date > new Date(state.company.license_expiration_date)) {
     if (state.company.company_type == 'Retail') {
       total_license_late_fee += LICENSE_LATE_FEE_RETAIL;
     } else if (state.company.company_type == 'Wholesale' || license.company_type == 'Medical Marijuana') {
