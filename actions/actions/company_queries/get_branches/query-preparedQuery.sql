@@ -8,6 +8,7 @@ on c.company_id = cd.company_id
 left join seed s
 on s.detail_id = cd.detail_id
 where cd.deactivated_date is null
-and c.headquarter_id = ?
-or c.company_id = ?
+and license_expiration_date < CURRENT_TIMESTAMP
 and program_id = ?
+and (c.headquarter_id = ?
+or c.company_id = ?)

@@ -20,9 +20,9 @@ steps:
         valueType: interpolatedValue
       - type: preparedQueryParams
         value:
-          - __UI_BAKERY__FORMAT_IF_DATE__(state.company.company_id)
-          - __UI_BAKERY__FORMAT_IF_DATE__(state.company.company_id)
           - __UI_BAKERY__FORMAT_IF_DATE__(PROGRAM)
+          - __UI_BAKERY__FORMAT_IF_DATE__(state.company.company_id)
+          - __UI_BAKERY__FORMAT_IF_DATE__(state.company.company_id)
         valueType: custom
       - type: customDatabaseName
         value: ''
